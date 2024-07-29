@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
 
         /* Estilos para el encabezado */
@@ -73,6 +74,33 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Estilos para los enlaces de contacto */
+        #contacto ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #contacto li {
+            margin: 0.5rem 0;
+        }
+
+        #contacto a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        #contacto a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para los emojis de contacto */
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -103,14 +131,11 @@
             <h2>Contacto</h2>
             <p>Puedes ponerte en contacto con nosotros a través de:</p>
             <ul>
-                <li><a href="https://www.instagram.com/sutepra.ac/?hl=es" target="_blank">Instagram</a></li>
-                <li><a href="https://wa.me/945997732" target="_blank">WhatsApp: 945 997 732</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+                <li>
+                    <a href="https://www.instagram.com/sutepra.ac/?hl=es" target="_blank">
+                        <span class="emoji">📸</span> Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/945997732" target="_blank">
+                        <sp
