@@ -48,6 +48,8 @@
             font-size: 16px;
             transition: background-color 0.3s;
             border-bottom: 1px solid #ddd;
+            width: 100%;
+            box-sizing: border-box;
         }
         .accordion:hover {
             background-color: #f1f1f1;
@@ -56,6 +58,7 @@
             display: none;
             padding: 15px;
             background-color: #fff;
+            border: 1px solid #ddd;
         }
         .product-card {
             background-color: #fff;
@@ -67,6 +70,7 @@
             display: inline-block;
             width: 30%;
             vertical-align: top;
+            box-sizing: border-box;
         }
         .product-card img {
             width: 100%;
@@ -110,8 +114,9 @@
             right: 20px;
             background-color: #25D366;
             border-radius: 50%;
-            padding: 10px;
+            padding: 15px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
         .whatsapp-button i {
             color: #fff;
@@ -127,6 +132,7 @@
         }
         .info-bar div {
             text-align: center;
+            width: 30%;
         }
         .info-bar img {
             width: 24px;
@@ -134,12 +140,26 @@
         }
         .info-bar p {
             margin: 5px 0 0;
+            font-size: 14px;
+        }
+        .accordion.active {
+            background-color: #f1f1f1;
         }
         .no-underline {
             text-decoration: none;
         }
-        .accordion.active {
-            background-color: #f1f1f1;
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product-card {
+            width: 100%;
+            max-width: 300px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -162,12 +182,11 @@
         </section>
 
         <section id="productos">
-            <h2>Productos</h2>
+            <h2 class="section-title">Productos</h2>
 
-            <div class="accordion-container">
-                <h3>Brazaletes Italianos</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
+            <button class="accordion">Brazaletes Italianos</button>
+            <div class="panel">
+                <div class="product-list">
                     <div class="product-card">
                         <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                         <h3>Golden Bracelet</h3>
@@ -179,19 +198,20 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3>Lentes Retro</h3>
-            </div>
-
-            <div class="product-card">
-                <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Lentes Elegantes</h3>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="lentes-retro.jpg" alt="Lentes Retro">
+                    <h3>Lentes Retro</h3>
+                </div>
+                <div class="product-card">
+                    <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
+                    <h3>Lentes Elegantes</h3>
+                </div>
             </div>
         </section>
 
         <section id="about">
-            <h2>Acerca de Nosotros</h2>
+            <h2 class="section-title">Acerca de Nosotros</h2>
             <p>En SUTEPRA, entendemos que los accesorios no solo complementan tu estilo, sino que también reflejan tu personalidad única. Mi nombre es Franco Castillo y, aunque estudio arquitectura, mi pasión por la moda y los accesorios siempre ha sido una parte integral de mi vida. Aficionado a la moda y con una profunda apreciación por los detalles, decidí fusionar mi amor por los accesorios con mi creatividad, dando vida a este emprendimiento. SUTEPRA nace del deseo de ofrecer piezas elegantes y versátiles que te permitan destacar y expresarte de una manera auténtica. Cada producto es cuidadosamente seleccionado para garantizar que no solo sigas las tendencias, sino que también las marques. ¡Gracias por ser parte de nuestra comunidad y por permitirnos ser parte de tu estilo!</p>
         </section>
 
@@ -221,11 +241,11 @@
         </div>
         <div>
             <img src="icono-pagos.png" alt="Pagos Encriptados">
-            <p>COMPRA SEGURA</p>
+            <p>PAGOS ENCRIPTADOS</p>
         </div>
         <div>
             <img src="icono-atencion.png" alt="Atención al Cliente">
-            <p>ASESORÍA PERSONALIZADA</p>
+            <p>ATENCIÓN AL CLIENTE</p>
         </div>
     </div>
 
