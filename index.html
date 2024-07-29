@@ -24,6 +24,7 @@
 
         header h1 {
             margin: 0;
+            font-size: 2rem;
         }
 
         /* Estilos para el menú de navegación */
@@ -35,13 +36,15 @@
 
         nav a {
             color: #fff;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
             display: inline-block;
+            font-size: 1.1rem;
         }
 
         nav a:hover {
             background-color: #555;
+            border-radius: 5px;
         }
 
         /* Estilos para el contenido principal */
@@ -56,26 +59,42 @@
             margin-bottom: 2rem;
         }
 
-        /* Estilos para las imágenes de productos */
-        img {
-            max-width: 100%;
+        /* Estilos para la galería de productos */
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto;
         }
 
-        /* Estilos para el pie de página */
-        footer {
+        .product-card h3 {
+            margin: 0;
+            padding: 1rem;
             background-color: #333;
             color: #fff;
-            padding: 1rem;
-            text-align: center;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
         }
 
-        /* Estilos para los enlaces de contacto */
+        /* Estilos para la sección de contacto */
+        #contacto {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
         #contacto ul {
             list-style: none;
             padding: 0;
@@ -90,6 +109,8 @@
             color: #333;
             text-decoration: none;
             font-size: 1.2rem;
+            display: flex;
+            align-items: center;
         }
 
         #contacto a:hover {
@@ -99,7 +120,18 @@
         /* Estilos para los emojis de contacto */
         .emoji {
             font-size: 1.5rem;
-            margin-right: 0.5rem;
+            margin-right: 0.75rem;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -117,9 +149,18 @@
     <main>
         <section id="productos">
             <h2>Productos Destacados</h2>
-            <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
-            <img src="lentes-retro.jpg" alt="Lentes Retro">
-            <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
+            <div class="product-card">
+                <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
+                <h3>Brazalete Italiano</h3>
+            </div>
+            <div class="product-card">
+                <img src="lentes-retro.jpg" alt="Lentes Retro">
+                <h3>Lentes Retro</h3>
+            </div>
+            <div class="product-card">
+                <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
+                <h3>Lentes Elegantes</h3>
+            </div>
         </section>
 
         <section id="acerca-de-nosotros">
@@ -138,4 +179,15 @@
                 </li>
                 <li>
                     <a href="https://wa.me/945997732" target="_blank">
-                        <sp
+                        <span class="emoji">📞</span> WhatsApp: 945 997 732
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
