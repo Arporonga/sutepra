@@ -18,7 +18,7 @@
         }
 
         header {
-            background-color: #333;
+            background-color: #000;
             color: #fff;
             padding: 1rem;
             text-align: center;
@@ -46,7 +46,7 @@
         }
 
         nav a:hover {
-            background-color: #555;
+            background-color: #444;
             border-radius: 5px;
         }
 
@@ -161,7 +161,7 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #000;
             color: #fff;
             padding: 1rem;
             text-align: center;
@@ -242,6 +242,10 @@
         .whatsapp-button:hover {
             background-color: #128C7E;
         }
+
+        .no-underline {
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -266,7 +270,7 @@
             <h2>Productos Destacados</h2>
             <div class="product-card">
                 <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
-                <h3><a href="#brazaletes-italianos">Brazaletes Italianos</a></h3>
+                <h3><a href="#brazaletes-italianos" class="no-underline">Brazaletes Italianos</a></h3>
             </div>
             <div class="product-card">
                 <img src="lentes-retro.jpg" alt="Lentes Retro">
@@ -288,24 +292,29 @@
                 <p>40 soles</p>
             </div>
             <div class="product-card">
-                <img src="brazalete_plateado.jpg" alt="Silver Bracelet">
+                <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                 <h3>Silver Bracelet</h3>
                 <p>40 soles</p>
             </div>
         </section>
 
-        <section id="acerca-de-nosotros">
-            <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, ofrecemos una cuidada selección de accesorios elegantes para todos los gustos.</p>
-        </section>
-
         <section class="subscribe-section">
-            <h2>¡Suscríbete!</h2>
-            <p>Recibe nuestras últimas noticias y ofertas especiales directamente en tu correo.</p>
-            <form action="https://example.com/subscribe" method="POST">
+            <h2>SUSCRÍBETE</h2>
+            <p>Recibe las últimas novedades y promociones en tu correo electrónico.</p>
+            <form action="https://example.com/subscribe" method="post">
                 <input type="email" name="email" placeholder="Tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
             </form>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div id="contacto">
+                <ul>
+                    <li><a href="https://www.instagram.com/sutepra.ac/?hl=es" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://wa.me/945997732" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                </ul>
+            </div>
         </section>
     </main>
 
@@ -318,10 +327,10 @@
     </div>
 
     <script>
-        // Script para el acordeón
         document.querySelectorAll('.accordion').forEach(button => {
             button.addEventListener('click', () => {
                 const panel = button.nextElementSibling;
+                button.classList.toggle('active');
                 panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
             });
         });
