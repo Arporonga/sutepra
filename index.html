@@ -217,14 +217,14 @@
             display: flex;
             align-items: center;
             color: #333;
-            font-size: 1.2rem;
+            font-size: 1rem; /* Ajustado para móviles */
             max-width: 300px;
             text-align: center;
         }
 
         .info-bar i {
-            font-size: 2rem;
-            margin-right: 0.75rem;
+            font-size: 1.5rem; /* Ajustado para móviles */
+            margin-right: 0.5rem;
             color: #333;
         }
 
@@ -256,27 +256,16 @@
         }
 
         @media (max-width: 768px) {
-            .info-bar {
-                flex-direction: column;
-            }
-
             .info-bar div {
-                font-size: 1rem;
-                max-width: none;
-                margin-bottom: 1rem;
+                font-size: 0.9rem;
             }
 
             .info-bar i {
-                font-size: 1.5rem;
-                margin-right: 0.5rem;
+                font-size: 1.2rem;
             }
 
             .product-card img {
-                height: 150px; /* Ajustar altura para móviles */
-            }
-
-            .product-card h3 {
-                font-size: 1rem; /* Ajustar tamaño del texto para móviles */
+                height: auto; /* Ajuste de altura para imágenes en móviles */
             }
         }
     </style>
@@ -313,11 +302,11 @@
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="golden-bracelet.jpg" alt="Golden Bracelet">
+                        <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                         <h3>Golden Bracelet</h3>
                     </div>
                     <div class="product-card">
-                        <img src="silver-bracelet.jpg" alt="Silver Bracelet">
+                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                         <h3>Silver Bracelet</h3>
                     </div>
                     <div class="product-card">
@@ -327,7 +316,7 @@
                 </div>
             </div>
             <div class="product-card">
-                <img src="retro-negro.jpg" alt="Lentes Retro">
+                <img src="lentes-retro.jpg" alt="Lentes Retro">
                 <h3>Lentes Retro</h3>
             </div>
             <div class="product-card">
@@ -338,16 +327,24 @@
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>Bienvenido a SUTEPRA, donde encontrarás una cuidada selección de accesorios elegantes, incluyendo brazaletes italianos, lentes retro y elegantes.</p>
+            <p>Somos una empresa dedicada a ofrecer accesorios premium con un diseño exclusivo. Nuestro objetivo es brindar productos que destaquen por su calidad y estilo único.</p>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <ul>
-                <li><a href="mailto:info@sutepra.com"><i class="fa fa-envelope"></i> info@sutepra.com</a></li>
-                <li><a href="https://www.instagram.com/sutepra" class="no-underline"><i class="fab fa-instagram"></i> @sutepra</a></li>
-                <li><a href="https://wa.me/1234567890" class="no-underline"><i class="fab fa-whatsapp"></i> +51 123 456 789</a></li>
-            </ul>
+            <div id="contacto">
+                <ul>
+                    <li><a href="mailto:info@sutepra.com"><i class="fas fa-envelope"></i> Email: info@sutepra.com</a></li>
+                    <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> Teléfono: +123 456 7890</a></li>
+                    <li><a href="https://www.google.com/maps?q=ubicación+de+la+tienda" target="_blank"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="subscribe-section">
+            <h2>Suscríbete a Nuestro Boletín</h2>
+            <input type="email" placeholder="Introduce tu correo electrónico">
+            <button>Suscribirse</button>
         </section>
     </main>
 
@@ -360,17 +357,20 @@
     </div>
 
     <script>
-        document.querySelectorAll('.accordion').forEach(button => {
-            button.addEventListener('click', () => {
-                const panel = button.nextElementSibling;
-                button.classList.toggle('active');
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
                 } else {
                     panel.style.display = "block";
                 }
             });
-        });
+        }
     </script>
 </body>
 </html>
