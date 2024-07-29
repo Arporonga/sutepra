@@ -13,12 +13,12 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333333;
+            background-color: #f4f4f4;
+            color: #333;
         }
 
         header {
-            background-color: #003366;
+            background-color: #0a1a2d; /* Azul oscuro */
             color: #ffffff;
             padding: 1rem;
             text-align: center;
@@ -30,7 +30,7 @@
         }
 
         nav {
-            background-color: #002244;
+            background-color: #00274d; /* Azul más oscuro */
             color: #ffffff;
             text-align: center;
             padding: 0.5rem 0;
@@ -46,8 +46,14 @@
         }
 
         nav a:hover {
-            background-color: #004080;
+            background-color: #004080; /* Azul más claro */
             border-radius: 5px;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .welcome-section {
@@ -69,16 +75,18 @@
             font-size: 4rem;
             margin: 0;
             font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Añadido para mejorar la legibilidad */
         }
 
         .welcome-section p {
             font-size: 1.5rem;
             margin: 1rem 0;
             max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Añadido para mejorar la legibilidad */
         }
 
         .welcome-button {
-            background-color: #009975;
+            background-color: #009975; /* Verde intenso */
             color: #ffffff;
             border: none;
             padding: 0.75rem 2rem;
@@ -90,13 +98,7 @@
         }
 
         .welcome-button:hover {
-            background-color: #007a61;
-        }
-
-        main {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            background-color: #007a61; /* Verde más oscuro */
         }
 
         section {
@@ -127,7 +129,7 @@
         .product-card h3 {
             margin: 0;
             padding: 1rem;
-            background-color: #003366;
+            background-color: #004080; /* Azul más claro */
             color: #ffffff;
             font-size: 1.2rem;
         }
@@ -135,9 +137,9 @@
         .product-card p {
             margin: 0;
             padding: 0.5rem;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             font-size: 1rem;
-            color: #333333;
+            color: #333;
         }
 
         #contacto {
@@ -158,7 +160,7 @@
         }
 
         #contacto a {
-            color: #333333;
+            color: #333;
             text-decoration: none;
             font-size: 1.2rem;
             display: flex;
@@ -167,17 +169,17 @@
         }
 
         #contacto a:hover {
-            color: #009975;
+            color: #007bff; /* Azul claro */
         }
 
         .fa {
             font-size: 2rem;
             margin-right: 0.75rem;
-            color: #333333;
+            color: #333;
         }
 
         .accordion {
-            background-color: #003366;
+            background-color: #00274d; /* Azul más oscuro */
             color: #ffffff;
             cursor: pointer;
             padding: 1rem;
@@ -190,7 +192,7 @@
         }
 
         .accordion:hover {
-            background-color: #004080;
+            background-color: #004080; /* Azul más claro */
         }
 
         .panel {
@@ -205,7 +207,7 @@
         }
 
         footer {
-            background-color: #003366;
+            background-color: #0a1a2d; /* Azul oscuro */
             color: #ffffff;
             padding: 1rem;
             text-align: center;
@@ -226,7 +228,7 @@
         .subscribe-section input[type="email"] {
             padding: 0.5rem;
             width: calc(100% - 110px);
-            border: 1px solid #e0e0e0;
+            border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1rem;
             margin-right: 0.5rem;
@@ -236,7 +238,7 @@
             padding: 0.5rem 1rem;
             border: none;
             border-radius: 5px;
-            background-color: #009975;
+            background-color: #009975; /* Verde intenso */
             color: #ffffff;
             font-size: 1rem;
             cursor: pointer;
@@ -244,22 +246,22 @@
         }
 
         .subscribe-section button:hover {
-            background-color: #007a61;
+            background-color: #007a61; /* Verde más oscuro */
         }
 
         .info-bar {
             display: flex;
             justify-content: space-around;
-            background-color: #f4f4f4;
+            background-color: #ffffff; /* Blanco */
             padding: 1rem 0;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #ddd;
             margin-bottom: 2rem;
         }
 
         .info-bar div {
             display: flex;
             align-items: center;
-            color: #333333;
+            color: #333;
             font-size: 1.2rem;
             max-width: 300px;
             text-align: center;
@@ -268,14 +270,14 @@
         .info-bar i {
             font-size: 2rem;
             margin-right: 0.75rem;
-            color: #333333;
+            color: #333;
         }
 
         .whatsapp-button {
             position: fixed;
             bottom: 1rem;
             right: 1rem;
-            background-color: #25D366;
+            background-color: #25D366; /* Verde WhatsApp */
             color: #ffffff;
             padding: 1rem;
             border-radius: 50%;
@@ -287,7 +289,7 @@
         }
 
         .whatsapp-button:hover {
-            background-color: #128C7E;
+            background-color: #128C7E; /* Verde más oscuro */
         }
 
         .no-underline {
@@ -301,113 +303,80 @@
     </header>
 
     <nav>
-        <a href="#productos">Productos</a>
-        <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#brazaletes">Brazaletes Italianos</a>
+        <a href="#retro">Lentes Retro</a>
+        <a href="#elegantes">Lentes Elegantes</a>
     </nav>
 
-    <section class="welcome-section">
-        <h2>Bienvenido a SUTEPRA</h2>
-        <p>Explora nuestra exclusiva colección de accesorios elegantes para complementar tu estilo único.</p>
-        <a href="#productos" class="welcome-button">Descubre Más</a>
-    </section>
-
     <main>
+        <section class="welcome-section">
+            <h2>Bienvenido a SUTEPRA</h2>
+            <p>Explora nuestra exclusiva colección de accesorios elegantes para complementar tu estilo único.</p>
+            <a href="#productos" class="welcome-button">Explora nuestros productos</a>
+        </section>
+
         <section id="productos">
-            <h2>Productos Destacados</h2>
-            <div class="product-card">
-                <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
-                <h3>Brazaletes Italianos</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <div class="product-card">
-                        <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-                        <h3>Golden Bracelet</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                        <h3>Silver Bracelet</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
-                        <h3>Lover Silver Bracelet</h3>
-                    </div>
-                </div>
-            </div>
+            <!-- Agrega aquí tu contenido de productos -->
+        </section>
 
-            <div class="product-card">
-                <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3>Retro</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <div class="product-card">
-                        <img src="reto-negro.jpg" alt="Retro Black">
-                        <h3>Retro Black</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="retro-blanco.jpg" alt="Retro White">
-                        <h3>Retro White</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="retro-marrón.jpg" alt="Retro Brown">
-                        <h3>Retro Brown</h3>
-                    </div>
-                </div>
-            </div>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <ul>
+                <li><a href="mailto:info@sutepra.com"><i class="fa fa-envelope"></i> info@sutepra.com</a></li>
+                <li><a href="tel:+123456789"><i class="fa fa-phone"></i> +123 456 789</a></li>
+                <li><a href="https://wa.me/123456789" class="whatsapp-button"><i class="fa fa-whatsapp"></i></a></li>
+            </ul>
+        </section>
 
-            <div class="product-card">
-                <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Sofisticado</h3>
-            </div>
+        <section class="subscribe-section">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <input type="email" placeholder="Ingresa tu correo electrónico">
+            <button>Suscribirse</button>
         </section>
 
         <section class="info-bar">
-            <div>
-                <i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL
-            </div>
-            <div>
-                <i class="fas fa-lock"></i> COMPRA SEGURA
-            </div>
-            <div>
-                <i class="fas fa-headset"></i> ASESORÍA PERSONAL
-            </div>
+            <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
+            <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
         </section>
 
-        <section id="acerca-de-nosotros">
-            <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos apasiona la moda y entendemos el impacto que los accesorios pueden tener en tu estilo personal. Aunque estudio arquitectura, mi amor por los accesorios ha sido la fuerza impulsora detrás de este emprendimiento. Desde brazaletes italianos hasta lentes retro y elegantes, cada pieza ha sido seleccionada con cuidado para ofrecerte calidad y elegancia. SUTEPRA no es solo una tienda, es una extensión de mi propio gusto y pasión por la moda.</p>
-        </section>
+        <section class="accordion">
+            <button class="accordion">Brazaletes Italianos</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
+                    <h3>Golden Bracelet</h3>
+                    <p>40 soles</p>
+                </div>
+                <div class="product-card">
+                    <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
+                    <h3>Lover Silver Bracelet</h3>
+                    <p>40 soles</p>
+                </div>
+            </div>
 
-        <section id="contacto" class="subscribe-section">
-            <h2>Entérate de las Ofertas</h2>
-            <form action="#" method="post">
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <button type="submit">Suscribirse</button>
-            </form>
+            <button class="accordion">Lentes Retro</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="retro-marrón.jpg" alt="Retro Brown">
+                    <h3>Retro Brown</h3>
+                    <p>18 soles</p>
+                </div>
+            </div>
+
+            <button class="accordion">Lentes Elegantes</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="lentes-elegantes.jpg" alt="Elegant Lenses">
+                    <h3>Elegant Lenses</h3>
+                    <p>22 soles</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
-
-    <div class="whatsapp-button">
-        <a href="https://wa.me/945997732" class="no-underline">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <script>
-        document.querySelectorAll('.accordion').forEach(button => {
-            button.addEventListener('click', () => {
-                const panel = button.nextElementSibling;
-                if (panel.style.display === 'block') {
-                    panel.style.display = 'none';
-                } else {
-                    panel.style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
