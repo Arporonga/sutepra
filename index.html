@@ -206,7 +206,7 @@
         .info-bar {
             display: flex;
             justify-content: space-around;
-            background-color: #f4f4f4;
+            background-color: #f8f8f8; /* Color crema */
             padding: 1rem 0;
             border-bottom: 1px solid #ddd;
             margin-bottom: 2rem;
@@ -217,11 +217,14 @@
             align-items: center;
             color: #333;
             font-size: 1rem;
+            max-width: 250px;
+            text-align: center;
         }
 
         .info-bar i {
             font-size: 1.5rem;
             margin-right: 0.5rem;
+            color: #333;
         }
 
         .whatsapp-button {
@@ -230,10 +233,10 @@
             right: 1rem;
             background-color: #25D366;
             color: #fff;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem;
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            font-size: 1.5rem;
+            font-size: 2rem;
             text-align: center;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -245,6 +248,15 @@
 
         .no-underline {
             text-decoration: none;
+        }
+
+        .main-content {
+            margin-top: 2rem;
+        }
+
+        .product-card img {
+            height: 200px; /* Ajustar altura para un tamaño consistente */
+            object-fit: cover;
         }
     </style>
 </head>
@@ -261,9 +273,18 @@
 
     <main>
         <section class="info-bar">
-            <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fas fa-lock"></i> PAGOS ENCRIPTADOS</div>
-            <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+            <div>
+                <i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL
+                <p>Llegamos a todo el Perú</p>
+            </div>
+            <div>
+                <i class="fas fa-lock"></i> PAGOS ENCRIPTADOS
+                <p>Compra de manera 100% segura</p>
+            </div>
+            <div>
+                <i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE
+                <p>Brindamos asesoría personalizada</p>
+            </div>
         </section>
 
         <section id="productos">
@@ -286,43 +307,22 @@
             </div>
             <div class="product-card">
                 <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3><a href="#lentes-retro" class="no-underline">Lentes Retro</a></h3>
+                <h3><a href="#lentes-retro">Lentes Retro</a></h3>
                 <p>18 soles</p>
             </div>
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3><a href="#lentes-elegantes" class="no-underline">Lentes Elegantes</a></h3>
+                <h3><a href="#lentes-elegantes">Lentes Elegantes</a></h3>
                 <p>22 soles</p>
             </div>
         </section>
 
-        <section id="lentes-retro">
-            <h2>Lentes Retro</h2>
-            <!-- Añadir aquí los detalles de los lentes retro si es necesario -->
-        </section>
-
-        <section id="lentes-elegantes">
-            <h2>Lentes Elegantes</h2>
-            <!-- Añadir aquí los detalles de los lentes elegantes si es necesario -->
-        </section>
-
-        <section class="subscribe-section">
-            <h2>SUSCRÍBETE</h2>
-            <p>Recibe las últimas novedades y promociones en tu correo electrónico.</p>
-            <form action="https://example.com/subscribe" method="post">
-                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <section id="contacto" class="subscribe-section">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <form action="#" method="post">
+                <input type="email" placeholder="Tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
             </form>
-        </section>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <div id="contacto">
-                <ul>
-                    <li><a href="https://www.instagram.com/sutepra.ac/?hl=es" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="https://wa.me/945997732" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-                </ul>
-            </div>
         </section>
     </main>
 
@@ -331,15 +331,20 @@
     </footer>
 
     <div class="whatsapp-button">
-        <a href="https://wa.me/945997732" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/1234567890" class="no-underline">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
     <script>
         document.querySelectorAll('.accordion').forEach(button => {
             button.addEventListener('click', () => {
                 const panel = button.nextElementSibling;
-                button.classList.toggle('active');
-                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                if (panel.style.display === 'block') {
+                    panel.style.display = 'none';
+                } else {
+                    panel.style.display = 'block';
+                }
             });
         });
     </script>
