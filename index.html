@@ -50,6 +50,49 @@
             border-radius: 5px;
         }
 
+        .welcome-section {
+            background-image: url('welcome-background.jpg'); /* Añade tu imagen de fondo aquí */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome-section h2 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .welcome-section p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            max-width: 800px;
+        }
+
+        .welcome-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .welcome-button:hover {
+            background-color: #0056b3;
+        }
+
         main {
             padding: 2rem;
             max-width: 1200px;
@@ -262,6 +305,12 @@
         <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
     </nav>
 
+    <section class="welcome-section">
+        <h2>Bienvenido a SUTEPRA</h2>
+        <p>Explora nuestra colección exclusiva de accesorios elegantes. Desde brazaletes italianos hasta lentes sofisticados, cada pieza está diseñada para complementar tu estilo único.</p>
+        <a href="#productos" class="welcome-button">Descubre Más</a>
+    </section>
+
     <main>
         <section id="productos">
             <h2>Productos Destacados</h2>
@@ -297,6 +346,10 @@
                     <div class="product-card">
                         <img src="retro-blanco.jpg" alt="Retro White">
                         <h3>Retro White</h3>
+                    </div>
+                    <div class="product-card">
+                        <img src="retro-marrón.jpg" alt="Retro Brown">
+                        <h3>Retro Brown</h3>
                     </div>
                 </div>
             </div>
