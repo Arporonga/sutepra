@@ -254,6 +254,27 @@
         .main-content {
             margin-top: 2rem;
         }
+
+        @media (max-width: 768px) {
+            .info-bar {
+                flex-direction: column;
+            }
+
+            .info-bar div {
+                font-size: 1rem;
+                max-width: none;
+                margin-bottom: 1rem;
+            }
+
+            .info-bar i {
+                font-size: 1.5rem;
+                margin-right: 0.5rem;
+            }
+
+            .product-card img {
+                height: 150px; /* Ajustar altura para móviles */
+            }
+        }
     </style>
 </head>
 <body>
@@ -292,49 +313,33 @@
                         <h3>Golden Bracelet</h3>
                     </div>
                     <div class="product-card">
-                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                        <h3>Silver Bracelet</h3>
-                    </div>
-                    <div class="product-card">
                         <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                         <h3>Lover Silver Bracelet</h3>
                     </div>
                 </div>
             </div>
-
             <div class="product-card">
-                <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3>Retro</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <div class="product-card">
-                        <img src="reto-negro.jpg" alt="Retro Black">
-                        <h3>Retro Black</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="retro-blanco.jpg" alt="Retro White">
-                        <h3>Retro White</h3>
-                    </div>
-                </div>
+                <img src="retro-negro.jpg" alt="Lentes Retro">
+                <h3>Lentes Retro</h3>
             </div>
-
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Sofisticado</h3>
+                <h3>Lentes Elegantes</h3>
             </div>
         </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos apasiona la moda y entendemos el impacto que los accesorios pueden tener en tu estilo personal. Aunque estudio arquitectura, mi amor por los accesorios ha sido la fuerza impulsora detrás de este emprendimiento. Desde brazaletes italianos hasta lentes retro y elegantes, cada pieza ha sido seleccionada con cuidado para ofrecerte calidad y elegancia. SUTEPRA no es solo una tienda, es una extensión de mi propio gusto y pasión por la moda.</p>
+            <p>Bienvenido a SUTEPRA, donde encontrarás una selección exclusiva de accesorios elegantes y de alta calidad.</p>
         </section>
 
-        <section id="contacto" class="subscribe-section">
-            <h2>Entérate de las Ofertas</h2>
-            <form action="#" method="post">
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <button type="submit">Suscribirse</button>
-            </form>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <ul>
+                <li><a href="mailto:info@sutepra.com"><i class="fa fa-envelope"></i> info@sutepra.com</a></li>
+                <li><a href="https://www.instagram.com/sutepra" class="no-underline"><i class="fab fa-instagram"></i> @sutepra</a></li>
+                <li><a href="https://wa.me/1234567890" class="no-underline"><i class="fab fa-whatsapp"></i> +51 123 456 789</a></li>
+            </ul>
         </section>
     </main>
 
@@ -343,19 +348,18 @@
     </footer>
 
     <div class="whatsapp-button">
-        <a href="https://wa.me/945997732" class="no-underline">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+        <i class="fab fa-whatsapp"></i>
     </div>
 
     <script>
         document.querySelectorAll('.accordion').forEach(button => {
             button.addEventListener('click', () => {
                 const panel = button.nextElementSibling;
-                if (panel.style.display === 'block') {
-                    panel.style.display = 'none';
+                button.classList.toggle('active');
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
                 } else {
-                    panel.style.display = 'block';
+                    panel.style.display = "block";
                 }
             });
         });
