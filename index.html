@@ -3,309 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUTEPRA - Accesorios Elegantes</title>
-    <meta name="description" content="SUTEPRA ofrece una cuidada selección de accesorios elegantes, incluyendo brazaletes italianos, lentes retro y elegantes.">
-    <meta name="keywords" content="accesorios, brazaletes italianos, lentes retro, lentes elegantes, moda, SUTEPRA">
+    <title>SUTEPRA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Estilos generales */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
             color: #333;
+            background-color: #f5f5f5;
         }
-
         header {
-            background-color: #000;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        nav {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 0.5rem 0;
-        }
-
-        nav a {
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #444;
-            border-radius: 5px;
-        }
-
-        main {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        .product-card {
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 10px;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        .product-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px; /* Mantener altura consistente */
-            object-fit: cover;
-        }
-
-        .product-card h3 {
-            margin: 0;
-            padding: 1rem;
-            background-color: #333;
-            color: #fff;
-            font-size: 1.2rem;
-        }
-
-        .product-card p {
-            margin: 0;
-            padding: 0.5rem;
-            background-color: #f9f9f9;
-            font-size: 1rem;
-            color: #333;
-        }
-
-        #contacto {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        #contacto ul {
-            list-style: none;
+        nav ul {
+            list-style-type: none;
             padding: 0;
             margin: 0;
         }
-
-        #contacto li {
-            margin: 0.5rem 0;
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
         }
-
-        #contacto a {
-            color: #333;
+        nav ul li a {
             text-decoration: none;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            transition: color 0.3s ease;
-        }
-
-        #contacto a:hover {
-            color: #007bff;
-        }
-
-        .fa {
-            font-size: 2rem;
-            margin-right: 0.75rem;
             color: #333;
+            font-weight: bold;
         }
-
+        .hero-image {
+            width: 100%;
+            height: auto;
+        }
         .accordion {
-            background-color: #333;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
             cursor: pointer;
-            padding: 1rem;
+            padding: 15px;
             text-align: left;
             border: none;
             outline: none;
-            font-size: 1.2rem;
-            width: 100%;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            border-bottom: 1px solid #ddd;
         }
-
         .accordion:hover {
-            background-color: #555;
+            background-color: #f1f1f1;
         }
-
         .panel {
             display: none;
-            overflow: hidden;
-            background-color: #f9f9f9;
+            padding: 15px;
+            background-color: #fff;
         }
-
-        .panel .product-card {
-            margin: 0;
-            text-align: left; /* Alinear el contenido al izquierdo */
-        }
-
-        footer {
-            background-color: #000;
-            color: #fff;
-            padding: 1rem;
+        .product-card {
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
         }
-
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product-card h3 {
+            margin: 10px 0;
+        }
         .subscribe-section {
             background-color: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
             text-align: center;
-            margin-bottom: 2rem;
         }
-
         .subscribe-section input[type="email"] {
-            padding: 0.5rem;
-            width: calc(100% - 110px);
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-            margin-right: 0.5rem;
+            padding: 10px;
+            width: 60%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
-
         .subscribe-section button {
-            padding: 0.5rem 1rem;
+            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
-            background-color: #007bff;
+            background-color: #333;
             color: #fff;
-            font-size: 1rem;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-
         .subscribe-section button:hover {
-            background-color: #0056b3;
+            background-color: #555;
         }
-
-        .info-bar {
-            display: flex;
-            justify-content: space-around;
-            background-color: #f8f8f8; /* Color crema */
-            padding: 1rem 0;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 2rem;
-        }
-
-        .info-bar div {
-            display: flex;
-            align-items: center;
-            color: #333;
-            font-size: 1.2rem;
-            max-width: 300px;
+        footer {
+            background-color: #fff;
+            padding: 10px;
             text-align: center;
+            border-top: 1px solid #ddd;
         }
-
-        .info-bar i {
-            font-size: 2rem;
-            margin-right: 0.75rem;
-            color: #333;
-        }
-
         .whatsapp-button {
             position: fixed;
-            bottom: 1rem;
-            right: 1rem;
+            bottom: 20px;
+            right: 20px;
             background-color: #25D366;
-            color: #fff;
-            padding: 1rem;
             border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            font-size: 2rem;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .whatsapp-button i {
+            color: #fff;
+            font-size: 24px;
+        }
+        .info-bar {
+            background-color: #f8f8f0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 2px solid #e1e1e1;
+        }
+        .info-bar div {
             text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-
-        .whatsapp-button:hover {
-            background-color: #128C7E;
+        .info-bar img {
+            width: 24px;
+            vertical-align: middle;
         }
-
+        .info-bar p {
+            margin: 5px 0 0;
+        }
         .no-underline {
             text-decoration: none;
         }
-
-        .main-content {
-            margin-top: 2rem;
-        }
-
-        .product-card img {
-            height: 200px; /* Ajustar altura para un tamaño consistente */
-            object-fit: cover;
-            width: 100%; /* Mantener imágenes cuadradas */
-        }
-
-        .product-card h3 {
-            margin: 0;
-            padding: 1rem;
-            background-color: #333;
-            color: #fff;
-            font-size: 1.2rem;
-        }
-
-        .product-card p {
-            margin: 0;
-            padding: 0.5rem;
-            background-color: #f9f9f9;
-            font-size: 1rem;
-            color: #333;
+        .accordion.active {
+            background-color: #f1f1f1;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>SUTEPRA</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#about">Acerca de Nosotros</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#productos">Productos</a>
-        <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
     <main>
-        <section class="info-bar">
-            <div>
-                <i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL
-            </div>
-            <div>
-                <i class="fas fa-lock"></i> COMPRA SEGURA
-            </div>
-            <div>
-                <i class="fas fa-headset"></i> ASESORÍA PERSONALIZADA
-            </div>
+        <section id="home">
+            <img src="hero-image.jpg" alt="Imagen Principal" class="hero-image">
         </section>
 
         <section id="productos">
-            <h2>Productos Destacados</h2>
-            <div class="product-card">
-                <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
+            <h2>Productos</h2>
+
+            <div class="accordion-container">
                 <h3>Brazaletes Italianos</h3>
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
@@ -331,8 +190,13 @@
             </div>
         </section>
 
+        <section id="about">
+            <h2>Acerca de Nosotros</h2>
+            <p>En SUTEPRA, entendemos que los accesorios no solo complementan tu estilo, sino que también reflejan tu personalidad única. Mi nombre es Franco Castillo y, aunque estudio arquitectura, mi pasión por la moda y los accesorios siempre ha sido una parte integral de mi vida. Aficionado a la moda y con una profunda apreciación por los detalles, decidí fusionar mi amor por los accesorios con mi creatividad, dando vida a este emprendimiento. SUTEPRA nace del deseo de ofrecer piezas elegantes y versátiles que te permitan destacar y expresarte de una manera auténtica. Cada producto es cuidadosamente seleccionado para garantizar que no solo sigas las tendencias, sino que también las marques. ¡Gracias por ser parte de nuestra comunidad y por permitirnos ser parte de tu estilo!</p>
+        </section>
+
         <section id="contacto" class="subscribe-section">
-            <h2>Entérate antes que el resto</h2>
+            <h2>Suscríbete a nuestro boletín</h2>
             <form action="#" method="post">
                 <input type="email" placeholder="Tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
@@ -348,6 +212,21 @@
         <a href="https://wa.me/945997732" class="no-underline">
             <i class="fab fa-whatsapp"></i>
         </a>
+    </div>
+
+    <div class="info-bar">
+        <div>
+            <img src="icono-envios.png" alt="Envíos Nacionales">
+            <p>ENVÍOS A NIVEL NACIONAL</p>
+        </div>
+        <div>
+            <img src="icono-pagos.png" alt="Pagos Encriptados">
+            <p>COMPRA SEGURA</p>
+        </div>
+        <div>
+            <img src="icono-atencion.png" alt="Atención al Cliente">
+            <p>ASESORÍA PERSONALIZADA</p>
+        </div>
     </div>
 
     <script>
