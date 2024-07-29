@@ -140,6 +140,34 @@
             color: #333;
         }
 
+        /* Estilos para el acordeón */
+        .accordion {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            padding: 1rem;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion:hover {
+            background-color: #555;
+        }
+
+        .panel {
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .panel .product-card {
+            margin: 0;
+        }
+
         /* Estilos para el pie de página */
         footer {
             background-color: #333;
@@ -166,15 +194,18 @@
     <main>
         <section id="productos">
             <h2>Productos Destacados</h2>
-            <div class="product-card">
-                <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
-                <h3>Brazalete Italiano</h3>
-                <p>40 soles</p>
-            </div>
-            <div class="product-card">
-                <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-                <h3>Golden Bracelet</h3>
-                <p>40 soles</p>
+            <button class="accordion">Brazaletes Italianos</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
+                    <h3>Brazalete Italiano</h3>
+                    <p>40 soles</p>
+                </div>
+                <div class="product-card">
+                    <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
+                    <h3>Golden Bracelet</h3>
+                    <p>40 soles</p>
+                </div>
             </div>
             <div class="product-card">
                 <img src="lentes-retro.jpg" alt="Lentes Retro">
@@ -214,5 +245,23 @@
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Script para el acordeón
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
