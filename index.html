@@ -316,7 +316,39 @@
         </section>
 
         <section id="productos">
-            <!-- Agrega aquí tu contenido de productos -->
+            <div class="accordion">
+                <button class="accordion">Brazaletes Italianos</button>
+                <div class="panel">
+                    <div class="product-card">
+                        <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
+                        <h3>Golden Bracelet</h3>
+                        <p>40 soles</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
+                        <h3>Lover Silver Bracelet</h3>
+                        <p>40 soles</p>
+                    </div>
+                </div>
+
+                <button class="accordion">Lentes Retro</button>
+                <div class="panel">
+                    <div class="product-card">
+                        <img src="retro-marrón.jpg" alt="Retro Brown">
+                        <h3>Retro Brown</h3>
+                        <p>18 soles</p>
+                    </div>
+                </div>
+
+                <button class="accordion">Lentes Elegantes</button>
+                <div class="panel">
+                    <div class="product-card">
+                        <img src="lentes-elegantes.jpg" alt="Elegant Lenses">
+                        <h3>Elegant Lenses</h3>
+                        <p>22 soles</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contacto">
@@ -339,44 +371,24 @@
             <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
             <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
         </section>
-
-        <section class="accordion">
-            <button class="accordion">Brazaletes Italianos</button>
-            <div class="panel">
-                <div class="product-card">
-                    <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-                    <h3>Golden Bracelet</h3>
-                    <p>40 soles</p>
-                </div>
-                <div class="product-card">
-                    <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
-                    <h3>Lover Silver Bracelet</h3>
-                    <p>40 soles</p>
-                </div>
-            </div>
-
-            <button class="accordion">Lentes Retro</button>
-            <div class="panel">
-                <div class="product-card">
-                    <img src="retro-marrón.jpg" alt="Retro Brown">
-                    <h3>Retro Brown</h3>
-                    <p>18 soles</p>
-                </div>
-            </div>
-
-            <button class="accordion">Lentes Elegantes</button>
-            <div class="panel">
-                <div class="product-card">
-                    <img src="lentes-elegantes.jpg" alt="Elegant Lenses">
-                    <h3>Elegant Lenses</h3>
-                    <p>22 soles</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.accordion').forEach((button) => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                if (panel.style.display === 'block') {
+                    panel.style.display = 'none';
+                } else {
+                    panel.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
