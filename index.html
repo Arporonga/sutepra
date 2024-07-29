@@ -250,10 +250,6 @@
         .no-underline {
             text-decoration: none;
         }
-
-        .main-content {
-            margin-top: 2rem;
-        }
     </style>
 </head>
 <body>
@@ -264,7 +260,6 @@
     <nav>
         <a href="#productos">Productos</a>
         <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
-        <a href="#contacto">Contacto</a>
     </nav>
 
     <main>
@@ -300,79 +295,65 @@
                         <h3>Retro Black</h3>
                     </div>
                     <div class="product-card">
-                        <img src="retro-marrón.jpg" alt="Retro Brown">
-                        <h3>Retro Brown</h3>
+                        <img src="retro-blanco.jpg" alt="Retro White">
+                        <h3>Retro White</h3>
                     </div>
                 </div>
             </div>
 
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Lentes Elegantes</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <div class="product-card">
-                        <img src="lentes-claros.jpg" alt="Elegant Clear">
-                        <h3>Elegant Clear</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="lentes-oscuros.jpg" alt="Elegant Dark">
-                        <h3>Elegant Dark</h3>
-                    </div>
-                </div>
+                <h3>Sofisticado</h3>
             </div>
         </section>
 
-        <!-- Barra de Información -->
-        <div class="info-bar">
-            <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fas fa-lock"></i> COMPRA SEGURA</div>
-            <div><i class="fas fa-headset"></i> ASESORÍA PERSONAL</div>
-        </div>
+        <section class="info-bar">
+            <div>
+                <i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL
+            </div>
+            <div>
+                <i class="fas fa-lock"></i> COMPRA SEGURA
+            </div>
+            <div>
+                <i class="fas fa-headset"></i> ASESORÍA PERSONAL
+            </div>
+        </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos dedicamos a ofrecer accesorios de alta calidad que destacan por su elegancia y sofisticación. Cada pieza es seleccionada con cuidado para brindar a nuestros clientes una experiencia única.</p>
+            <p>En SUTEPRA, nos apasiona la moda y entendemos el impacto que los accesorios pueden tener en tu estilo personal. Aunque estudio arquitectura, mi amor por los accesorios ha sido la fuerza impulsora detrás de este emprendimiento. Desde brazaletes italianos hasta lentes retro y elegantes, cada pieza ha sido seleccionada con cuidado para ofrecerte calidad y elegancia. SUTEPRA no es solo una tienda, es una extensión de mi propio gusto y pasión por la moda.</p>
         </section>
 
-        <section id="contacto">
-            <div id="contacto">
-                <h2>Contacto</h2>
-                <ul>
-                    <li><a href="mailto:contacto@sutepra.com"><i class="fas fa-envelope"></i> contacto@sutepra.com</a></li>
-                    <li><a href="tel:+123456789"><i class="fas fa-phone"></i> +123 456 789</a></li>
-                    <li><a href="https://wa.me/123456789" class="whatsapp-button"><i class="fab fa-whatsapp"></i></a></li>
-                </ul>
-            </div>
+        <section id="contacto" class="subscribe-section">
+            <h2>Entérate de las Ofertas</h2>
+            <form action="#" method="post">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
         </section>
-
-        <div class="subscribe-section">
-            <h2>Suscríbete para más actualizaciones</h2>
-            <input type="email" placeholder="Introduce tu email">
-            <button>Suscribirse</button>
-        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        // Funcionalidad para el acordeón
-        var acc = document.getElementsByClassName("accordion");
-        var i;
+    <div class="whatsapp-button">
+        <a href="https://wa.me/945997732" class="no-underline">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
+    <script>
+        document.querySelectorAll('.accordion').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                if (panel.style.display === 'block') {
+                    panel.style.display = 'none';
                 } else {
-                    panel.style.display = "block";
+                    panel.style.display = 'block';
                 }
             });
-        }
+        });
     </script>
 </body>
 </html>
