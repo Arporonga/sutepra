@@ -308,31 +308,49 @@
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="reto-negro.jpg" alt="Retro Black">
-                        <h3>Retro Black</h3>
+                        <img src="retro-marrón.jpg" alt="Retro Brown">
+                        <h3>Retro Brown</h3>
                     </div>
                     <div class="product-card">
-                        <img src="retro-blanco.jpg" alt="Retro White">
-                        <h3>Retro White</h3>
+                        <img src="lentes-retro.jpg" alt="Retro Black">
+                        <h3>Retro Black</h3>
                     </div>
                 </div>
             </div>
 
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Sofisticado</h3>
+                <h3>Lentes Elegantes</h3>
+                <button class="accordion">Mostrar Opciones</button>
+                <div class="panel">
+                    <div class="product-card">
+                        <img src="lentes-elegantes.jpg" alt="Elegant Glasses">
+                        <h3>Elegant Glasses</h3>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos apasiona la moda y entendemos el impacto que los accesorios pueden tener en tu estilo personal. Aunque estudio arquitectura, mi amor por los accesorios ha sido la fuerza impulsora detrás de este emprendimiento. Desde brazaletes italianos hasta lentes retro y elegantes, cada pieza ha sido seleccionada con cuidado para ofrecerte calidad y elegancia. SUTEPRA no es solo una tienda, es una extensión de mi propio gusto y pasión por la moda.</p>
+            <p>En SUTEPRA nos dedicamos a ofrecer una exclusiva colección de accesorios de moda. Desde brazaletes italianos hasta lentes elegantes, nuestro objetivo es brindarte productos que te permitan destacar con estilo.</p>
         </section>
 
-        <section id="contacto" class="subscribe-section">
-            <h2>Entérate de las Ofertas</h2>
-            <form action="#" method="post">
-                <input type="email" placeholder="Tu correo electrónico" required>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div id="contacto">
+                <ul>
+                    <li><a href="mailto:info@sutepra.com"><i class="fas fa-envelope"></i> info@sutepra.com</a></li>
+                    <li><a href="tel:+123456789"><i class="fas fa-phone"></i> +123 456 789</a></li>
+                    <li><a href="https://wa.me/1234567890" class="no-underline"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="subscribe-section">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <form>
+                <input type="email" placeholder="Introduce tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
             </form>
         </section>
@@ -343,20 +361,14 @@
     </footer>
 
     <div class="whatsapp-button">
-        <a href="https://wa.me/945997732" class="no-underline">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+        <i class="fab fa-whatsapp"></i>
     </div>
 
     <script>
         document.querySelectorAll('.accordion').forEach(button => {
             button.addEventListener('click', () => {
                 const panel = button.nextElementSibling;
-                if (panel.style.display === 'block') {
-                    panel.style.display = 'none';
-                } else {
-                    panel.style.display = 'block';
-                }
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
             });
         });
     </script>
