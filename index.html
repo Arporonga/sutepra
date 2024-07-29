@@ -276,6 +276,11 @@
                     <h3>Golden Bracelet</h3>
                     <p>40 soles</p>
                 </div>
+                <div class="product-card">
+                    <img src="brazalete_plateado.jpg" alt="Silver Bracelet">
+                    <h3>Silver Bracelet</h3>
+                    <p>40 soles</p>
+                </div>
             </div>
             <div class="product-card">
                 <img src="lentes-retro.jpg" alt="Lentes Retro">
@@ -295,4 +300,31 @@
         </section>
 
         <section class="subscribe-section">
-            <h2>¡Suscríb
+            <h2>¡Suscríbete!</h2>
+            <p>Recibe nuestras últimas noticias y ofertas especiales directamente en tu correo.</p>
+            <form action="https://example.com/subscribe" method="POST">
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="whatsapp-button">
+        <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <script>
+        // Script para el acordeón
+        document.querySelectorAll('.accordion').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
