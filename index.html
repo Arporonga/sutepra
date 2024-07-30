@@ -211,7 +211,7 @@
         }
 
         .info-bar i {
-            font-size: 1.5rem; /* Tamaño reducido de los íconos */
+            font-size: 1.2rem; /* Tamaño reducido de los íconos */
             margin-right: 0.75rem;
             color: #d4af37; /* Dorado */
         }
@@ -281,42 +281,59 @@
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="retro-marrón.jpg" alt="Retro Brown">
-                        <h3>Retro Brown</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="reto-negro.jpg" alt="Retro Black">
+                        <img src="retro-negro.jpg" alt="Retro Black">
                         <h3>Retro Black</h3>
                     </div>
                     <div class="product-card">
                         <img src="retro-blanco.jpg" alt="Retro White">
                         <h3>Retro White</h3>
                     </div>
+                    <div class="product-card">
+                        <img src="retro-marrón.jpg" alt="Retro Brown">
+                        <h3>Retro Brown</h3>
+                    </div>
                 </div>
             </div>
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
                 <h3>Lentes Elegantes</h3>
+                <button class="accordion">Mostrar Opciones</button>
+                <div class="panel">
+                    <div class="product-card">
+                        <img src="elegantes-negro.jpg" alt="Elegantes Black">
+                        <h3>Elegantes Black</h3>
+                    </div>
+                    <div class="product-card">
+                        <img src="elegantes-blanco.jpg" alt="Elegantes White">
+                        <h3>Elegantes White</h3>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nuestra misión es ofrecerte accesorios de alta calidad que reflejen tu estilo personal. Cada pieza es cuidadosamente seleccionada para garantizar la mejor combinación de elegancia y sofisticación.</p>
+            <p>En SUTEPRA, estamos comprometidos con ofrecer accesorios de la más alta calidad. Cada pieza es seleccionada con cuidado para garantizar que nuestros clientes reciban solo lo mejor.</p>
         </section>
+
+        <div class="info-bar">
+            <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fas fa-lock"></i> PAGOS ENCRIPTADOS</div>
+            <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+        </div>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <div class="subscribe-section">
-                <h3>Suscríbete a nuestro boletín</h3>
-                <input type="email" placeholder="Ingresa tu correo electrónico">
-                <button>Suscribirse</button>
-            </div>
-            <div class="info-bar">
-                <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-                <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
-                <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
-            </div>
+            <ul>
+                <li><a href="mailto:contacto@sutepra.com"><i class="fas fa-envelope"></i> contacto@sutepra.com</a></li>
+                <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +123 456 7890</a></li>
+            </ul>
+        </section>
+
+        <section class="subscribe-section">
+            <h2>Suscríbete a Nuestro Boletín</h2>
+            <input type="email" placeholder="Introduce tu email">
+            <button>Suscribirse</button>
         </section>
     </main>
 
@@ -324,18 +341,17 @@
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Botón de WhatsApp -->
     <div class="whatsapp-button">
-        <a href="https://wa.me/tu_numero" class="no-underline"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/1234567890" class="no-underline" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script>
-        // JavaScript para acordeones
-        const accordions = document.querySelectorAll(".accordion");
-
-        accordions.forEach(acc => {
-            acc.addEventListener("click", function() {
-                this.classList.toggle("active");
-                const panel = this.nextElementSibling;
+        // Script para el acordeón
+        document.querySelectorAll('.accordion').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                button.classList.toggle('active');
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
                 } else {
