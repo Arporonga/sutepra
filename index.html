@@ -38,14 +38,15 @@
             margin: auto;
             overflow: hidden;
             width: 100%;
-            height: auto;
+            height: 300px; /* Altura fija para las imágenes del deslizador */
         }
         .mySlides {
             display: none;
         }
         .mySlides img {
             width: 100%;
-            height: auto;
+            height: 100%; /* Ajustar altura al contenedor */
+            object-fit: cover; /* Mantener la proporción de la imagen */
         }
         .prev, .next {
             cursor: pointer;
@@ -217,7 +218,7 @@
                 <img src="panel2.jpg" alt="Panel 2">
             </div>
             <div class="mySlides">
-                <img src="panel3.jpg .jpg" alt="Panel 3">
+                <img src="panel3.jpg" alt="Panel 3">
             </div>
             <div class="mySlides">
                 <img src="panel4.jpg" alt="Panel 4">
@@ -270,46 +271,40 @@
             </div>
         </section>
 
-        <section id="acerca-de-nosotros">
-            <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos dedicamos a ofrecer accesorios únicos y elegantes que complementan tu estilo personal. Nuestros productos son seleccionados con cuidado y atención al detalle, asegurando la máxima calidad y diseño.</p>
-        </section>
-
         <section class="info-bar">
-            <div>
-                <i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL
-            </div>
-            <div>
-                <i class="fas fa-lock"></i> PAGO SEGURO
-            </div>
-            <div>
-                <i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE
-            </div>
+            <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
+            <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
         </section>
 
         <section class="subscribe-section">
-            <h2>Suscríbete a Nuestro Boletín</h2>
-            <form action="#">
-                <input type="email" placeholder="Ingresa tu correo electrónico">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <form action="/suscribirse" method="post">
+                <input type="email" name="email" placeholder="Ingresa tu correo electrónico">
                 <button type="submit">Suscribirse</button>
             </form>
+        </section>
+
+        <section id="acerca-de-nosotros">
+            <h2>Acerca de Nosotros</h2>
+            <p>Somos SUTEPRA, apasionados por ofrecer los mejores accesorios que reflejan tu estilo único.</p>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
             <ul>
-                <li><a href="mailto:contacto@sutepra.com">Email: contacto@sutepra.com</a></li>
-                <li><a href="tel:+123456789">Teléfono: +123 456 789</a></li>
+                <li><a href="mailto:contacto@sutepra.com">contacto@sutepra.com</a></li>
+                <li><a href="tel:+123456789">+123 456 789</a></li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 SUTEPRA - Todos los derechos reservados</p>
+        <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
     <div class="whatsapp-button">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fa fa-whatsapp"></i>
     </div>
 
     <script>
@@ -317,15 +312,16 @@
         showSlides();
 
         function showSlides() {
-            let i;
             let slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 2000); // Cambiar imagen cada 2 segundos
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Cambia cada 2 segundos
         }
 
         function plusSlides(n) {
