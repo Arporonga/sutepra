@@ -14,7 +14,7 @@
             font-family: 'Playfair Display', serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             color: #333;
         }
 
@@ -26,6 +26,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         nav a {
@@ -53,8 +54,8 @@
 
         .product-card {
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
             overflow: hidden;
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -62,13 +63,13 @@
         }
 
         .product-card:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
         .product-card img {
             width: 100%;
-            height: 200px; /* Mantener altura consistente */
+            height: 250px; /* Aumentar altura para imágenes más grandes */
             object-fit: cover;
         }
 
@@ -77,22 +78,23 @@
             padding: 1rem;
             background-color: #333;
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
 
         .product-card p {
             margin: 0;
             padding: 0.5rem;
-            background-color: #f9f9f9;
-            font-size: 1rem;
-            color: #333;
+            background-color: #f4f4f4;
+            font-size: 1.1rem;
+            color: #666;
         }
 
         #contacto {
             background-color: #fff;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
         }
 
         #contacto ul {
@@ -119,13 +121,13 @@
         }
 
         .fa {
-            font-size: 1.5rem; /* Tamaño reducido de los íconos */
+            font-size: 1.6rem; /* Tamaño ligeramente mayor de los íconos */
             margin-right: 0.75rem;
             color: #d4af37; /* Color dorado para los íconos */
         }
 
         .accordion {
-            background-color: #000;
+            background-color: #333;
             color: #fff;
             cursor: pointer;
             padding: 1rem;
@@ -135,16 +137,18 @@
             font-size: 1.2rem;
             width: 100%;
             transition: background-color 0.3s ease;
+            border-radius: 8px; /* Bordes redondeados */
         }
 
         .accordion:hover {
-            background-color: #333;
+            background-color: #444;
         }
 
         .panel {
             display: none;
             overflow: hidden;
             background-color: #f9f9f9;
+            border-radius: 0 0 8px 8px; /* Bordes redondeados inferiores */
         }
 
         .panel .product-card {
@@ -160,33 +164,34 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         }
 
         .subscribe-section {
             background-color: #fff;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
             text-align: center;
             margin-bottom: 2rem;
         }
 
         .subscribe-section input[type="email"] {
-            padding: 0.5rem;
-            width: calc(100% - 110px);
+            padding: 0.75rem;
+            width: calc(100% - 120px);
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-right: 0.5rem;
         }
 
         .subscribe-section button {
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             border: none;
             border-radius: 5px;
             background-color: #d4af37; /* Dorado */
             color: #fff;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
@@ -202,6 +207,7 @@
             padding: 1rem 0;
             border-bottom: 1px solid #ddd;
             margin-bottom: 2rem;
+            border-radius: 12px; /* Bordes redondeados */
         }
 
         .info-bar div {
@@ -214,7 +220,7 @@
         }
 
         .info-bar i {
-            font-size: 1.5rem; /* Tamaño reducido de los íconos */
+            font-size: 1.6rem; /* Tamaño mayor de los íconos */
             margin-right: 0.75rem;
             color: #d4af37; /* Dorado */
         }
@@ -251,115 +257,107 @@
     </nav>
 
     <!-- Sección de bienvenida -->
-    <section id="bienvenida" style="text-align: center; padding: 2rem; background-color: #007bff; color: #fff;">
+    <section id="bienvenida" style="text-align: center; padding: 2rem; background-color: #007bff; color: #fff; border-radius: 12px;">
         <h2>Bienvenido a SUTEPRA</h2>
         <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo. ¡Explora nuestras categorías y encuentra el complemento perfecto para ti!</p>
         <a href="#productos" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #fff; color: #007bff; text-decoration: none; border-radius: 5px; font-size: 1.1rem; transition: background-color 0.3s ease;">Ver Productos</a>
     </section>
 
     <main>
-        <section id="productos">
-            <h2>Productos Destacados</h2>
-            <div class="product-card">
-                <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
-                <h3>Brazaletes Italianos</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <div class="product-card">
-                        <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-                        <h3>Golden Bracelet</h3>
-                        <p>Precio: 35 soles</p
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                        <h3>Silver Bracelet</h3>
-                        <p>Precio: 35 soles</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
-                        <h3>Lover Silver Bracelet</h3>
-                        <p>Precio: 40 soles</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Lentes Elegantes</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <div class="product-card">
-                        <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                        <h3>Lentes Elegantes</h3>
-                        <p>Precio: 22 soles</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoría Lentes Retro sin opciones actuales -->
-            <div class="product-card">
-                <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3>Lentes Retro</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <!-- Aquí se añadirán nuevas opciones en el futuro -->
-                </div>
-            </div>
-            
-               <!-- Barra de información -->
-        <div class="info-bar">
-            <div><i class="fa fa-truck"></i>ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fa fa-lock"></i>PAGOS ENCRIPTADOS</div>
-            <div><i class="fa fa-headset"></i>ATENCIÓN AL CLIENTE</div>
+        <div class="subscribe-section">
+            <h2>Suscríbete para recibir novedades</h2>
+            <input type="email" placeholder="Tu correo electrónico">
+            <button>Suscribirse</button>
         </div>
+
+        <div class="info-bar">
+            <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fas fa-lock"></i> PAGOS ENCRIPTADOS</div>
+            <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+        </div>
+
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+
+            <button class="accordion">Brazaletes Italianos</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
+                    <h3>Silver Bracelet</h3>
+                    <p>40 soles</p>
+                </div>
+                <div class="product-card">
+                    <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
+                    <h3>Lover Silver Bracelet</h3>
+                    <p>40 soles</p>
+                </div>
+            </div>
+
+            <button class="accordion">Lentes Retro</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="retro-marrón.jpg" alt="Retro Brown">
+                    <h3>Retro Brown</h3>
+                </div>
+                <div class="product-card">
+                    <img src="reto-negro.jpg" alt="Retro Black">
+                    <h3>Retro Black</h3>
+                </div>
+                <div class="product-card">
+                    <img src="retro-blanco.jpg" alt="Retro White">
+                    <h3>Retro White</h3>
+                </div>
+            </div>
+
+            <button class="accordion">Lentes Elegantes</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
+                    <h3>Lentes Elegantes</h3>
+                </div>
+            </div>
         </section>
-    <section id="contacto">
+
+        <section id="acerca-de-nosotros">
+            <h2>Acerca de Nosotros</h2>
+            <p>En SUTEPRA, combinamos pasión por la moda con accesorios de alta calidad. Nuestro objetivo es ofrecer productos que reflejen elegancia y distinción. Conoce más sobre nuestra historia y misión.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
             <div id="contacto">
-                <h2>Contacto</h2>
                 <ul>
-                    <li><a href="mailto:contacto@sutepra.com"><i class="fa fa-envelope"></i>Correo Electrónico</a></li>
-                    <li><a href="tel:+51945997732"><i class="fa fa-phone"></i>Teléfono</a></li>
+                    <li><a href="mailto:contacto@sutepra.com"><i class="fas fa-envelope"></i> contacto@sutepra.com</a></li>
+                    <li><a href="tel:+123456789"><i class="fas fa-phone"></i> +1 234 567 89</a></li>
+                    <li><a href="https://www.instagram.com/sutepra/" class="no-underline"><i class="fab fa-instagram"></i> @sutepra</a></li>
                 </ul>
             </div>
         </section>
-
-        <!-- Sección de suscripción -->
-        <div class="subscribe-section">
-            <h3>Suscríbete a nuestro boletín</h3>
-            <input type="email" placeholder="Introduce tu correo electrónico">
-            <button>Suscribirse</button>
-        </div>
     </main>
 
-      <section id="acerca-de-nosotros">
-            <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos apasiona ofrecer accesorios de alta calidad que elevan tu estilo personal. Con una amplia gama de brazaletes y lentes, cada pieza está cuidadosamente seleccionada para garantizar tu satisfacción.</p>
-        </section>
-    
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Botón de WhatsApp -->
     <div class="whatsapp-button">
-        <i class="fa fa-whatsapp"></i>
+        <a href="https://wa.me/123456789" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            var accordions = document.getElementsByClassName("accordion");
+            for (var i = 0; i < accordions.length; i++) {
+                accordions[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
