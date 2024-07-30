@@ -181,7 +181,7 @@
             padding: 0.5rem 1rem;
             border: none;
             border-radius: 5px;
-            background-color: #d4af37; /* Dorado */
+            background-color: #007bff; /* Azul */
             color: #fff;
             font-size: 1rem;
             cursor: pointer;
@@ -189,7 +189,7 @@
         }
 
         .subscribe-section button:hover {
-            background-color: #b5962f; /* Dorado oscuro */
+            background-color: #0056b3; /* Azul oscuro */
         }
 
         .info-bar {
@@ -273,7 +273,7 @@
                         <p>Precio: 40 soles</p>
                     </div>
                     <div class="product-card">
-                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
+                        <img src="brazalete-silver.jpg" alt="Silver Bracelet">
                         <h3>Silver Bracelet</h3>
                         <p>Precio: 40 soles</p>
                     </div>
@@ -285,16 +285,16 @@
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="retro-marrón.jpg" alt="Retro Brown">
-                        <h3>Retro Brown</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="reto-negro.jpg" alt="Retro Black">
+                        <img src="retro-negro.jpg" alt="Retro Black">
                         <h3>Retro Black</h3>
                     </div>
                     <div class="product-card">
                         <img src="retro-blanco.jpg" alt="Retro White">
                         <h3>Retro White</h3>
+                    </div>
+                    <div class="product-card">
+                        <img src="retro-marrón.jpg" alt="Retro Brown">
+                        <h3>Retro Brown</h3>
                     </div>
                 </div>
             </div>
@@ -304,85 +304,67 @@
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="lentes-sofisticado.jpg" alt="Sofisticado">
-                        <h3>Sofisticado</h3>
+                        <img src="lentes-elegantes.jpg" alt="Elegante">
+                        <h3>Elegante</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Información destacada -->
-        <div class="info-bar">
-            <div>
-                <i class="fas fa-shipping-fast"></i>
-                <span>ENVÍOS A NIVEL NACIONAL</span>
-            </div>
-            <div>
-                <i class="fas fa-lock"></i>
-                <span>PAGOS ENCRIPTADOS</span>
-            </div>
-            <div>
-                <i class="fas fa-headset"></i>
-                <span>ATENCIÓN AL CLIENTE</span>
-            </div>
-        </div>
-
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos apasiona la moda y los accesorios. Desde nuestros inicios, hemos buscado ofrecer productos de alta calidad que realcen el estilo de nuestros clientes. Cada uno de nuestros artículos es cuidadosamente seleccionado para asegurar que cumpla con nuestros estándares de elegancia y sofisticación.</p>
+            <p>SUTEPRA es una marca dedicada a ofrecer accesorios de alta calidad que realzan tu estilo personal. Nuestro objetivo es proporcionarte productos elegantes y exclusivos que reflejen tu individualidad.</p>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <ul>
-                <li>
-                    <a href="mailto:info@sutepra.com" class="no-underline">
-                        <i class="fas fa-envelope"></i> info@sutepra.com
-                    </a>
-                </li>
-                <li>
-                    <a href="tel:+1234567890" class="no-underline">
-                        <i class="fas fa-phone"></i> +1 234 567 890
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/sutepra.ac/?hl=es" class="no-underline" target="_blank">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                </li>
-            </ul>
+            <div id="contacto">
+                <ul>
+                    <li><a href="mailto:info@sutepra.com"><i class="fa fa-envelope"></i> info@sutepra.com</a></li>
+                    <li><a href="tel:+5194599732"><i class="fa fa-phone"></i> 94599732</a></li>
+                    <li><a href="https://www.instagram.com/sutepra" target="_blank" class="no-underline"><i class="fa fa-instagram"></i> @sutepra</a></li>
+                </ul>
+            </div>
         </section>
 
-        <section class="subscribe-section">
-            <h2>Suscríbete para recibir ofertas exclusivas</h2>
-            <form>
-                <input type="email" placeholder="Ingresa tu email">
+        <div class="subscribe-section">
+            <h2>Suscríbete a nuestro boletín</h2>
+            <form action="#" method="post">
+                <input type="email" placeholder="Tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
             </form>
-        </section>
+        </div>
     </main>
+
+    <div class="info-bar">
+        <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+        <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
+        <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+    </div>
 
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/51945999732" class="whatsapp-button" target="_blank">
+        <i class="fa fa-whatsapp"></i>
     </a>
 
     <script>
-        const acc = document.getElementsByClassName("accordion");
-        for (let i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                const panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            var acc = document.getElementsByClassName("accordion");
+            for (var i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
