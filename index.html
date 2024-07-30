@@ -265,17 +265,12 @@
                     <div class="product-card">
                         <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                         <h3>Golden Bracelet</h3>
-                        <p>Precio: 40 soles</p>
+                        <p>40 soles</p>
                     </div>
                     <div class="product-card">
                         <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                         <h3>Lover Silver Bracelet</h3>
-                        <p>Precio: 40 soles</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                        <h3>Silver Bracelet</h3>
-                        <p>Precio: 40 soles</p>
+                        <p>40 soles</p>
                     </div>
                 </div>
             </div>
@@ -304,85 +299,59 @@
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="lentes-sofisticado.jpg" alt="Sofisticado">
-                        <h3>Sofisticado</h3>
+                        <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
+                        <h3>Lentes Elegantes</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Información destacada -->
-        <div class="info-bar">
-            <div>
-                <i class="fas fa-shipping-fast"></i>
-                <span>ENVÍOS A NIVEL NACIONAL</span>
-            </div>
-            <div>
-                <i class="fas fa-lock"></i>
-                <span>PAGOS ENCRIPTADOS</span>
-            </div>
-            <div>
-                <i class="fas fa-headset"></i>
-                <span>ATENCIÓN AL CLIENTE</span>
-            </div>
-        </div>
-
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos apasiona la moda y los accesorios. Desde nuestros inicios, hemos buscado ofrecer productos de alta calidad que realcen el estilo de nuestros clientes. Cada uno de nuestros artículos es cuidadosamente seleccionado para asegurar que cumpla con nuestros estándares de elegancia y sofisticación.</p>
+            <p>SUTEPRA es una marca dedicada a ofrecer accesorios de alta calidad para aquellos que buscan destacar su estilo con elegancia y sofisticación.</p>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <ul>
-                <li>
-                    <a href="mailto:franco290415@gmail.com" class="no-underline">
-                        <i class="fas fa-envelope"></i> info@sutepra.com
-                    </a>
-                </li>
-                <li>
-                    <a href="tel:+51945997732" class="no-underline">
-                        <i class="fas fa-phone"></i> +51 945997732
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/sutepra.ac/?hl=es" class="no-underline" target="_blank">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                </li>
-            </ul>
+            <div id="contacto">
+                <ul>
+                    <li><a href="mailto:info@sutepra.com"><i class="fa fa-envelope"></i> info@sutepra.com</a></li>
+                    <li><a href="tel:+123456789"><i class="fa fa-phone"></i> +123 456 789</a></li>
+                    <li><a href="https://www.instagram.com/sutepra" target="_blank" class="no-underline"><i class="fa fa-instagram"></i> @sutepra</a></li>
+                </ul>
+            </div>
         </section>
 
         <section class="subscribe-section">
-            <h2>Suscríbete para recibir ofertas exclusivas</h2>
+            <h2>Suscríbete a nuestro boletín</h2>
             <form>
-                <input type="email" placeholder="Ingresa tu email">
+                <input type="email" placeholder="Introduce tu correo electrónico">
                 <button type="submit">Suscribirse</button>
             </form>
         </section>
     </main>
 
     <footer>
+        <div class="info-bar">
+            <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
+            <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+        </div>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div class="whatsapp-button">
+        <i class="fa fa-whatsapp"></i>
+    </div>
 
     <script>
-        const acc = document.getElementsByClassName("accordion");
-        for (let i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                const panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
+        // Script para los acordeones
+        document.querySelectorAll('.accordion').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
             });
-        }
+        });
     </script>
 </body>
 </html>
