@@ -49,6 +49,7 @@
         }
 
         .product-card {
+            position: relative;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -83,6 +84,24 @@
             background-color: #f9f9f9;
             font-size: 1rem;
             color: #333;
+        }
+
+        .product-card .description {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+
+        .product-card:hover .description {
+            display: block;
         }
 
         #contacto {
@@ -261,11 +280,13 @@
                 <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                 <h3>Lover Silver Bracelet</h3>
                 <p>Precio: 40 soles</p>
+                <div class="description">Elegante brazalete de plata con diseño en forma de corazón. Ideal para ocasiones especiales.</div>
             </div>
             <div class="product-card">
                 <img src="brazalete-silver.jpg" alt="Silver Bracelet">
                 <h3>Silver Bracelet</h3>
                 <p>Precio: 40 soles</p>
+                <div class="description">Brazalete de plata clásica, perfecto para un look sofisticado y atemporal.</div>
             </div>
             <div class="product-card">
                 <img src="lentes-retro.jpg" alt="Lentes Retro">
@@ -275,14 +296,17 @@
                     <div class="product-card">
                         <img src="retro-negro.jpg" alt="Retro Black">
                         <h3>Retro Black</h3>
+                        <div class="description">Lentes retro de color negro, ideales para un estilo vintage.</div>
                     </div>
                     <div class="product-card">
                         <img src="retro-blanco.jpg" alt="Retro White">
                         <h3>Retro White</h3>
+                        <div class="description">Lentes retro en color blanco, que aportan un toque fresco y moderno.</div>
                     </div>
                     <div class="product-card">
                         <img src="retro-marrón.jpg" alt="Retro Brown">
                         <h3>Retro Brown</h3>
+                        <div class="description">Lentes retro en color marrón, perfectos para un estilo clásico y elegante.</div>
                     </div>
                 </div>
             </div>
@@ -294,6 +318,7 @@
                     <div class="product-card">
                         <img src="lentes-elegantes.jpg" alt="Elegante">
                         <h3>Elegante</h3>
+                        <div class="description">Lentes sofisticados que complementan cualquier outfit con un toque de clase.</div>
                     </div>
                 </div>
             </div>
