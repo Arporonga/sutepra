@@ -39,7 +39,15 @@
 
         nav a:hover {
             color: #d4af37; /* Color dorado para el hover */
-        }         section {
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
             margin-bottom: 2rem;
         }
 
@@ -51,11 +59,9 @@
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .product-card img {
@@ -233,6 +239,30 @@
         .no-underline {
             text-decoration: none;
         }
+
+        /* Estilos específicos para pantallas grandes */
+        @media (min-width: 768px) {
+            .product-card {
+                flex-direction: row;
+                max-width: 100%;
+            }
+
+            .product-card img {
+                height: 250px; /* Mayor altura en pantallas grandes */
+            }
+
+            .product-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .product-card p {
+                font-size: 1.1rem;
+            }
+
+            .info-bar {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -245,88 +275,104 @@
     <!-- Sección de bienvenida -->
     <section id="bienvenida" style="text-align: center; padding: 2rem; background-color: #007bff; color: #fff;">
         <h2>Bienvenido a SUTEPRA</h2>
-        <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo. ¡Explora nuestras categorías y encuentra el complemento perfecto para ti!</p>
-        <a href="#productos" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #fff; color: #007bff; text-decoration: none; border-radius: 5px; font-size: 1.1rem; transition: background-color 0.3s ease;">Ver Productos</a>
+        <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo. ¡Explora nuestras        colecciones y encuentra el accesorio perfecto para ti!</p>
     </section>
 
     <main>
         <section id="productos">
-            <h2>Productos Destacados</h2>
-            <div class="product-card">
-                <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
-                <h3>Brazaletes Italianos</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <div class="product-card">
-                        <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-                        <h3>Golden Bracelet</h3>
-                        <p>Precio: 35 soles</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                        <h3>Silver Bracelet</h3>
-                        <p>Precio: 35 soles</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
-                        <h3>Lover Silver Bracelet</h3>
-                        <p>Precio: 40 soles</p>
-                    </div>
-                </div>
-            </div>
+            <h2>Productos</h2>
 
-            <div class="product-card">
-                <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Lentes Elegantes</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <div class="product-card">
-                        <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                        <h3>Lentes Elegantes</h3>
-                        <p>Precio: 22 soles</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categoría Lentes Retro sin opciones actuales -->
-            <div class="product-card">
-                <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3>Lentes Retro</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <!-- Aquí se añadirán nuevas opciones en el futuro -->
-                </div>
-            </div>
-
-            <!-- Barra de información -->
             <div class="info-bar">
-                <div><i class="fa fa-truck"></i>ENVÍOS A NIVEL NACIONAL</div>
-                <div><i class="fa fa-lock"></i>PAGOS ENCRIPTADOS</div>
-                <div><i class="fa fa-headset"></i>ATENCIÓN AL CLIENTE</div>
+                <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+                <div><i class="fas fa-lock"></i> PAGOS ENCRIPTADOS</div>
+                <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
             </div>
+
+            <!-- Categoría de Brazaletes Italianos -->
+            <button class="accordion">Brazaletes Italianos</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
+                    <div>
+                        <h3>Golden Bracelet</h3>
+                        <p>40 soles</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
+                    <div>
+                        <h3>Silver Bracelet</h3>
+                        <p>40 soles</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
+                    <div>
+                        <h3>Lover Silver Bracelet</h3>
+                        <p>40 soles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría de Lentes Retro -->
+            <button class="accordion">Lentes Retro</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="retro-marrón.jpg" alt="Retro Brown">
+                    <div>
+                        <h3>Retro Brown</h3>
+                        <p>18 soles</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="reto-negro.jpg" alt="Retro Black">
+                    <div>
+                        <h3>Retro Black</h3>
+                        <p>18 soles</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="retro-blanco.jpg" alt="Retro White">
+                    <div>
+                        <h3>Retro White</h3>
+                        <p>18 soles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría de Lentes Elegantes -->
+            <button class="accordion">Lentes Elegantes</button>
+            <div class="panel">
+                <div class="product-card">
+                    <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
+                    <div>
+                        <h3>Lentes Elegantes</h3>
+                        <p>22 soles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="acerca-de-nosotros">
+            <h2>Acerca de Nosotros</h2>
+            <p>SUTEPRA es una marca dedicada a ofrecer accesorios premium con un enfoque en la elegancia y el estilo. Nuestro compromiso es brindarte productos de alta calidad que complementen tu look y te hagan sentir especial. Explora nuestra colección y únete a la experiencia SUTEPRA.</p>
         </section>
 
         <section id="contacto">
             <div id="contacto">
                 <h2>Contacto</h2>
                 <ul>
-                    <li><a href="mailto:contacto@sutepra.com"><i class="fa fa-envelope"></i>contacto@sutepra.com</a></li>
-                    <li><a href="tel:+123456789"><i class="fa fa-phone"></i>+123 456 789</a></li>
-                    <li><a href="https://www.instagram.com/sutepra" target="_blank" class="no-underline"><i class="fa fa-instagram"></i>@sutepra</a></li>
+                    <li><a href="mailto:info@sutepra.com"><i class="fas fa-envelope"></i> Email</a></li>
+                    <li><a href="tel:+123456789"><i class="fas fa-phone"></i> Teléfono</a></li>
+                    <li><a href="https://www.google.com/maps" target="_blank"><i class="fas fa-map-marker-alt"></i> Dirección</a></li>
                 </ul>
             </div>
         </section>
 
-        <section id="acerca-de-nosotros">
-            <h2>Acerca de Nosotros</h2>
-            <p>SUTEPRA es una marca dedicada a ofrecer accesorios elegantes y exclusivos. Cada pieza es cuidadosamente seleccionada para complementar tu estilo único.</p>
-        </section>
-
-        <!-- Sección de suscripción -->
         <section class="subscribe-section">
-            <h2>Suscríbete a Nuestro Boletín</h2>
+            <h2>Suscríbete a nuestro boletín</h2>
             <form action="#" method="post">
-                <input type="email" name="email" placeholder="Introduce tu correo electrónico" required>
+                <input type="email" placeholder="Tu email" required>
                 <button type="submit">Suscribirse</button>
             </form>
         </section>
@@ -337,27 +383,22 @@
     </footer>
 
     <div class="whatsapp-button">
-        <i class="fa fa-whatsapp"></i>
+        <i class="fab fa-whatsapp"></i>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var acc = document.getElementsByClassName("accordion");
-            for (var i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var panel = this.nextElementSibling;
-                    if (panel.style.display === "block") {
-                        panel.style.display = "none";
-                    } else {
-                        panel.style.display = "block";
-                    }
-                });
-            }
+        document.querySelectorAll('.accordion').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (panel.style.display === 'block') {
+                    panel.style.display = 'none';
+                } else {
+                    panel.style.display = 'block';
+                }
+            });
         });
     </script>
 </body>
 </html>
 
-
-       
