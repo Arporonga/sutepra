@@ -249,6 +249,7 @@
             color: #fff;
             overflow: hidden;
             height: 80vh; /* Ajustar altura según sea necesario */
+            background-color: #000; /* Fondo negro para contraste */
         }
 
         #bienvenida video {
@@ -261,18 +262,25 @@
             z-index: -1;
         }
 
-        #bienvenida h2, #bienvenida p {
+        #bienvenida .content {
             position: relative;
             z-index: 1;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor contraste */
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        #bienvenida h2, #bienvenida p {
+            margin: 0;
+            font-size: 2rem;
         }
 
         #bienvenida a {
-            position: relative;
-            z-index: 1;
             display: inline-block;
             padding: 0.75rem 1.5rem;
-            background-color: #fff;
-            color: #007bff;
+            background-color: #d4af37;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-size: 1.1rem;
@@ -280,32 +288,60 @@
         }
 
         #bienvenida a:hover {
-            background-color: #d4af37; /* Color dorado para el hover */
-            color: #fff;
+            background-color: #b5962f; /* Dorado oscuro */
         }
     </style>
 </head>
 <body>
     <nav>
+        <a href="#bienvenida">Inicio</a>
         <a href="#productos">Productos</a>
-        <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- Sección de bienvenida -->
     <section id="bienvenida">
         <video autoplay muted loop>
             <source src="https://www.example.com/video-elegante.mp4" type="video/mp4">
             Tu navegador no soporta el formato de video.
         </video>
-        <div style="padding: 2rem;">
+        <div class="content">
             <h2>Bienvenido a SUTEPRA</h2>
             <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo y elegancia.</p>
             <a href="#productos">Explorar Productos</a>
         </div>
     </section>
 
-    <!-- Resto del contenido de la web -->
+    <main>
+        <!-- Resto del contenido de la web -->
+
+        <section class="subscribe-section">
+            <h2>Suscríbete</h2>
+            <p>Recibe las últimas novedades y ofertas exclusivas directamente en tu bandeja de entrada.</p>
+            <form action="https://example.com/subscribe" method="post">
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
+        </section>
+
+        <div class="info-bar">
+            <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fas fa-lock"></i> PAGO SEGURO</div>
+            <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+        </div>
+
+        <section id="productos">
+            <!-- Aquí van los productos -->
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <ul>
+                <li><a href="mailto:contacto@sutepra.com"><i class="fas fa-envelope"></i> contacto@sutepra.com</a></li>
+                <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +123 456 7890</a></li>
+                <li><a href="https://www.google.com/maps/place/Tu+Dirección"><i class="fas fa-map-marker-alt"></i> Tu Dirección</a></li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
