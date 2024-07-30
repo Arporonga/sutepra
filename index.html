@@ -149,12 +149,6 @@
             text-align: left; /* Alinear el contenido al izquierdo */
         }
 
-        .panel img {
-            width: 80px; /* Tamaño pequeño para los íconos */
-            height: 80px;
-            object-fit: cover;
-        }
-
         footer {
             background-color: #000;
             color: #fff;
@@ -272,7 +266,6 @@
                         <h3>Golden Bracelet</h3>
                     </div>
                     <div class="product-card">
-                        <img src="brazalete-plateado.jpg"
                         <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                         <h3>Silver Bracelet</h3>
                     </div>
@@ -282,18 +275,17 @@
                     </div>
                 </div>
             </div>
-
             <div class="product-card">
                 <img src="lentes-retro.jpg" alt="Lentes Retro">
                 <h3>Lentes Retro</h3>
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="retro-marrón.jpg" alt="Retro Brown">
+                        <img src="retro-marron.jpg" alt="Retro Brown">
                         <h3>Retro Brown</h3>
                     </div>
                     <div class="product-card">
-                        <img src="retro-negro.jpg" alt="Retro Black">
+                        <img src="reto-negro.jpg" alt="Retro Black">
                         <h3>Retro Black</h3>
                     </div>
                     <div class="product-card">
@@ -302,50 +294,29 @@
                     </div>
                 </div>
             </div>
-
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
                 <h3>Lentes Elegantes</h3>
-                <button class="accordion">Mostrar Opciones</button>
-                <div class="panel">
-                    <!-- Puedes añadir más productos aquí si es necesario -->
-                </div>
             </div>
         </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos dedicamos a ofrecer accesorios únicos y de alta calidad que realzan tu estilo personal. Nuestro compromiso es proporcionar productos elegantes y sofisticados que se adapten a tus necesidades y preferencias.</p>
-        </section>
-
-        <section class="info-bar">
-            <div>
-                <i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL
-            </div>
-            <div>
-                <i class="fas fa-lock"></i> PAGOS ENCRIPTADOS
-            </div>
-            <div>
-                <i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE
-            </div>
-        </section>
-
-        <section class="subscribe-section">
-            <h3>Suscríbete a Nuestro Boletín</h3>
-            <p>Recibe las últimas noticias y ofertas exclusivas directamente en tu correo electrónico.</p>
-            <form action="#" method="post">
-                <input type="email" name="email" placeholder="Introduce tu correo electrónico" required>
-                <button type="submit">Suscribirse</button>
-            </form>
+            <p>En SUTEPRA, nuestra misión es ofrecerte accesorios de alta calidad que reflejen tu estilo personal. Cada pieza es cuidadosamente seleccionada para garantizar la mejor combinación de elegancia y sofisticación.</p>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <ul>
-                <li><a href="mailto:info@sutepra.com"><i class="fas fa-envelope"></i> info@sutepra.com</a></li>
-                <li><a href="tel:+123456789"><i class="fas fa-phone"></i> +123 456 789</a></li>
-                <li><a href="https://wa.me/123456789" class="no-underline" target="_blank"><i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp</a></li>
-            </ul>
+            <div class="subscribe-section">
+                <h3>Suscríbete a nuestro boletín</h3>
+                <input type="email" placeholder="Ingresa tu correo electrónico">
+                <button>Suscribirse</button>
+            </div>
+            <div class="info-bar">
+                <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+                <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
+                <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+            </div>
         </section>
     </main>
 
@@ -354,26 +325,24 @@
     </footer>
 
     <div class="whatsapp-button">
-        <a href="https://wa.me/123456789" class="no-underline" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://wa.me/tu_numero" class="no-underline"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
+        // JavaScript para acordeones
+        const accordions = document.querySelectorAll(".accordion");
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
+        accordions.forEach(acc => {
+            acc.addEventListener("click", function() {
                 this.classList.toggle("active");
-                var panel = this.nextElementSibling;
+                const panel = this.nextElementSibling;
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
                 } else {
                     panel.style.display = "block";
                 }
             });
-        }
+        });
     </script>
 </body>
 </html>
