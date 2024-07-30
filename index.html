@@ -11,12 +11,6 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
         nav {
             margin: 1rem 0;
             text-align: center;
@@ -38,114 +32,13 @@
         .welcome-section p {
             margin: 1rem 0 0;
         }
-        .product-section {
-            padding: 2rem;
-            text-align: center;
-        }
-        .product-section h2 {
-            margin: 0 0 2rem;
-        }
-        .product-card {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #fff;
-            padding: 1rem;
-            margin: 0.5rem;
-            text-align: center;
-            width: calc(33% - 2rem);
-            box-sizing: border-box;
-        }
-        .product-card img {
-            max-width: 100%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-        .info-bar {
-            display: flex;
-            justify-content: space-around;
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-        }
-        .info-bar div {
-            display: flex;
-            align-items: center;
-        }
-        .info-bar i {
-            margin-right: 0.5rem;
-        }
-        .subscribe-section {
-            background-color: #f4f4f4;
-            padding: 2rem;
-            text-align: center;
-        }
-        .subscribe-section form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .subscribe-section input[type="email"] {
-            padding: 0.5rem;
-            margin-right: 1rem;
-            border: 1px solid #ccc;
-        }
-        .subscribe-section button {
-            padding: 0.5rem 1rem;
-            border: none;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-        }
-        #acerca-de-nosotros {
-            padding: 2rem;
-            text-align: center;
-        }
-        #contacto {
-            padding: 2rem;
-            text-align: center;
-        }
-        #contacto ul {
-            list-style: none;
-            padding: 0;
-        }
-        #contacto ul li {
-            margin: 0.5rem 0;
-        }
-        #contacto ul li a {
-            color: #333;
-            text-decoration: none;
-        }
-        .no-underline {
-            text-decoration: none;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-        }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50%;
-            padding: 15px;
-            font-size: 24px;
-            cursor: pointer;
-        }
         .slideshow-container {
             position: relative;
             max-width: 100%;
             margin: auto;
             overflow: hidden;
-            width: 600px; /* Aumenta el tamaño de la vista deslizante */
-            height: 400px; /* Aumenta el tamaño de la vista deslizante */
+            width: 100%; /* Aumenta el tamaño de la vista deslizante */
+            height: 300px; /* Aumenta el tamaño de la vista deslizante */
         }
         .mySlides {
             display: none;
@@ -180,12 +73,129 @@
         .prev:hover, .next:hover {
             background-color: rgba(0,0,0,0.8);
         }
+        .product-section {
+            padding: 2rem;
+            text-align: center;
+        }
+        .product-section h2 {
+            margin: 0 0 2rem;
+        }
+        .product-card {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #fff;
+            padding: 1rem;
+            margin: 0.5rem;
+            text-align: center;
+            width: calc(33% - 2rem);
+            box-sizing: border-box;
+        }
+        .product-card img {
+            max-width: 100%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .info-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+        .info-bar div {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        .info-bar i {
+            margin-right: 0.5rem;
+        }
+        .subscribe-section {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            text-align: center;
+        }
+        .subscribe-section form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .subscribe-section input[type="email"] {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            width: 80%;
+            max-width: 300px;
+        }
+        .subscribe-section button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        #acerca-de-nosotros {
+            padding: 2rem;
+            text-align: center;
+        }
+        #contacto {
+            padding: 2rem;
+            text-align: center;
+        }
+        #contacto ul {
+            list-style: none;
+            padding: 0;
+        }
+        #contacto ul li {
+            margin: 0.5rem 0;
+        }
+        #contacto ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        .no-underline {
+            text-decoration: none;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(50% - 2rem);
+            }
+        }
+        @media (max-width: 480px) {
+            .product-card {
+                width: calc(100% - 2rem);
+            }
+            .subscribe-section form {
+                flex-direction: column;
+            }
+            .subscribe-section input[type="email"] {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>SUTEPRA - Accesorios Únicos</h1>
-    </header>
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
@@ -205,7 +215,7 @@
                 <img src="panel2.jpg" alt="Panel 2">
             </div>
             <div class="mySlides">
-                <img src="panel3.jpg" alt="Panel 3">
+                <img src="panel3.jpg .jpg" alt="Panel 3">
             </div>
             <div class="mySlides">
                 <img src="panel4.jpg" alt="Panel 4">
@@ -264,9 +274,18 @@
         </section>
 
         <section class="info-bar">
-            <div><i class="fa fa-truck"></i>ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fa fa-lock"></i>PAGOS ENCRIPTADOS</div>
-            <div><i class="fa fa-headset"></i>ATENCIÓN AL CLIENTE</div>
+            <div>
+                <i class="fa fa-truck"></i>
+                <p>ENVÍOS A NIVEL NACIONAL</p>
+            </div>
+            <div>
+                <i class="fa fa-lock"></i>
+                <p>PAGOS ENCRIPTADOS</p>
+            </div>
+            <div>
+                <i class="fa fa-headphones"></i>
+                <p>ATENCIÓN AL CLIENTE</p>
+            </div>
         </section>
 
         <section class="subscribe-section">
