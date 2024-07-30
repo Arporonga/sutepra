@@ -4,118 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SUTEPRA - Accesorios únicos para destacar tu estilo.">
-    <title>SUTEPRA - Accesorios Únicos</title>
     <link rel="stylesheet" href="styles.css">
+    <title>SUTEPRA</title>
 </head>
 <body>
     <nav>
-        <a href="#inicio">Inicio</a>
+        <a href="#welcome">Inicio</a>
+        <a href="#productos">Productos</a>
         <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
         <a href="#contacto">Contacto</a>
     </nav>
-    <main>
-        <section class="welcome-section" id="inicio">
-            <h1>Bienvenidos a SUTEPRA</h1>
-            <p>Accesorios que destacan tu estilo único</p>
-        </section>
+    
+    <div class="welcome-section" id="welcome">
+        <h1>Bienvenido a SUTEPRA</h1>
+        <p>Accesorios únicos para destacar tu estilo.</p>
+    </div>
 
-        <section class="slideshow-container">
-            <div class="mySlides">
-                <img src="panel.jpg" alt="Panel 1">
-            </div>
-            <div class="mySlides">
-                <img src="panel2.jpg" alt="Panel 2">
-            </div>
-            <div class="mySlides">
-                <img src="panel3.jpg" alt="Panel 3">
-            </div>
-            <div class="mySlides">
-                <img src="panel4.jpg" alt="Panel 4">
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </section>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="slide1.jpg" alt="Slide 1">
+        </div>
+        <div class="mySlides">
+            <img src="slide2.jpg" alt="Slide 2">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
 
-        <section class="product-section">
-            <h2>Productos</h2>
-            <div class="product-card">
-                <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-                <h3>Golden Bracelet</h3>
-                <p>Precio: 40 soles</p>
-            </div>
-            <div class="product-card">
-                <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                <h3>Silver Bracelet</h3>
-                <p>Precio: 40 soles</p>
-            </div>
-            <div class="product-card">
-                <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
-                <h3>Lover Silver Bracelet</h3>
-                <p>Precio: 40 soles</p>
-            </div>
-            <div class="product-card" onclick="toggleRetroOptions()">
-                <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3>Lentes Retro</h3>
-                <p>Precio: 18 soles</p>
-            </div>
-            <div class="hidden-options" id="retro-options">
-                <div class="product-card">
-                    <img src="retro-blanco.jpg" alt="Retro White">
-                    <h3>Retro White</h3>
-                    <p>Precio: 18 soles</p>
-                </div>
-                <div class="product-card">
-                    <img src="retro-marrón.jpg" alt="Retro Brown">
-                    <h3>Retro Brown</h3>
-                    <p>Precio: 18 soles</p>
-                </div>
-                <div class="product-card">
-                    <img src="retro-negro.jpg" alt="Retro Black">
-                    <h3>Retro Black</h3>
-                    <p>Precio: 18 soles</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Lentes Elegantes</h3>
-                <p>Precio: 22 soles</p>
-            </div>
-        </section>
+    <div class="product-section" id="productos">
+        <h2>Productos</h2>
+        <!-- Aquí se añadirán los productos -->
+    </div>
 
-        <section class="info-bar">
-            <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
-            <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
-        </section>
+    <div class="hidden-options">
+        <!-- Opciones ocultas para los productos -->
+    </div>
 
-        <section class="subscribe-section">
-            <h2>Suscríbete</h2>
-            <form>
-                <input type="email" placeholder="Ingresa tu correo">
-                <button type="submit">Suscribirse</button>
-            </form>
-        </section>
+    <div class="info-bar">
+        <div><i class="icon-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+        <div><i class="icon-lock"></i> PAGOS ENCRIPTADOS</div>
+        <div><i class="icon-support"></i> ATENCIÓN AL CLIENTE</div>
+    </div>
 
-        <section id="acerca-de-nosotros">
-            <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos especializamos en ofrecer accesorios únicos y elegantes que resaltan tu estilo personal. Cada pieza es seleccionada con cuidado para garantizar la mejor calidad y diseño.</p>
-        </section>
+    <div class="subscribe-section">
+        <h2>Suscríbete a nuestro boletín</h2>
+        <form>
+            <input type="email" placeholder="Introduce tu correo electrónico">
+            <button type="submit">Suscribirse</button>
+        </form>
+    </div>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <ul>
-                <li><a href="mailto:contacto@sutepra.com">contacto@sutepra.com</a></li>
-                <li><a href="tel:+123456789">+123 456 789</a></li>
-            </ul>
-        </section>
-    </main>
+    <section id="acerca-de-nosotros">
+        <h2>Acerca de Nosotros</h2>
+        <p>Somos una empresa dedicada a ofrecer accesorios únicos.</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Contáctanos a través de <a href="mailto:info@sutepra.com">info@sutepra.com</a>.</p>
+    </section>
 
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
-    <div class="whatsapp-button">
-        <i class="fa fa-whatsapp"></i>
+    <div class="whatsapp-button" onclick="window.open('https://wa.me/tu-numero', '_blank')">
+        <i class="icon-whatsapp"></i>
     </div>
 
     <script src="script.js"></script>
