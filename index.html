@@ -95,8 +95,17 @@
             height: 120px;
             object-fit: cover;
         }
-        .product-card.hidden {
+        .hidden-options {
             display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .hidden-options img {
+            max-width: 100%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin: 0.5rem;
         }
         .info-bar {
             display: flex;
@@ -179,44 +188,16 @@
             font-size: 24px;
             cursor: pointer;
         }
-        .product-card-container {
-            position: relative;
-            display: inline-block;
-            background-color: #ffd700;
-            padding: 0.5rem;
-            margin: 0.5rem;
-            text-align: center;
-            width: calc(33% - 1rem);
-            box-sizing: border-box;
-        }
-        .product-card-container img {
-            max-width: 100%;
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-        }
-        .product-card-container button {
-            border: none;
-            background: transparent;
-            color: #fff;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            font-size: 16px;
-        }
-        .hidden-options {
-            display: none;
-            text-align: center;
-        }
-        .hidden-options .product-card {
-            width: calc(33% - 1rem);
-        }
         @media (max-width: 768px) {
-            .product-card-container {
+            .product-card {
                 width: calc(50% - 1rem);
+            }
+            .slideshow-container {
+                height: auto;
             }
         }
         @media (max-width: 480px) {
-            .product-card-container {
+            .product-card {
                 width: calc(100% - 1rem);
             }
             .subscribe-section form {
@@ -248,7 +229,7 @@
                 <img src="panel2.jpg" alt="Panel 2">
             </div>
             <div class="mySlides">
-                <img src="panel3.jpg .jpg" alt="Panel 3">
+                <img src="panel3.jpg" alt="Panel 3">
             </div>
             <div class="mySlides">
                 <img src="panel4.jpg" alt="Panel 4">
@@ -259,42 +240,44 @@
 
         <section class="product-section">
             <h2>Productos</h2>
-            <div class="product-card-container">
+            <div class="product-card">
                 <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                 <h3>Golden Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card-container">
+            <div class="product-card">
                 <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                 <h3>Silver Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card-container">
+            <div class="product-card">
                 <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                 <h3>Lover Silver Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card-container">
-                <button onclick="toggleRetroOptions()">Lentes Retro</button>
-                <div class="hidden-options" id="retro-options">
-                    <div class="product-card">
-                        <img src="retro-blanco.jpg" alt="Retro White">
-                        <h3>Retro White</h3>
-                        <p>Precio: 18 soles</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="retro-marrón.jpg" alt="Retro Brown">
-                        <h3>Retro Brown</h3>
-                        <p>Precio: 18 soles</p>
-                    </div>
-                                        <div class="product-card">
-                        <img src="reto-negro.jpg" alt="Retro Black">
-                        <h3>Retro Black</h3>
-                        <p>Precio: 18 soles</p>
-                    </div>
+            <div class="product-card" onclick="toggleRetroOptions()">
+                <img src="lentes-retro.jpg" alt="Lentes Retro">
+                <h3>Lentes Retro</h3>
+                <p>Precio: 18 soles</p>
+            </div>
+            <div class="hidden-options" id="retro-options">
+                <div class="product-card">
+                    <img src="retro-blanco.jpg" alt="Retro White">
+                    <h3>Retro White</h3>
+                    <p>Precio: 18 soles</p>
+                </div>
+                <div class="product-card">
+                    <img src="retro-marrón.jpg" alt="Retro Brown">
+                    <h3>Retro Brown</h3>
+                    <p>Precio: 18 soles</p>
+                </div>
+                <div class="product-card">
+                    <img src="retro-negro.jpg" alt="Retro Black">
+                    <h3>Retro Black</h3>
+                    <p>Precio: 18 soles</p>
                 </div>
             </div>
-            <div class="product-card-container">
+            <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
                 <h3>Lentes Elegantes</h3>
                 <p>Precio: 22 soles</p>
@@ -366,4 +349,3 @@
     </script>
 </body>
 </html>
-
