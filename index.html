@@ -241,144 +241,125 @@
         .no-underline {
             text-decoration: none;
         }
-
-        /* Estilos para la sección de bienvenida con video */
-        #bienvenida {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            overflow: hidden;
-            height: 80vh; /* Ajustar altura según sea necesario */
-            background-color: #000; /* Fondo negro para contraste */
-        }
-
-        #bienvenida video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        #bienvenida .content {
-            position: relative;
-            z-index: 1;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor contraste */
-            border-radius: 10px;
-            display: inline-block;
-        }
-
-        #bienvenida h2, #bienvenida p {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        #bienvenida a {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #d4af37;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        #bienvenida a:hover {
-            background-color: #b5962f; /* Dorado oscuro */
-        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#bienvenida">Inicio</a>
         <a href="#productos">Productos</a>
+        <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
-    <section id="bienvenida">
-        <video autoplay muted loop>
-            <source src="https://www.example.com/video-elegante.mp4" type="video/mp4">
-            Tu navegador no soporta el formato de video.
-        </video>
-        <div class="content">
-            <h2>Bienvenido a SUTEPRA</h2>
-            <p>Descubre nuestra exclusiva colección de accesorios.</p>
-            <a href="#productos">Explorar Productos</a>
-        </div>
+    <!-- Sección de bienvenida -->
+    <section id="bienvenida" style="text-align: center; padding: 2rem; background-color: #007bff; color: #fff;">
+        <h2>Bienvenido a SUTEPRA</h2>
+        <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo. ¡Explora nuestras categorías y encuentra el complemento perfecto para ti!</p>
+        <a href="#productos" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #fff; color: #007bff; text-decoration: none; border-radius: 5px; font-size: 1.1rem; transition: background-color 0.3s ease;">Ver Productos</a>
     </section>
 
     <main>
-        <!-- Sección de productos -->
         <section id="productos">
-            <h2>Nuestros Productos</h2>
+            <h2>Productos Destacados</h2>
             <div class="product-card">
-                <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
-                <h3>Lover Silver Bracelet</h3>
-                <p>Precio: 40 soles</p>
+                <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
+                <h3>Brazaletes Italianos</h3>
+                <button class="accordion">Mostrar Opciones</button>
+                <div class="panel">
+                    <div class="product-card">
+                        <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
+                        <h3>Golden Bracelet</h3>
+                        <p>Precio: 35 soles</p
+                    </div>
+                    <div class="product-card">
+                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
+                        <h3>Silver Bracelet</h3>
+                        <p>Precio: 35 soles</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
+                        <h3>Lover Silver Bracelet</h3>
+                        <p>Precio: 40 soles</p>
+                    </div>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                <h3>Silver Bracelet</h3>
-                <p>Precio: 40 soles</p>
-            </div>
-            <div class="product-card">
-                <img src="retro-marrón.jpg" alt="Retro Brown">
-                <h3>Retro Brown</h3>
-                <p>Precio: 18 soles</p>
-            </div>
-            <div class="product-card">
-                <img src="retro-negro.jpg" alt="Retro Black">
-                <h3>Retro Black</h3>
-                <p>Precio: 18 soles</p>
-            </div>
-            <div class="product-card">
-                <img src="retro-blanco.jpg" alt="Retro White">
-                <h3>Retro White</h3>
-                <p>Precio: 18 soles</p>
-            </div>
+
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
                 <h3>Lentes Elegantes</h3>
-                <p>Precio: 22 soles</p>
+                <button class="accordion">Mostrar Opciones</button>
+                <div class="panel">
+                    <div class="product-card">
+                        <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
+                        <h3>Lentes Elegantes</h3>
+                        <p>Precio: 22 soles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría Lentes Retro sin opciones actuales -->
+            <div class="product-card">
+                <img src="lentes-retro.jpg" alt="Lentes Retro">
+                <h3>Lentes Retro</h3>
+                <button class="accordion">Mostrar Opciones</button>
+                <div class="panel">
+                    <!-- Aquí se añadirán nuevas opciones en el futuro -->
+                </div>
+            </div>
+            
+               <!-- Barra de información -->
+        <div class="info-bar">
+            <div><i class="fa fa-truck"></i>ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fa fa-lock"></i>PAGOS ENCRIPTADOS</div>
+            <div><i class="fa fa-headset"></i>ATENCIÓN AL CLIENTE</div>
+        </div>
+        </section>
+    <section id="contacto">
+            <div id="contacto">
+                <h2>Contacto</h2>
+                <ul>
+                    <li><a href="mailto:contacto@sutepra.com"><i class="fa fa-envelope"></i>Correo Electrónico</a></li>
+                    <li><a href="tel:+51945997732"><i class="fa fa-phone"></i>Teléfono</a></li>
+                </ul>
             </div>
         </section>
 
-        <section class="subscribe-section">
-            <h2>Suscríbete</h2>
-            <p>Recibe las últimas novedades y ofertas exclusivas directamente en tu bandeja de entrada.</p>
-            <form action="https://example.com/subscribe" method="post">
-                <input type="email" name="email" placeholder="Tu correo electrónico" required>
-                <button type="submit">Suscribirse</button>
-            </form>
-        </section>
-
-        <div class="info-bar">
-            <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fas fa-lock"></i> PAGO SEGURO</div>
-            <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+        <!-- Sección de suscripción -->
+        <div class="subscribe-section">
+            <h3>Suscríbete a nuestro boletín</h3>
+            <input type="email" placeholder="Introduce tu correo electrónico">
+            <button>Suscribirse</button>
         </div>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <ul>
-                <li><a href="mailto:contacto@sutepra.com"><i class="fas fa-envelope"></i> contacto@sutepra.com</a></li>
-                <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +123 456 7890</a></li>
-                <li><a href="https://www.google.com/maps/place/Tu+Dirección"><i class="fas fa-map-marker-alt"></i> Tu Dirección</a></li>
-            </ul>
-        </section>
     </main>
 
+      <section id="acerca-de-nosotros">
+            <h2>Acerca de Nosotros</h2>
+            <p>En SUTEPRA, nos apasiona ofrecer accesorios de alta calidad que elevan tu estilo personal. Con una amplia gama de brazaletes y lentes, cada pieza está cuidadosamente seleccionada para garantizar tu satisfacción.</p>
+        </section>
+    
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Botón de WhatsApp -->
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div class="whatsapp-button">
+        <i class="fa fa-whatsapp"></i>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
