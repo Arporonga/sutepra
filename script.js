@@ -1,18 +1,26 @@
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-    let slides = document.getElementsByClassName("mySlides");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 3000); // Cambia la imagen cada 3 segundos
-}
+let slideIndex = 1;
+showSlides(slideIndex);
 
 function plusSlides(n) {
-    slideIndex += n - 1;
-    showSlides();
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+}
+
+function toggleRetroOptions() {
+    const retroOptions = document.getElementById("retro-options");
+    if (retroOptions.style.display === "none" || retroOptions.style.display === "") {
+        retroOptions.style.display = "block";
+    } else {
+        retroOptions.style.display = "none";
+    }
 }
