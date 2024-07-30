@@ -59,9 +59,11 @@
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
         .product-card img {
@@ -240,28 +242,36 @@
             text-decoration: none;
         }
 
-        /* Estilos específicos para pantallas grandes */
-        @media (min-width: 768px) {
-            .product-card {
-                flex-direction: row;
-                max-width: 100%;
-            }
+        .preview-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-            .product-card img {
-                height: 250px; /* Mayor altura en pantallas grandes */
-            }
+        .preview-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-            .product-card h3 {
-                font-size: 1.5rem;
-            }
+        .preview-card h3 {
+            margin: 0;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+            font-size: 1.2rem;
+        }
 
-            .product-card p {
-                font-size: 1.1rem;
-            }
-
-            .info-bar {
-                font-size: 1.5rem;
-            }
+        .preview-card p {
+            margin: 0;
+            padding: 0.5rem;
+            background-color: #f9f9f9;
+            font-size: 1rem;
+            color: #333;
         }
     </style>
 </head>
@@ -275,7 +285,7 @@
     <!-- Sección de bienvenida -->
     <section id="bienvenida" style="text-align: center; padding: 2rem; background-color: #007bff; color: #fff;">
         <h2>Bienvenido a SUTEPRA</h2>
-        <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo. ¡Explora nuestras        colecciones y encuentra el accesorio perfecto para ti!</p>
+        <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo personal.</p>
     </section>
 
     <main>
@@ -287,6 +297,35 @@
                 <div><i class="fas fa-lock"></i> PAGOS ENCRIPTADOS</div>
                 <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
             </div>
+
+            <!-- Vista previa de las categorías -->
+            <section id="categorias">
+                <h2>Categorías</h2>
+                
+                <div class="preview-card">
+                    <img src="brazaletes-preview.jpg" alt="Brazaletes Italianos">
+                    <div>
+                        <h3>Brazaletes Italianos</h3>
+                        <p>Explora nuestra selección de brazaletes italianos hechos con materiales premium.</p>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <img src="lentes-retro-preview.jpg" alt="Lentes Retro">
+                    <div>
+                        <h3>Lentes Retro</h3>
+                        <p>Descubre nuestra colección de lentes retro que añaden un toque nostálgico a tu look.</p>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <img src="lentes-elegantes-preview.jpg" alt="Lentes Elegantes">
+                    <div>
+                        <h3>Lentes Elegantes</h3>
+                        <p>Encuentra lentes elegantes que complementan tu estilo con sofisticación.</p>
+                    </div>
+                </div>
+            </section>
 
             <!-- Categoría de Brazaletes Italianos -->
             <button class="accordion">Brazaletes Italianos</button>
@@ -401,4 +440,3 @@
     </script>
 </body>
 </html>
-
