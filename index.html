@@ -149,6 +149,12 @@
             text-align: left; /* Alinear el contenido al izquierdo */
         }
 
+        .panel img {
+            width: 80px; /* Tamaño pequeño para los íconos */
+            height: 80px;
+            object-fit: cover;
+        }
+
         footer {
             background-color: #000;
             color: #fff;
@@ -266,6 +272,7 @@
                         <h3>Golden Bracelet</h3>
                     </div>
                     <div class="product-card">
+                        <img src="brazalete-plateado.jpg"
                         <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                         <h3>Silver Bracelet</h3>
                     </div>
@@ -285,6 +292,14 @@
                         <img src="retro-marrón.jpg" alt="Retro Brown">
                         <h3>Retro Brown</h3>
                     </div>
+                    <div class="product-card">
+                        <img src="retro-negro.jpg" alt="Retro Black">
+                        <h3>Retro Black</h3>
+                    </div>
+                    <div class="product-card">
+                        <img src="retro-blanco.jpg" alt="Retro White">
+                        <h3>Retro White</h3>
+                    </div>
                 </div>
             </div>
 
@@ -293,30 +308,45 @@
                 <h3>Lentes Elegantes</h3>
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
-                    <!-- Opciones para lentes elegantes si las hay -->
+                    <!-- Puedes añadir más productos aquí si es necesario -->
                 </div>
             </div>
         </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>Somos SUTEPRA, una marca dedicada a ofrecer accesorios de alta calidad y diseño. Nos enorgullece ofrecer productos que combinan elegancia y sofisticación para realzar tu estilo personal.</p>
+            <p>En SUTEPRA, nos dedicamos a ofrecer accesorios únicos y de alta calidad que realzan tu estilo personal. Nuestro compromiso es proporcionar productos elegantes y sofisticados que se adapten a tus necesidades y preferencias.</p>
+        </section>
+
+        <section class="info-bar">
+            <div>
+                <i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL
+            </div>
+            <div>
+                <i class="fas fa-lock"></i> PAGOS ENCRIPTADOS
+            </div>
+            <div>
+                <i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE
+            </div>
         </section>
 
         <section class="subscribe-section">
-            <h2>Suscríbete a nuestro boletín</h2>
-            <p>Recibe las últimas noticias y ofertas especiales directamente en tu bandeja de entrada.</p>
+            <h3>Suscríbete a Nuestro Boletín</h3>
+            <p>Recibe las últimas noticias y ofertas exclusivas directamente en tu correo electrónico.</p>
             <form action="#" method="post">
-                <input type="email" placeholder="Tu correo electrónico" required>
+                <input type="email" name="email" placeholder="Introduce tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
             </form>
         </section>
 
-        <div class="info-bar">
-            <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
-            <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
-        </div>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <ul>
+                <li><a href="mailto:info@sutepra.com"><i class="fas fa-envelope"></i> info@sutepra.com</a></li>
+                <li><a href="tel:+123456789"><i class="fas fa-phone"></i> +123 456 789</a></li>
+                <li><a href="https://wa.me/123456789" class="no-underline" target="_blank"><i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp</a></li>
+            </ul>
+        </section>
     </main>
 
     <footer>
@@ -324,7 +354,9 @@
     </footer>
 
     <div class="whatsapp-button">
-        <a href="https://wa.me/1234567890" target="_blank" class="no-underline"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/123456789" class="no-underline" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
     <script>
