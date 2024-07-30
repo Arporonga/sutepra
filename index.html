@@ -11,7 +11,7 @@
         #bienvenida {
             background-color: black;
             color: white;
-            padding: 50px 0;
+            padding: 100px 0; /* Ampliado para posible inclusión de video */
             text-align: center;
             position: relative;
         }
@@ -169,17 +169,19 @@
                         <h3>Golden Bracelet</h3>
                         <p>Precio: 40 soles</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card hidden-preview" id="silver-bracelet">
                         <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                         <h3>Silver Bracelet</h3>
                         <p>Precio: 40 soles</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card hidden-preview" id="silver-love-bracelet">
                         <img src="brazalete-corazon.jpg" alt="Silver Love Bracelet">
                         <h3>Silver Love Bracelet</h3>
                         <p>Precio: 40 soles</p>
                     </div>
                 </div>
+                <button class="show-more" onclick="toggleVisibility('silver-bracelet')">Mostrar Más</button>
+                <button class="show-more" onclick="toggleVisibility('silver-love-bracelet')">Mostrar Más</button>
             </div>
 
             <!-- Sección de Lentes Retro -->
@@ -226,12 +228,10 @@
         <!-- Sección de Contacto -->
         <section id="contacto">
             <h2>Contacto</h2>
-            <div id="contacto">
-                <ul>
-                    <li><a href="mailto:contacto@sutepra.com"><i class="fas fa-envelope"></i> contacto@sutepra.com</a></li>
-                    <li><a href="tel:+123456789"><i class="fas fa-phone"></i> +123 456 789</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="mailto:contacto@sutepra.com"><i class="fas fa-envelope"></i> contacto@sutepra.com</a></li>
+                <li><a href="tel:+123456789"><i class="fas fa-phone"></i> +123 456 789</a></li>
+            </ul>
         </section>
 
         <!-- Sección de Suscripción -->
@@ -250,11 +250,11 @@
 
     <!-- Botón de WhatsApp -->
     <div class="whatsapp-button">
-        <a href="https://wa.me/1234567890" class="no-underline"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/123456789" target="_blank" class="no-underline"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script>
-        // Script para manejar la visibilidad del producto Silver Bracelet
+        // Script para manejar la visibilidad de los productos adicionales
         function toggleVisibility(id) {
             var element = document.getElementById(id);
             if (element.style.display === "none" || element.style.display === "") {
