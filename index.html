@@ -248,6 +248,7 @@
             text-align: center;
             color: #fff;
             overflow: hidden;
+            height: 80vh; /* Ajustar altura según sea necesario */
         }
 
         #bienvenida video {
@@ -277,6 +278,11 @@
             font-size: 1.1rem;
             transition: background-color 0.3s ease;
         }
+
+        #bienvenida a:hover {
+            background-color: #d4af37; /* Color dorado para el hover */
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -289,9 +295,25 @@
     <!-- Sección de bienvenida -->
     <section id="bienvenida">
         <video autoplay muted loop>
-            <source src="video-elegante.mp4" type="video/mp4">
+            <source src="https://www.example.com/video-elegante.mp4" type="video/mp4">
             Tu navegador no soporta el formato de video.
         </video>
         <div style="padding: 2rem;">
             <h2>Bienvenido a SUTEPRA</h2>
-            <p>Descubre nuestra exclusiva colección de accesorios que realzan
+            <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo y elegancia.</p>
+            <a href="#productos">Explorar Productos</a>
+        </div>
+    </section>
+
+    <!-- Resto del contenido de la web -->
+
+    <footer>
+        <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
