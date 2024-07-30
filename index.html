@@ -38,15 +38,14 @@
             margin: auto;
             overflow: hidden;
             width: 100%;
-            height: 300px; /* Altura fija para las imágenes del deslizador */
+            height: auto;
         }
         .mySlides {
             display: none;
         }
         .mySlides img {
             width: 100%;
-            height: 100%; /* Ajustar altura al contenedor */
-            object-fit: cover; /* Mantener la proporción de la imagen */
+            height: auto;
         }
         .prev, .next {
             cursor: pointer;
@@ -95,6 +94,9 @@
             width: 120px;
             height: 120px;
             object-fit: cover;
+        }
+        .product-card.hidden {
+            display: none;
         }
         .info-bar {
             display: flex;
@@ -177,19 +179,44 @@
             font-size: 24px;
             cursor: pointer;
         }
-        .hidden {
+        .product-card-container {
+            position: relative;
+            display: inline-block;
+            background-color: #ffd700;
+            padding: 0.5rem;
+            margin: 0.5rem;
+            text-align: center;
+            width: calc(33% - 1rem);
+            box-sizing: border-box;
+        }
+        .product-card-container img {
+            max-width: 100%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+        .product-card-container button {
+            border: none;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            font-size: 16px;
+        }
+        .hidden-options {
             display: none;
+            text-align: center;
+        }
+        .hidden-options .product-card {
+            width: calc(33% - 1rem);
         }
         @media (max-width: 768px) {
-            .product-card {
+            .product-card-container {
                 width: calc(50% - 1rem);
-            }
-            .slideshow-container {
-                height: auto;
             }
         }
         @media (max-width: 480px) {
-            .product-card {
+            .product-card-container {
                 width: calc(100% - 1rem);
             }
             .subscribe-section form {
@@ -232,37 +259,42 @@
 
         <section class="product-section">
             <h2>Productos</h2>
-            <div class="product-card" onclick="showRetroProducts()">
+            <div class="product-card-container">
                 <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                 <h3>Golden Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card" onclick="showRetroProducts()">
+            <div class="product-card-container">
                 <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                 <h3>Silver Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card" onclick="showRetroProducts()">
+            <div class="product-card-container">
                 <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                 <h3>Lover Silver Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card" onclick="toggleRetro()">
-                <img src="retro-blanco.jpg" alt="Retro White">
-                <h3>Retro White</h3>
-                <p>Precio: 18 soles</p>
+            <div class="product-card-container">
+                <button onclick="toggleRetroOptions()">Lentes Retro</button>
+                <div class="hidden-options" id="retro-options">
+                    <div class="product-card">
+                        <img src="retro-blanco.jpg" alt="Retro White">
+                        <h3>Retro White</h3>
+                        <p>Precio: 18 soles</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="retro-marrón.jpg" alt="Retro Brown">
+                        <h3>Retro Brown</h3>
+                        <p>Precio: 18 soles</p>
+                    </div>
+                                        <div class="product-card">
+                        <img src="reto-negro.jpg" alt="Retro Black">
+                        <h3>Retro Black</h3>
+                        <p>Precio: 18 soles</p>
+                    </div>
+                </div>
             </div>
-            <div class="product-card hidden" id="retro-brown">
-                <img src="retro-marrón.jpg" alt="Retro Brown">
-                <h3>Retro Brown</h3>
-                <p>Precio: 18 soles</p>
-            </div>
-            <div class="product-card hidden" id="retro-black">
-                <img src="retro-negro.jpg" alt="Retro Black">
-                <h3>Retro Black</h3>
-                <p>Precio: 18 soles</p>
-            </div>
-            <div class="product-card">
+            <div class="product-card-container">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
                 <h3>Lentes Elegantes</h3>
                 <p>Precio: 22 soles</p>
@@ -276,16 +308,16 @@
         </section>
 
         <section class="subscribe-section">
-            <h2>Suscríbete a nuestro boletín</h2>
-            <form action="/suscribirse" method="post">
-                <input type="email" name="email" placeholder="Ingresa tu correo electrónico">
+            <h2>Suscríbete</h2>
+            <form>
+                <input type="email" placeholder="Ingresa tu correo">
                 <button type="submit">Suscribirse</button>
             </form>
         </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>Somos SUTEPRA, apasionados por ofrecer los mejores accesorios que reflejan tu estilo único.</p>
+            <p>En SUTEPRA, nos especializamos en ofrecer accesorios únicos y elegantes que resaltan tu estilo personal. Cada pieza es seleccionada con cuidado para garantizar la mejor calidad y diseño.</p>
         </section>
 
         <section id="contacto">
@@ -306,36 +338,32 @@
     </div>
 
     <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("mySlides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 2000); // Cambia cada 2 segundos
-        }
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
 
-        function toggleRetro() {
-            let retroProducts = document.querySelectorAll('#retro-brown, #retro-black');
-            retroProducts.forEach(product => {
-                if (product.classList.contains('hidden')) {
-                    product.classList.remove('hidden');
-                } else {
-                    product.classList.add('hidden');
-                }
-            });
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (let slide of slides) {
+                slide.style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function toggleRetroOptions() {
+            const retroOptions = document.getElementById("retro-options");
+            if (retroOptions.style.display === "block") {
+                retroOptions.style.display = "none";
+            } else {
+                retroOptions.style.display = "block";
+            }
         }
     </script>
 </body>
 </html>
+
