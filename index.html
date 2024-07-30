@@ -49,7 +49,6 @@
         }
 
         .product-card {
-            position: relative;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -182,7 +181,7 @@
             padding: 0.5rem 1rem;
             border: none;
             border-radius: 5px;
-            background-color: #007bff; /* Azul */
+            background-color: #d4af37; /* Dorado */
             color: #fff;
             font-size: 1rem;
             cursor: pointer;
@@ -190,7 +189,7 @@
         }
 
         .subscribe-section button:hover {
-            background-color: #0056b3; /* Azul oscuro */
+            background-color: #b5962f; /* Dorado oscuro */
         }
 
         .info-bar {
@@ -239,27 +238,6 @@
         .no-underline {
             text-decoration: none;
         }
-
-        /* Descripción emergente */
-        .product-card:hover .description {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .description {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 1rem;
-            font-size: 0.9rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -277,17 +255,8 @@
     </section>
 
     <main>
-        <!-- Barra de información -->
-        <div class="info-bar">
-            <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fas fa-lock"></i> PAGOS ENCRIPTADOS</div>
-            <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
-        </div>
-
-        <!-- Sección de productos -->
         <section id="productos">
-            <h2>Nuestros Productos</h2>
-            <!-- Categoría: Brazaletes Italianos -->
+            <h2>Productos Destacados</h2>
             <div class="product-card">
                 <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
                 <h3>Brazaletes Italianos</h3>
@@ -297,24 +266,19 @@
                         <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                         <h3>Golden Bracelet</h3>
                         <p>Precio: 40 soles</p>
-                        <div class="description">Elegante brazalete dorado italiano.</div>
                     </div>
                     <div class="product-card">
                         <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                         <h3>Lover Silver Bracelet</h3>
                         <p>Precio: 40 soles</p>
-                        <div class="description">Brazalete plateado con encanto.</div>
                     </div>
                     <div class="product-card">
                         <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                         <h3>Silver Bracelet</h3>
                         <p>Precio: 40 soles</p>
-                        <div class="description">Elegante brazalete plateado italiano.</div>
                     </div>
                 </div>
             </div>
-
-            <!-- Categoría: Lentes Retro -->
             <div class="product-card">
                 <img src="lentes-retro.jpg" alt="Lentes Retro">
                 <h3>Lentes Retro</h3>
@@ -323,74 +287,95 @@
                     <div class="product-card">
                         <img src="retro-marrón.jpg" alt="Retro Brown">
                         <h3>Retro Brown</h3>
-                        <div class="description">Lentes retro color marrón.</div>
                     </div>
                     <div class="product-card">
                         <img src="reto-negro.jpg" alt="Retro Black">
                         <h3>Retro Black</h3>
-                        <div class="description">Lentes retro color negro.</div>
                     </div>
                     <div class="product-card">
                         <img src="retro-blanco.jpg" alt="Retro White">
                         <h3>Retro White</h3>
-                        <div class="description">Lentes retro color blanco.</div>
                     </div>
                 </div>
             </div>
-
-            <!-- Categoría: Lentes Elegantes -->
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
                 <h3>Lentes Elegantes</h3>
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                        <h3>Lentes Elegantes</h3>
-                        <div class="description">Lentes elegantes de alta calidad.</div>
+                        <img src="lentes-sofisticado.jpg" alt="Sofisticado">
+                        <h3>Sofisticado</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de suscripción -->
-        <div class="subscribe-section">
-            <h3>Suscríbete para recibir nuestras novedades</h3>
-            <form action="#" method="post">
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <button type="submit">Suscribirse</button>
-            </form>
+        <!-- Información destacada -->
+        <div class="info-bar">
+            <div>
+                <i class="fas fa-shipping-fast"></i>
+                <span>ENVÍOS A NIVEL NACIONAL</span>
+            </div>
+            <div>
+                <i class="fas fa-lock"></i>
+                <span>PAGOS ENCRIPTADOS</span>
+            </div>
+            <div>
+                <i class="fas fa-headset"></i>
+                <span>ATENCIÓN AL CLIENTE</span>
+            </div>
         </div>
 
-        <!-- Sección de contacto -->
+        <section id="acerca-de-nosotros">
+            <h2>Acerca de Nosotros</h2>
+            <p>En SUTEPRA, nos apasiona la moda y los accesorios. Desde nuestros inicios, hemos buscado ofrecer productos de alta calidad que realcen el estilo de nuestros clientes. Cada uno de nuestros artículos es cuidadosamente seleccionado para asegurar que cumpla con nuestros estándares de elegancia y sofisticación.</p>
+        </section>
+
         <section id="contacto">
             <h2>Contacto</h2>
             <ul>
-                <li><a href="mailto:info@sutepra.com"><i class="fas fa-envelope"></i> Email: info@sutepra.com</a></li>
-                <li><a href="tel:+123456789"><i class="fas fa-phone"></i> Teléfono: +123456789</a></li>
-                <li><a href="https://www.instagram.com/sutepra" target="_blank" class="no-underline"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li>
+                    <a href="mailto:info@sutepra.com" class="no-underline">
+                        <i class="fas fa-envelope"></i> info@sutepra.com
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+1234567890" class="no-underline">
+                        <i class="fas fa-phone"></i> +1 234 567 890
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/sutepra.ac/?hl=es" class="no-underline" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </li>
             </ul>
         </section>
-    </main>
 
-    <!-- Botón de WhatsApp -->
-    <div class="whatsapp-button">
-        <a href="https://wa.me/1234567890" target="_blank" class="no-underline">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+        <section class="subscribe-section">
+            <h2>Suscríbete para recibir ofertas exclusivas</h2>
+            <form>
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
-        // Script para el acordeón
-        var acc = document.getElementsByClassName("accordion");
-        for (var i = 0; i < acc.length; i++) {
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
-                var panel = this.nextElementSibling;
+                const panel = this.nextElementSibling;
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
                 } else {
