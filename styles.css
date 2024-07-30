@@ -161,20 +161,14 @@ nav a {
 
 .subscribe-section button {
     padding: 0.5rem 1rem;
-    border: none;
     background-color: #333;
     color: #fff;
+    border: none;
     cursor: pointer;
-    margin-top: 1rem;
 }
 
-#acerca-de-nosotros, #contacto {
-    padding: 2rem;
-    text-align: center;
-}
-
-#acerca-de-nosotros h2, #contacto h2 {
-    margin: 0;
+.subscribe-section button:hover {
+    background-color: #555;
 }
 
 footer {
@@ -191,14 +185,15 @@ footer {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    background-color: #25D366;
+    background-color: #25d366;
     color: #fff;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 50%;
-    font-size: 24px;
     cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-.whatsapp-button i {
-    font-size: 24px;
+.whatsapp-button:hover {
+    background-color: #128c7e;
 }
