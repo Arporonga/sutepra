@@ -275,8 +275,9 @@
                     </div>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="retro.jpg" alt="Lentes Retro">
+                <img src="lentes-retro.jpg" alt="Lentes Retro">
                 <h3>Lentes Retro</h3>
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
@@ -286,36 +287,34 @@
                     </div>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="elegantes.jpg" alt="Lentes Elegantes">
+                <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
                 <h3>Lentes Elegantes</h3>
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
-                    <div class="product-card">
-                        <img src="sofisticado.jpg" alt="Sofisticado">
-                        <h3>Sofisticado</h3>
-                    </div>
+                    <!-- Opciones para lentes elegantes si las hay -->
                 </div>
             </div>
         </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos apasiona ofrecer accesorios que no solo complementen tu estilo, sino que también reflejen tu personalidad única. Nuestro objetivo es brindarte productos de la más alta calidad que te hagan sentir especial.</p>
+            <p>Somos SUTEPRA, una marca dedicada a ofrecer accesorios de alta calidad y diseño. Nos enorgullece ofrecer productos que combinan elegancia y sofisticación para realzar tu estilo personal.</p>
         </section>
 
-        <div class="subscribe-section">
+        <section class="subscribe-section">
             <h2>Suscríbete a nuestro boletín</h2>
             <p>Recibe las últimas noticias y ofertas especiales directamente en tu bandeja de entrada.</p>
-            <form>
-                <input type="email" placeholder="Introduce tu correo electrónico" required>
+            <form action="#" method="post">
+                <input type="email" placeholder="Tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
             </form>
-        </div>
+        </section>
 
         <div class="info-bar">
             <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fa fa-lock"></i> PAGO SEGURO</div>
+            <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
             <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
         </div>
     </main>
@@ -325,20 +324,24 @@
     </footer>
 
     <div class="whatsapp-button">
-        <a href="https://wa.me/1234567890" class="no-underline"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/1234567890" target="_blank" class="no-underline"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script>
-        document.querySelectorAll('.accordion').forEach(function (button) {
-            button.addEventListener('click', function () {
-                const panel = this.nextElementSibling;
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
                 } else {
                     panel.style.display = "block";
                 }
             });
-        });
+        }
     </script>
 </body>
 </html>
