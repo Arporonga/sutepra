@@ -194,6 +194,7 @@
 
         .info-bar {
             display: flex;
+            flex-direction: column;
             justify-content: space-around;
             background-color: #fff; /* Blanco */
             padding: 1rem 0;
@@ -208,10 +209,11 @@
             font-size: 1.2rem;
             max-width: 300px;
             text-align: center;
+            margin: 0.5rem auto;
         }
 
         .info-bar i {
-            font-size: 1.5rem; /* Tamaño reducido de los íconos */
+            font-size: 2rem; /* Tamaño reducido de los íconos */
             margin-right: 0.75rem;
             color: #d4af37; /* Dorado */
         }
@@ -237,6 +239,12 @@
 
         .no-underline {
             text-decoration: none;
+        }
+
+        @media (min-width: 768px) {
+            .info-bar {
+                flex-direction: row;
+            }
         }
     </style>
 </head>
@@ -264,14 +272,12 @@
                     <div class="product-card">
                         <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                         <h3>Golden Bracelet</h3>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                        <h3>Silver Bracelet</h3>
+                        <p>Precio: 40 soles</p>
                     </div>
                     <div class="product-card">
                         <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                         <h3>Lover Silver Bracelet</h3>
+                        <p>Precio: 40 soles</p>
                     </div>
                 </div>
             </div>
@@ -283,66 +289,87 @@
                     <div class="product-card">
                         <img src="retro-marrón.jpg" alt="Retro Brown">
                         <h3>Retro Brown</h3>
+                        <p>Precio: 18 soles</p>
                     </div>
                     <div class="product-card">
-                        <img src="reto-negro.jpg" alt="Retro Black">
+                        <img src="retro-negro.jpg" alt="Retro Black">
                         <h3>Retro Black</h3>
+                        <p>Precio: 18 soles</p>
                     </div>
                     <div class="product-card">
                         <img src="retro-blanco.jpg" alt="Retro White">
                         <h3>Retro White</h3>
+                        <p>Precio: 18 soles</p>
                     </div>
                 </div>
             </div>
             <div class="product-card">
                 <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
                 <h3>Lentes Elegantes</h3>
+                <button class="accordion">Mostrar Opciones</button>
+                <div class="panel">
+                    <div class="product-card">
+                        <img src="lentes-sofisticados.jpg" alt="Sophisticated Glasses">
+                        <h3>Sophisticated Glasses</h3>
+                        <p>Precio: 22 soles</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <div class="info-bar">
+            <div><i class="fas fa-shipping-fast"></i>ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fas fa-lock"></i>COMPRA SEGURA</div>
+            <div><i class="fas fa-headset"></i>ASESORÍA PERSONAL</div>
+        </div>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nuestra misión es ofrecerte accesorios de alta calidad que reflejen tu estilo personal. Cada pieza es cuidadosamente seleccionada para garantizar la mejor combinación de elegancia y sofisticación.</p>
+            <p>En SUTEPRA, nos apasiona ofrecer accesorios de alta calidad que complementen tu estilo personal. Nuestra colección incluye brazaletes italianos, lentes retro y lentes elegantes, seleccionados cuidadosamente para satisfacer los gustos más exigentes. Nos esforzamos por proporcionar una experiencia de compra excepcional, con envíos a nivel nacional, compra segura y asesoría personalizada.</p>
         </section>
 
-        <section id="contacto">
+        <div id="contacto">
             <h2>Contacto</h2>
-            <div class="subscribe-section">
-                <h3>Suscríbete a nuestro boletín</h3>
-                <input type="email" placeholder="Ingresa tu correo electrónico">
-                <button>Suscribirse</button>
-            </div>
-            <div class="info-bar">
-                <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-                <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
-                <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
-            </div>
+            <ul>
+                <li><a href="https://wa.me/tu-numero-de-telefono" target="_blank" class="no-underline"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
+                <li><a href="mailto:tu-correo-electronico" class="no-underline"><i class="fas fa-envelope"></i>Email</a></li>
+                <li><a href="https://www.instagram.com/tu-cuenta-de-instagram" target="_blank" class="no-underline"><i class="fab fa-instagram"></i>Instagram</a></li>
+            </ul>
+        </div>
+
+        <section class="subscribe-section">
+            <h2>Suscríbete a Nuestro Boletín</h2>
+            <form>
+                <input type="email" placeholder="Ingresa tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
-    </footer>
-
     <div class="whatsapp-button">
-        <a href="https://wa.me/tu_numero" class="no-underline"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/tu-numero-de-telefono" target="_blank" class="no-underline">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
-    <script>
-        // JavaScript para acordeones
-        const accordions = document.querySelectorAll(".accordion");
+    <footer>
+        &copy; 2023 SUTEPRA. Todos los derechos reservados.
+    </footer>
 
-        accordions.forEach(acc => {
-            acc.addEventListener("click", function() {
+    <script>
+        // JavaScript para la funcionalidad del acordeón
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
-                const panel = this.nextElementSibling;
+                var panel = this.nextElementSibling;
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
                 } else {
                     panel.style.display = "block";
                 }
             });
-        });
+        }
     </script>
 </body>
 </html>
