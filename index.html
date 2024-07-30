@@ -177,6 +177,9 @@
             font-size: 24px;
             cursor: pointer;
         }
+        .hidden {
+            display: none;
+        }
         @media (max-width: 768px) {
             .product-card {
                 width: calc(50% - 1rem);
@@ -218,7 +221,7 @@
                 <img src="panel2.jpg" alt="Panel 2">
             </div>
             <div class="mySlides">
-                <img src="panel3.jpg .jpg" alt="Panel 3">
+                <img src="panel3.jpg" alt="Panel 3">
             </div>
             <div class="mySlides">
                 <img src="panel4.jpg" alt="Panel 4">
@@ -229,39 +232,34 @@
 
         <section class="product-section">
             <h2>Productos</h2>
-            <div class="product-card">
+            <div class="product-card" onclick="showRetroProducts()">
                 <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                 <h3>Golden Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card">
+            <div class="product-card" onclick="showRetroProducts()">
                 <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                 <h3>Silver Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card">
+            <div class="product-card" onclick="showRetroProducts()">
                 <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                 <h3>Lover Silver Bracelet</h3>
                 <p>Precio: 40 soles</p>
             </div>
-            <div class="product-card">
+            <div class="product-card" onclick="toggleRetro()">
                 <img src="retro-blanco.jpg" alt="Retro White">
                 <h3>Retro White</h3>
                 <p>Precio: 18 soles</p>
             </div>
-            <div class="product-card">
+            <div class="product-card hidden" id="retro-brown">
                 <img src="retro-marrón.jpg" alt="Retro Brown">
                 <h3>Retro Brown</h3>
                 <p>Precio: 18 soles</p>
             </div>
-            <div class="product-card">
+            <div class="product-card hidden" id="retro-black">
                 <img src="retro-negro.jpg" alt="Retro Black">
                 <h3>Retro Black</h3>
-                <p>Precio: 18 soles</p>
-            </div>
-            <div class="product-card">
-                <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3>Lentes Retro</h3>
                 <p>Precio: 18 soles</p>
             </div>
             <div class="product-card">
@@ -326,6 +324,17 @@
 
         function plusSlides(n) {
             showSlides(slideIndex += n);
+        }
+
+        function toggleRetro() {
+            let retroProducts = document.querySelectorAll('#retro-brown, #retro-black');
+            retroProducts.forEach(product => {
+                if (product.classList.contains('hidden')) {
+                    product.classList.remove('hidden');
+                } else {
+                    product.classList.add('hidden');
+                }
+            });
         }
     </script>
 </body>
