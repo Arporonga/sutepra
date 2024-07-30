@@ -7,22 +7,21 @@
     <meta name="description" content="SUTEPRA ofrece una cuidada selección de accesorios elegantes, incluyendo brazaletes italianos, lentes retro y elegantes.">
     <meta name="keywords" content="accesorios, brazaletes italianos, lentes retro, lentes elegantes, moda, SUTEPRA">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
     <style>
         /* Estilos generales */
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             color: #333;
         }
 
         nav {
-            background-color: #000;
+            background-color: #222;
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
         }
 
         nav a {
@@ -31,11 +30,12 @@
             text-decoration: none;
             display: inline-block;
             font-size: 1.1rem;
-            transition: color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         nav a:hover {
-            color: #d4af37; /* Color dorado para el hover */
+            background-color: #444;
+            border-radius: 5px;
         }
 
         main {
@@ -112,17 +112,17 @@
         }
 
         #contacto a:hover {
-            color: #d4af37; /* Color dorado para el hover */
+            color: #007bff;
         }
 
         .fa {
             font-size: 2rem;
             margin-right: 0.75rem;
-            color: #d4af37; /* Color dorado para los íconos */
+            color: #333;
         }
 
         .accordion {
-            background-color: #000;
+            background-color: #333;
             color: #fff;
             cursor: pointer;
             padding: 1rem;
@@ -135,7 +135,7 @@
         }
 
         .accordion:hover {
-            background-color: #333;
+            background-color: #555;
         }
 
         .panel {
@@ -181,7 +181,7 @@
             padding: 0.5rem 1rem;
             border: none;
             border-radius: 5px;
-            background-color: #d4af37; /* Dorado */
+            background-color: #007bff;
             color: #fff;
             font-size: 1rem;
             cursor: pointer;
@@ -189,13 +189,13 @@
         }
 
         .subscribe-section button:hover {
-            background-color: #b5962f; /* Dorado oscuro */
+            background-color: #0056b3;
         }
 
         .info-bar {
             display: flex;
             justify-content: space-around;
-            background-color: #fff; /* Blanco */
+            background-color: #f8f8f8; /* Color crema */
             padding: 1rem 0;
             border-bottom: 1px solid #ddd;
             margin-bottom: 2rem;
@@ -213,7 +213,7 @@
         .info-bar i {
             font-size: 2rem;
             margin-right: 0.75rem;
-            color: #d4af37; /* Dorado */
+            color: #333;
         }
 
         .whatsapp-button {
@@ -275,32 +275,35 @@
                     </div>
                 </div>
             </div>
+
             <div class="product-card">
                 <img src="retro.jpg" alt="Lentes Retro">
                 <h3>Lentes Retro</h3>
                 <button class="accordion">Mostrar Opciones</button>
                 <div class="panel">
                     <div class="product-card">
-                        <img src="retro-marrón.jpg" alt="Retro Brown">
+                        <img src="retro-marron.jpg" alt="Retro Brown">
                         <h3>Retro Brown</h3>
                     </div>
                 </div>
             </div>
+
             <div class="product-card">
-                <img src="elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Lentes Elegantes</h3>
+                <img src="sofisticado.jpg" alt="Lentes Sofisticado">
+                <h3>Lentes Sofisticado</h3>
+                <p>Elegancia y sofisticación en cada mirada.</p>
             </div>
         </section>
 
         <section id="acerca-de-nosotros">
             <h2>Acerca de Nosotros</h2>
-            <p>En SUTEPRA, nos apasiona ofrecer accesorios que no solo complementen tu estilo, sino que también reflejen tu personalidad única. Nuestro objetivo es brindarte productos de la más alta calidad que te hagan sentir especial.</p>
+            <p>SUTEPRA es una marca dedicada a ofrecer accesorios elegantes y de alta calidad. Con una pasión por la moda y un compromiso con la excelencia, nuestros productos están diseñados para realzar tu estilo personal.</p>
         </section>
 
         <div class="subscribe-section">
-            <h2>Suscríbete a nuestro boletín</h2>
-            <p>Recibe las últimas noticias y ofertas especiales directamente en tu bandeja de entrada.</p>
-            <form>
+            <h2>Suscríbete a Nuestro Boletín</h2>
+            <p>Recibe las últimas noticias y ofertas directamente en tu bandeja de entrada.</p>
+            <form action="#" method="post">
                 <input type="email" placeholder="Introduce tu correo electrónico" required>
                 <button type="submit">Suscribirse</button>
             </form>
@@ -308,7 +311,7 @@
 
         <div class="info-bar">
             <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fa fa-lock"></i> PAGO SEGURO</div>
+            <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
             <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
         </div>
     </main>
@@ -318,19 +321,27 @@
     </footer>
 
     <div class="whatsapp-button">
-        <a href="https://wa.me/1234567890" class="no-underline"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/your-number" target="_blank" class="no-underline">
+            <i class="fa fa-whatsapp"></i>
+        </a>
     </div>
 
     <script>
-        document.querySelectorAll('.accordion').forEach(function (button) {
-            button.addEventListener('click', function () {
-                const panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
+        document.addEventListener("DOMContentLoaded", function() {
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
         });
     </script>
 </body>
