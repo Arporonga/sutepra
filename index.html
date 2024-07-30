@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SUTEPRA - Accesorios únicos para destacar tu estilo.">
     <title>SUTEPRA - Accesorios Únicos</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Vinculación al archivo CSS -->
 </head>
 <body>
     <nav>
@@ -84,14 +84,14 @@
 
         <section class="info-bar">
             <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-            <div><i class="fa fa-lock"></i> PAGO SEGURO</div>
+            <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
             <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
         </section>
 
         <section class="subscribe-section">
-            <h2>Suscríbete a nuestro boletín</h2>
-            <form action="#" method="post">
-                <input type="email" name="email" placeholder="Tu correo electrónico">
+            <h2>Suscríbete</h2>
+            <form>
+                <input type="email" placeholder="Ingresa tu correo">
                 <button type="submit">Suscribirse</button>
             </form>
         </section>
@@ -115,9 +115,35 @@
     </footer>
 
     <div class="whatsapp-button">
-        <a href="https://wa.me/123456789" target="_blank"><i class="fa fa-whatsapp"></i></a>
+        <i class="fa fa-whatsapp"></i>
     </div>
 
-    <script src="scripts.js"></script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (let slide of slides) {
+                slide.style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function toggleRetroOptions() {
+            const retroOptions = document.getElementById("retro-options");
+            if (retroOptions.style.display === "block") {
+                retroOptions.style.display = "none";
+            } else {
+                retroOptions.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
