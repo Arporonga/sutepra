@@ -51,6 +51,42 @@
             margin-bottom: 2rem;
         }
 
+        /* Estilo para la imagen de bienvenida */
+        #bienvenida {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            background-color: #000; /* Color negro */
+            height: 500px; /* Espacio grande para el posible video */
+            background-image: url('imagen-bienvenida.jpg'); /* Cambia esto por la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #bienvenida h2, #bienvenida p {
+            position: relative;
+            z-index: 2;
+        }
+
+        #bienvenida a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            z-index: 2;
+        }
+
+        #bienvenida a:hover {
+            background-color: #d4af37; /* Dorado */
+        }
+
         .product-card {
             background-color: #fff;
             border-radius: 10px;
@@ -59,11 +95,7 @@
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            width: 100%;
         }
 
         .product-card img {
@@ -242,71 +274,83 @@
             text-decoration: none;
         }
 
-        /* Estilos para la sección de bienvenida */
-        #bienvenida {
+        /* Estilo para la disposición cuadrada de los productos */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             text-align: center;
-            padding: 4rem 2rem; /* Aumentar el padding para más espacio */
-            background-color: #000; /* Fondo negro */
-            color: #fff;
+        }
+
+        .hidden-preview {
+            display: none;
         }
     </style>
 </head>
 <body>
     <nav>
         <a href="#bienvenida">Inicio</a>
-        <a href="#productos">Productos</a>
-        <a href="#acerca-de-nosotros">Acerca de Nosotros</a>
+                <a href="#productos">Productos</a>
+        <a href="#acerca">Acerca de Nosotros</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- Sección de bienvenida -->
-    <section id="bienvenida">
-        <h2>Bienvenido a SUTEPRA</h2>
-        <p>Descubre nuestra exclusiva colección de accesorios que realzan tu estilo. ¡Explora nuestras categorías y encuentra el complemento perfecto para ti!</p>
-        <a href="#productos" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #fff; color: #000; text-decoration: none; border-radius: 5px; font-size: 1.1rem; transition: background-color 0.3s ease;">Ver Productos</a>
-    </section>
-
     <main>
+        <!-- Sección de Bienvenida -->
+        <section id="bienvenida">
+            <div>
+                <h2>Bienvenido a SUTEPRA</h2>
+                <p>Descubre nuestros accesorios exclusivos y eleva tu estilo.</p>
+                <a href="#productos">Ver Productos</a>
+            </div>
+        </section>
+
+        <!-- Barra de Información -->
+        <div class="info-bar">
+            <div><i class="fas fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
+            <div><i class="fas fa-lock"></i> PAGOS ENCRIPTADOS</div>
+            <div><i class="fas fa-headset"></i> ATENCIÓN AL CLIENTE</div>
+        </div>
+
+        <!-- Sección de Productos -->
         <section id="productos">
-            <h2>Productos Destacados</h2>
-            <div class="product-card">
-                <img src="brazalete-italiano.jpg" alt="Brazalete Italiano">
-                               <h3>Brazaletes Italianos</h3>
-                <p><button class="accordion">Ver Opciones</button></p>
-                <div class="panel">
+            <h2>Nuestros Productos</h2>
+
+            <!-- Sección de Brazaletes Italianos -->
+            <button class="accordion">Brazaletes Italianos</button>
+            <div class="panel">
+                <div class="product-grid">
                     <div class="product-card">
                         <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
                         <h3>Golden Bracelet</h3>
                         <p>Precio: 40 soles</p>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                        <h3>Silver Bracelet</h3>
-                        <p><button class="view-options" onclick="toggleSilverBracelet()">Otras Opciones</button></p>
-                        <div id="silver-bracelet" style="display: none;">
+                        <button class="show-more" onclick="toggleVisibility('brazalete-plateado')">Otras Opciones</button>
+                        <div id="brazalete-plateado" class="hidden-preview">
                             <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                            <p>Más detalles sobre el Silver Bracelet.</p>
+                            <h3>Silver Bracelet</h3>
+                            <p>Precio: 40 soles</p>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
-                        <h3>Lover Silver Bracelet</h3>
-                        <p>Precio: 40 soles</p>
                     </div>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="lentes-retro.jpg" alt="Lentes Retro">
-                <h3>Lentes Retro</h3>
-                <p><button class="accordion">Ver Opciones</button></p>
-                <div class="panel">
+
+            <!-- Sección de Lentes Retro -->
+            <button class="accordion">Lentes Retro</button>
+            <div class="panel">
+                <div class="product-grid">
                     <div class="product-card">
                         <img src="retro-marrón.jpg" alt="Retro Brown">
                         <h3>Retro Brown</h3>
                         <p>Precio: 18 soles</p>
                     </div>
                     <div class="product-card">
-                        <img src="retro-negro.jpg" alt="Retro Black">
+                        <img src="reto-negro.jpg" alt="Retro Black">
                         <h3>Retro Black</h3>
                         <p>Precio: 18 soles</p>
                     </div>
@@ -317,37 +361,44 @@
                     </div>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="lentes-elegantes.jpg" alt="Lentes Elegantes">
-                <h3>Lentes Elegantes</h3>
-                <p>Precio: 22 soles</p>
+
+            <!-- Sección de Lentes Elegantes -->
+            <button class="accordion">Lentes Elegantes</button>
+            <div class="panel">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="lentes-elegantes.jpg" alt="Elegant Lenses">
+                        <h3>Elegant Lenses</h3>
+                        <p>Precio: 22 soles</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="acerca-de-nosotros">
+        <!-- Sección de Acerca de Nosotros -->
+        <section id="acerca">
             <h2>Acerca de Nosotros</h2>
-            <p>SUTEPRA es una marca dedicada a ofrecer accesorios de moda premium. Nuestra misión es proporcionar productos de alta calidad que complementen tu estilo personal y te hagan sentir único. Explora nuestras categorías y descubre por qué somos la opción preferida para quienes buscan elegancia y distinción.</p>
+            <p>En SUTEPRA, nos dedicamos a ofrecer accesorios de alta calidad que te ayudan a destacar. Nuestra pasión por la moda nos impulsa a seleccionar cada pieza con cuidado y dedicación. Descubre cómo nuestros productos pueden mejorar tu estilo personal.</p>
         </section>
-        
+
+        <!-- Sección de Contacto -->
         <section id="contacto">
-            <div class="info-bar">
-                <div><i class="fa fa-truck"></i> ENVÍOS A NIVEL NACIONAL</div>
-                <div><i class="fa fa-lock"></i> PAGOS ENCRIPTADOS</div>
-                <div><i class="fa fa-headset"></i> ATENCIÓN AL CLIENTE</div>
-            </div>
+            <h2>Contacto</h2>
             <div id="contacto">
-                <h2>Contacto</h2>
                 <ul>
-                    <li><a href="mailto:info@sutepra.com"><i class="fa fa-envelope"></i> info@sutepra.com</a></li>
-                    <li><a href="tel:+123456789"><i class="fa fa-phone"></i> +123 456 789</a></li>
+                    <li><a href="mailto:contacto@sutepra.com"><i class="fas fa-envelope"></i> contacto@sutepra.com</a></li>
+                    <li><a href="tel:+123456789"><i class="fas fa-phone"></i> +123 456 789</a></li>
                 </ul>
             </div>
         </section>
 
+        <!-- Sección de Suscripción -->
         <section class="subscribe-section">
             <h2>Suscríbete a nuestro boletín</h2>
-            <input type="email" placeholder="Introduce tu correo electrónico">
-            <button>Suscribirse</button>
+            <form action="subscribe.php" method="post">
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
         </section>
     </main>
 
@@ -355,24 +406,38 @@
         <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Botón de WhatsApp -->
     <div class="whatsapp-button">
-        <a href="https://wa.me/123456789" class="no-underline" target="_blank">
-            <i class="fa fa-whatsapp"></i>
-        </a>
+        <a href="https://wa.me/1234567890" class="no-underline"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script>
-        document.querySelectorAll('.accordion').forEach(button => {
-            button.addEventListener('click', () => {
-                const panel = button.nextElementSibling;
-                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-            });
-        });
+        // Script para manejar la visibilidad del producto Silver Bracelet
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
 
-        function toggleSilverBracelet() {
-            const silverBracelet = document.getElementById('silver-bracelet');
-            silverBracelet.style.display = silverBracelet.style.display === 'block' ? 'none' : 'block';
+        // Script para manejar los acordeones
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
         }
     </script>
 </body>
 </html>
+
