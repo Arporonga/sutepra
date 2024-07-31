@@ -1,26 +1,15 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+document.addEventListener('DOMContentLoaded', () => {
+    // Ejemplo: Cambiar el texto del slider cada 5 segundos
+    const sliderText = document.querySelector('.slider-text');
+    const texts = [
+        'Accesorios que destacan tu estilo único',
+        'Novedades y tendencias',
+        'Estilo y elegancia en cada detalle'
+    ];
+    let index = 0;
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
-}
-
-function toggleRetroOptions() {
-    const retroOptions = document.getElementById("retro-options");
-    if (retroOptions.style.display === "none" || retroOptions.style.display === "") {
-        retroOptions.style.display = "block";
-    } else {
-        retroOptions.style.display = "none";
-    }
-}
+    setInterval(() => {
+        index = (index + 1) % texts.length;
+        sliderText.textContent = texts[index];
+    }, 5000);
+});
