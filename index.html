@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUTEPRA - Accesorios</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Didot:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Didot:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <div class="header">
-        SUTEPRA
-    </div>
-    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#acerca-de">Acerca de Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- Slider -->
     <div class="slider">
         <div class="slider-images">
@@ -22,26 +29,46 @@
             <img src="panel4.jpg" class="slider-image" alt="Imagen 4">
         </div>
         <div class="slider-text">Accesorios que destacan tu estilo único</div>
+        <div class="slider-brand">SUTEPRA</div>
     </div>
 
     <!-- Productos -->
     <section id="productos">
         <h2>Productos</h2>
-        <div class="producto">
-            <img src="brazalete-corazon.jpg" alt="Silver Love Bracelet">
-            <h3>Silver Love Corazón</h3>
-            <span>Precio: 37 soles</span>
+        <div class="productos-container">
+            <div class="producto">
+                <img src="brazalete-corazon.jpg" alt="Silver Love Bracelet">
+                <h3>Silver Love Corazón</h3>
+                <span>Precio: 37 soles</span>
+            </div>
+            <div class="producto">
+                <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
+                <h3>Golden Bracelet</h3>
+                <span>Precio: 42 soles</span>
+            </div>
+            <div class="producto">
+                <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
+                <h3>Silver Corazón</h3>
+                <span>Precio: 37 soles</span>
+            </div>
+            <!-- Agrega más productos aquí -->
         </div>
-        <div class="producto">
-            <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-            <h3>Golden Bracelet</h3>
-            <span>Precio: 42 soles</span>
-        </div>
-        <div class="producto">
-            <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-            <h3>Silver Corazón</h3>
-            <span>Precio: 37 soles</span>
-        <!-- Agrega más productos aquí -->
+    </section>
+
+    <!-- Barra de Información -->
+    <div class="info-bar">
+        <span><img src="icono-envios.svg" alt="Envíos" class="info-icon"> ENVÍOS A NIVEL NACIONAL</span>
+        <span><img src="icono-pagos.svg" alt="Pagos" class="info-icon"> PAGOS ENCRIPTADOS</span>
+        <span><img src="icono-atencion.svg" alt="Atención" class="info-icon"> ATENCIÓN PERSONALIZADA</span>
+    </div>
+
+    <!-- Suscripción -->
+    <section id="suscripcion">
+        <h2>Suscríbete a nuestro boletín</h2>
+        <form>
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <button type="submit">Suscribirse</button>
+        </form>
     </section>
 
     <!-- Acerca de Nosotros -->
@@ -53,23 +80,17 @@
     <!-- Contacto -->
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>Para consultas y pedidos, por favor contáctanos a través de nuestro correo electrónico o el botón de WhatsApp.</p>
-        <a href="mailto:contacto@sutepra.com" class="contact-email">contacto@sutepra.com</a>
-        <a href="https://wa.me/1234567890" class="contact-email" target="_blank">Contáctanos por WhatsApp</a>
+        <p>Para consultas y pedidos, por favor contáctanos a través de:</p>
+        <a href="mailto:contacto@sutepra.com" class="contact-email">Correo Electrónico</a>
+        <a href="https://wa.me/1234567890" class="contact-email" target="_blank">WhatsApp</a>
+        <a href="https://instagram.com/sutepra" class="contact-email" target="_blank">Instagram</a>
     </section>
-
-    <!-- Barra de Información -->
-    <div class="info-bar">
-        <span><img src="icono-envios.svg" alt="Envíos" class="info-icon"> ENVÍOS A NIVEL NACIONAL</span>
-        <span><img src="icono-pagos.svg" alt="Pagos" class="info-icon"> PAGOS ENCRIPTADOS</span>
-        <span><img src="icono-atencion.svg" alt="Atención" class="info-icon"> ATENCIÓN PERSONALIZADA</span>
-    </div>
 
     <!-- Footer -->
     <footer>
         &copy; 2024 SUTEPRA. Todos los derechos reservados.
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
