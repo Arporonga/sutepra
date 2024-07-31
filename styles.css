@@ -34,3 +34,42 @@ body {
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
 }
+
+#productos, #acerca-de, #contacto {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#productos h2, #acerca-de h2, #contacto h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.producto {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+}
+
+.producto h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.producto p {
+    font-size: 16px;
+    color: #666;
+}
+
+.producto span {
+    font-size: 20px;
+    font-weight: bold;
+}
