@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showImage(index) {
         images.forEach((img, i) => {
-            img.style.display = i === index ? 'block' : 'none';
+            img.classList.toggle('active', i === index);
         });
     }
 
