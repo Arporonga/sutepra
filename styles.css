@@ -83,3 +83,51 @@ body {
     font-size: 20px;
     font-weight: bold;
 }
+
+#acerca-de, #contacto {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#acerca-de h2, #contacto h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.whatsapp-button a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #25D366; /* Color de WhatsApp */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.whatsapp-button a:hover {
+    background-color: #128C7E; /* Color más oscuro de WhatsApp */
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.whatsapp-float img {
+    width: 60px;
+    height: 60px;
+}
+
+.info-bar {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+.info-bar span {
+    margin: 0 20px;
+}
