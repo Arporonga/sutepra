@@ -1,170 +1,118 @@
-/* Estilos generales */
+/* General Styles */
 body {
     font-family: 'Didot', serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    color: #333;
+    background-color: #f8f8f8;
 }
 
-/* Header */
 header {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 10px 0;
 }
 
-header nav ul {
-    list-style-type: none;
-    margin: 0;
+nav ul {
+    list-style: none;
     padding: 0;
-    text-align: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-header nav ul li {
-    display: inline;
+nav ul li {
     margin: 0 15px;
 }
 
-header nav ul li a {
-    color: white;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* Slider */
 .slider {
     position: relative;
-    height: 300px;
     overflow: hidden;
-    background-color: black;
-    color: white;
-    text-align: center;
+    height: 300px;
 }
 
 .slides {
     display: flex;
-    width: 400%;
-    height: 100%;
-    animation: slide 15s infinite;
+    transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-    width: 25%;
-    flex-shrink: 0;
-}
-
-.slide img {
-    width: 100%;
+    min-width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
 }
 
-.slider-text {
+.slider-controls {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
     font-size: 24px;
-    color: #fff;
-    font-weight: bold;
 }
 
-.slider-brand {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px;
-    color: #fff;
-    font-weight: bold;
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(0); }
-    33.33% { transform: translateX(-25%); }
-    58.33% { transform: translateX(-25%); }
-    66.66% { transform: translateX(-50%); }
-    91.66% { transform: translateX(-50%); }
-    100% { transform: translateX(-75%); }
-}
-
-/* Productos */
-section {
+#productos {
     padding: 20px;
 }
 
-h2 {
-    text-align: center;
-    font-size: 28px;
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
-.order-container {
-    text-align: center;
-    margin: 20px 0;
+.filter label {
+    margin-right: 10px;
 }
 
-.order-button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.order-button:hover {
-    background-color: #555;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    text-align: left;
-    background-color: #fff;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-}
-
-.dropdown-content a:hover {
-    background-color: #f5f5f5;
+.filter select {
+    padding: 5px;
 }
 
 .productos-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
 }
 
 .producto {
+    background-color: #fff;
     border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    width: 200px;
+    border-radius: 8px;
+    padding: 10px;
     text-align: center;
-    transition: transform 0.3s;
     cursor: pointer;
-}
-
-.producto:hover {
-    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .producto img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+
+.producto:hover {
+    transform: scale(1.05);
 }
 
 .producto h3 {
@@ -174,109 +122,87 @@ h2 {
 
 .producto span {
     font-size: 16px;
-    color: #333;
+    color: #555;
 }
 
-/* Barra de Información */
 .info-bar {
+    background-color: #333;
+    color: #fff;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 10px;
-    background-color: #f5f5f5;
+    padding: 10px 0;
 }
 
 .info-bar span {
+    margin: 0 15px;
     display: flex;
     align-items: center;
 }
 
 .info-icon {
-    margin-right: 8px;
+    margin-right: 5px;
 }
 
-/* Contacto */
-.contact-button {
-    display: inline-block;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    text-decoration: none;
+#suscripcion {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#suscripcion form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#suscripcion input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+#suscripcion button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
 }
 
-.email-button {
-    background-color: #4CAF50;
+#suscripcion button:hover {
+    background-color: #555;
 }
 
-.email-button:hover {
-    background-color: #45a049;
+#acerca-de {
+    padding: 20px;
+    text-align: center;
 }
 
-.whatsapp-button {
-    background-color: #25D366;
+#contacto {
+    padding: 20px;
+    text-align: center;
 }
 
-.whatsapp-button:hover {
-    background-color: #1ebe57;
+.contact-email {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 18px;
 }
 
-.instagram-button {
-    background-color: #C13584;
+.contact-email:hover {
+    text-decoration: underline;
 }
 
-.instagram-button:hover {
-    background-color: #a32a68;
-}
-
-/* Footer */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 10px 0;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-}
-
-.modal-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
