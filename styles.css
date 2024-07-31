@@ -280,3 +280,30 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Estilos específicos para pantallas grandes */
+@media (min-width: 1024px) {
+    .slider {
+        height: 400px;
+    }
+
+    .slider-text {
+        font-size: 36px;
+    }
+
+    .slider-brand {
+        font-size: 48px;
+    }
+
+    .productos-container {
+        justify-content: space-around;
+    }
+
+    .producto {
+        width: 250px;
+    }
+
+    .info-bar {
+        font-size: 18px;
+    }
+}
