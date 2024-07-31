@@ -11,5 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sliderImages[currentIndex].classList.add('active');
     }
 
+    // Ajusta el intervalo para mostrar imágenes solo entre panel.jpg y panel4.jpg
     setInterval(showNextImage, 4000); // Cambiar cada 4 segundos
 });
