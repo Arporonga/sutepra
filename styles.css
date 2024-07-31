@@ -22,8 +22,9 @@ body {
 .slider {
     position: relative;
     width: 100%;
-    height: 400px; /* Ajusta según sea necesario */
+    height: 500px; /* Altura mayor para pantallas grandes */
     overflow: hidden;
+    border-bottom: 2px solid #ddd; /* Línea sutil en la parte inferior */
 }
 
 .slider-images {
@@ -37,18 +38,21 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 1s ease-in-out;
 }
 
 .slider-text {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 30px;
+    left: 30px;
     color: #fff;
-    font-size: 24px;
+    font-size: 36px; /* Tamaño grande para pantallas grandes */
     font-family: 'Didot', serif;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
+    max-width: 80%; /* Ajusta el ancho máximo */
+    text-align: center;
 }
 
 /* Productos */
@@ -61,7 +65,7 @@ body {
 .producto {
     display: inline-block;
     margin: 10px;
-    width: calc(33.333% - 20px); /* Ajuste para 3 columnas */
+    width: calc(25% - 20px); /* Ajuste para 4 columnas */
     box-sizing: border-box;
 }
 
@@ -162,7 +166,7 @@ footer {
     }
 
     .slider-text {
-        font-size: 18px;
+        font-size: 24px;
         bottom: 15px;
         left: 15px;
     }
