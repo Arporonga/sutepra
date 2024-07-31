@@ -24,51 +24,55 @@
     <!-- Slider -->
     <div class="slider">
         <div class="slides">
-            <div class="slide" style="background-image: url('panel2.jpg');"></div>
-            <div class="slide" style="background-image: url('panel3.jpg');"></div>
-            <div class="slide" style="background-image: url('panel4.jpg');"></div>
+            <div class="slide">
+                <img src="panel2.jpg" alt="Panel 2">
+            </div>
+            <div class="slide">
+                <img src="panel4.jpg" alt="Panel 4">
+            </div>
+            <div class="slide">
+                <img src="panel3.jpg" alt="Panel 3">
+            </div>
         </div>
-        <div class="slider-controls">
-            <span class="prev" onclick="prevSlide()">&#10094;</span>
-            <span class="next" onclick="nextSlide()">&#10095;</span>
-        </div>
+        <div class="slider-text">Accesorios que destacan tu estilo único</div>
+        <div class="slider-brand">SUTEPRA</div>
     </div>
 
     <!-- Productos -->
     <section id="productos">
         <h2>Productos</h2>
-        <div class="filter">
-            <label for="sort">Ordenar por:</label>
-            <select id="sort" onchange="sortProducts()">
-                <option value="low-to-high">Precio: Más bajo a más alto</option>
-                <option value="high-to-low">Precio: Más alto a más bajo</option>
-            </select>
+        <div class="order-container">
+            <button id="order-button">Ordenar por Precio</button>
+            <div class="dropdown-content">
+                <a href="#" id="sort-low-to-high">Precio más Bajo a Alto</a>
+                <a href="#" id="sort-high-to-low">Precio más Alto a Bajo</a>
+            </div>
         </div>
-        <div class="productos-container">
-            <div class="producto" onclick="showDetails('lover-silver-bracelet')">
+        <div id="productos-container" class="productos-container">
+            <div class="producto" data-price="42" data-description="Descubre la elegancia del 'Butterfly Silver Bracelet', un brazalete de plata exquisitamente diseñado con un toque de feminidad. Este accesorio combina un diseño delicado con materiales de alta calidad, ideal para cualquier ocasión. Con un ancho de 9mm, es perfectamente combinable con charms y está fabricado en acero inoxidable para garantizar durabilidad y resistencia a la decoloración.">
+                <img src="brazalete-mariposa.jpg" alt="Butterfly Silver Bracelet">
+                <h3>Butterfly Silver Bracelet</h3>
+                <span>Precio: 42 soles</span>
+            </div>
+            <div class="producto" data-price="42" data-description="El 'Lover Silver Bracelet' es el epitome de la sofisticación. Este brazalete de plata destaca por su diseño atemporal y elegante, que resalta con cualquier conjunto. Con 9mm de ancho y fabricado en acero inoxidable, ofrece una combinación perfecta de belleza y funcionalidad, ideal para combinar con charms. Su acabado de alta calidad asegura que nunca se despinte, manteniendo su aspecto como nuevo.">
                 <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                 <h3>Lover Silver Bracelet</h3>
                 <span>Precio: 42 soles</span>
             </div>
-            <div class="producto" onclick="showDetails('golden-bracelet')">
-                <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-                <h3>Golden Bracelet</h3>
-                <span>Precio: 37 soles</span>
-            </div>
-            <div class="producto" onclick="showDetails('silver-bracelet')">
-                <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                <h3>Silver Bracelet</h3>
-                <span>Precio: 37 soles</span>
-            </div>
-            <div class="producto" onclick="showDetails('star-silver-bracelet')">
+            <div class="producto" data-price="42" data-description="Con el 'Star Silver Bracelet', destaca con un estilo brillante y moderno. Este brazalete de plata está adornado con un diseño de estrella que aporta un toque de glamour a tu look. Con 9mm de ancho, este brazalete es ideal para el uso diario y especial, y está hecho de acero inoxidable para una durabilidad superior y resistencia a la decoloración.">
                 <img src="brazalete-estrella.jpg" alt="Star Silver Bracelet">
                 <h3>Star Silver Bracelet</h3>
                 <span>Precio: 42 soles</span>
             </div>
-            <div class="producto" onclick="showDetails('butterfly-silver-bracelet')">
-                <img src="brazalete-mariposa.jpg" alt="Butterfly Silver Bracelet">
-                <h3>Butterfly Silver Bracelet</h3>
-                <span>Precio: 42 soles</span>
+            <div class="producto" data-price="37" data-description="El 'Golden Bracelet' es la opción ideal para quienes buscan un toque de lujo en su día a día. Fabricado en acero inoxidable con un acabado dorado, este brazalete de 9mm de ancho combina elegancia y resistencia. Perfecto para cualquier ocasión, su diseño versátil permite combinarlo con charms y accesorios para un estilo personalizado.">
+                <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
+                <h3>Golden Bracelet</h3>
+                <span>Precio: 37 soles</span>
+            </div>
+            <div class="producto" data-price="37" data-description="El 'Silver Bracelet' es el complemento perfecto para cualquier guardarropa. Su diseño clásico de plata es adecuado tanto para ocasiones formales como informales. Con un ancho de 9mm y fabricado en acero inoxidable, garantiza durabilidad y resistencia a la decoloración. Ideal para quienes buscan un brazalete elegante y versátil.">
+                <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
+                <h3>Silver Bracelet</h3>
+                <span>Precio: 37 soles</span>
             </div>
         </div>
     </section>
@@ -99,15 +103,25 @@
     <section id="contacto">
         <h2>Contacto</h2>
         <p>Para consultas y pedidos, por favor contáctanos a través de nuestro correo electrónico o el botón de WhatsApp.</p>
-        <a href="mailto:contacto@sutepra.com" class="contact-email">contacto@sutepra.com</a>
-        <a href="https://wa.me/1234567890" class="contact-email" target="_blank">Contáctanos por WhatsApp</a>
-        <a href="https://www.instagram.com/sutepra" class="contact-email" target="_blank">Síguenos en Instagram</a>
+        <a href="mailto:contacto@sutepra.com" class="contact-button email-button">contacto@sutepra.com</a>
+        <a href="https://wa.me/1234567890" class="contact-button whatsapp-button" target="_blank">Contáctanos por WhatsApp</a>
+        <a href="https://www.instagram.com/sutepra" class="contact-button instagram-button" target="_blank">Síguenos en Instagram</a>
     </section>
 
     <!-- Footer -->
     <footer>
         &copy; 2024 SUTEPRA. Todos los derechos reservados.
     </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
