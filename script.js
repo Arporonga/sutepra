@@ -1,20 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('.slider-image');
+    const totalImages = images.length;
     let currentIndex = 0;
 
-    function showImage(index) {
-        images.forEach((img, i) => {
-            img.classList.remove('active');
-            if (i === index) {
-                img.classList.add('active');
-            }
-        });
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        const offset = -currentIndex * 100;
+        document.querySelector('.slider-images').style.transform = `translateX(${offset}%)`;
     }
 
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }
-
-    setInterval(nextImage, 3000);
+    setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos
 });
