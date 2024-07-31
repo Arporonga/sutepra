@@ -33,13 +33,15 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+    transition: transform 1s ease-in-out;
 }
 
 .slider-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
+    display: block;
+    transition: opacity 1s ease-in-out;
 }
 
 .slider-text {
@@ -80,6 +82,18 @@ body {
     .slider-text {
         font-size: 2vw; /* Ajustar aún más el tamaño del texto */
         padding: 40px;
+    }
+}
+
+/* Slider para mostrar las imágenes correctamente */
+@media (min-width: 768px) {
+    .slider-images {
+        width: 100%;
+        height: auto;
+    }
+
+    .slider-image {
+        display: block;
     }
 }
 
