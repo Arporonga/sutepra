@@ -28,7 +28,7 @@ body {
     display: flex;
     width: 400%; /* Ajusta el ancho total para las 4 imágenes */
     height: 100%;
-    transition: transform 1s ease-in-out; /* Transición suave */
+    transition: transform 2s ease-in-out; /* Transición suave */
 }
 
 .slider-image {
