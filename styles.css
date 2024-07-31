@@ -52,6 +52,10 @@ body {
     display: none;
 }
 
+.slider-image.active {
+    display: block;
+}
+
 #productos {
     padding: 40px 20px;
     text-align: center;
