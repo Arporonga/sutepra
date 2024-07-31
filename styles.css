@@ -40,13 +40,13 @@ header nav ul li a {
 
 .slides {
     display: flex;
-    width: 200%;
+    width: 300%;
     height: 100%;
-    animation: slide 10s infinite;
+    animation: slide 15s infinite;
 }
 
 .slide {
-    width: 50%;
+    width: 33.33%;
     flex-shrink: 0;
 }
 
@@ -75,9 +75,11 @@ header nav ul li a {
 @keyframes slide {
     0% { transform: translateX(0); }
     25% { transform: translateX(0); }
-    50% { transform: translateX(-50%); }
-    75% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
+    33.33% { transform: translateX(0); }
+    58.33% { transform: translateX(-33.33%); }
+    66.66% { transform: translateX(-33.33%); }
+    91.66% { transform: translateX(-66.66%); }
+    100% { transform: translateX(-66.66%); }
 }
 
 section {
