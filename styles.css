@@ -3,60 +3,74 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4; /* Fondo de la página */
+    background-color: #f4f4f4;
 }
 
 .header {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 72px; /* Tamaño más grande para SUTEPRA */
-    font-family: 'Didot', serif; /* Fuente elegante similar a Zara */
+    font-size: 72px;
+    font-family: 'Didot', serif;
     font-weight: bold;
     color: white;
     z-index: 10;
 }
 
-.slider {
+.bienvenida {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background-color: black;
 }
 
-.slider-text {
-    position: absolute;
-    font-size: 48px;
-    text-align: center;
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    color: white; /* Eliminado el sombreado oscuro */
-    z-index: 20;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.slider-images {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-.slider-image {
+.video-background {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bienvenida-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.bienvenida-texto h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.bienvenida-texto p {
+    font-size: 24px;
+    margin: 10px 0 20px 0;
+}
+
+.bienvenida-texto .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.bienvenida-texto .btn:hover {
+    background-color: #0056b3;
 }
 
 #productos {
     padding: 40px 20px;
     text-align: center;
-    background-color: white; /* Fondo blanco para productos */
-    border-top: 2px solid #ddd; /* Línea de separación */
+    background-color: white;
+    border-top: 2px solid #ddd;
 }
 
 #productos h2 {
@@ -92,20 +106,20 @@ body {
 #acerca-de, #contacto {
     padding: 40px 20px;
     text-align: center;
-    background-color: white; /* Fondo blanco para secciones */
-    border-top: 2px solid #ddd; /* Línea de separación */
+    background-color: white;
+    border-top: 2px solid #ddd;
 }
 
 #acerca-de h2, #contacto h2 {
     font-size: 32px;
     margin-bottom: 20px;
-    color: #333; /* Color de texto */
+    color: #333;
 }
 
 #acerca-de p, #contacto p {
     font-size: 18px;
     line-height: 1.6;
-    color: #666; /* Color de texto */
+    color: #666;
 }
 
 .contact-email {
@@ -126,7 +140,7 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
-    background-color: #333; /* Fondo oscuro para la barra de información */
+    background-color: #333;
     color: white;
     text-align: center;
 }
@@ -143,7 +157,7 @@ body {
 }
 
 footer {
-    background-color: #333; /* Fondo oscuro para el pie de página */
+    background-color: #333;
     color: white;
     padding: 10px 0;
     text-align: center;
