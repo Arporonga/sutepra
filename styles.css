@@ -3,15 +3,15 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4; /* Fondo de la página */
+    background-color: #f4f4f4;
 }
 
 .header {
     position: absolute;
     top: 20px;
     left: 20px;
-    font-size: 72px; /* Tamaño más grande para SUTEPRA */
-    font-family: 'Didot', serif; /* Fuente elegante similar a Zara */
+    font-size: 72px;
+    font-family: 'Didot', serif;
     font-weight: bold;
     color: white;
     z-index: 10;
@@ -26,13 +26,13 @@ body {
 
 .slider-images {
     display: flex;
-    width: 400%; /* Ancho total para 4 imágenes */
+    width: 400%; /* Ajusta el ancho total para las 4 imágenes */
     height: 100%;
     transition: transform 1s ease-in-out; /* Transición suave */
 }
 
 .slider-image {
-    width: 25%; /* Cada imagen ocupa el 25% del slider */
+    width: 25%; /* Cada imagen ocupa el 25% del contenedor del slider */
     height: 100%;
     object-fit: cover;
 }
@@ -79,8 +79,8 @@ body {
 #productos {
     padding: 40px 20px;
     text-align: center;
-    background-color: white; /* Fondo blanco para productos */
-    border-top: 2px solid #ddd; /* Línea de separación */
+    background-color: white;
+    border-top: 2px solid #ddd;
 }
 
 #productos h2 {
@@ -116,20 +116,20 @@ body {
 #acerca-de, #contacto {
     padding: 40px 20px;
     text-align: center;
-    background-color: white; /* Fondo blanco para secciones */
-    border-top: 2px solid #ddd; /* Línea de separación */
+    background-color: white;
+    border-top: 2px solid #ddd;
 }
 
 #acerca-de h2, #contacto h2 {
     font-size: 32px;
     margin-bottom: 20px;
-    color: #333; /* Color de texto */
+    color: #333;
 }
 
 #acerca-de p, #contacto p {
     font-size: 18px;
     line-height: 1.6;
-    color: #666; /* Color de texto */
+    color: #666;
 }
 
 .contact-email {
@@ -150,24 +150,26 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
-    background-color: #333; /* Fondo oscuro para la barra de información */
+    background-color: #333;
     color: white;
     text-align: center;
 }
 
 .info-bar span {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .info-icon {
     width: 24px;
     height: 24px;
-    vertical-align: middle;
     margin-right: 8px;
 }
 
 footer {
-    background-color: #333; /* Fondo oscuro para el pie de página */
+    background-color: #333;
     color: white;
     padding: 10px 0;
     text-align: center;
