@@ -1,26 +1,20 @@
 // script.js
-let currentIndex = 0;
-const images = document.querySelectorAll('.slider-image');
-const totalImages = images.length;
-const displayTime = 5000; // Tiempo en milisegundos para cada imagen (5 segundos)
 
-// Función para mostrar la siguiente imagen
-function showNextImage() {
-    // Ocultar la imagen actual
-    images[currentIndex].classList.remove('active');
-    // Avanzar al siguiente índice
-    currentIndex = (currentIndex + 1) % totalImages;
-    // Mostrar la nueva imagen
-    images[currentIndex].classList.add('active');
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const sliderImages = document.querySelectorAll(".slider-image");
+    let currentIndex = 0;
 
-// Iniciar el slider
-function startSlider() {
-    // Mostrar la primera imagen
-    images[currentIndex].classList.add('active');
-    // Cambiar de imagen cada `displayTime` milisegundos
-    setInterval(showNextImage, displayTime);
-}
+    function showNextImage() {
+        sliderImages[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % sliderImages.length;
+        sliderImages[currentIndex].classList.add("active");
+        const offset = -100 * currentIndex;
+        document.querySelector(".slider-images").style.transform = `translateX(${offset}%)`;
+    }
 
-// Iniciar el slider al cargar la página
-window.addEventListener('load', startSlider);
+    // Inicializar la primera imagen como activa
+    sliderImages[currentIndex].classList.add("active");
+
+    // Cambiar la imagen cada 5 segundos
+    setInterval(showNextImage, 5000);
+});
