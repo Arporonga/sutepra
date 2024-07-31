@@ -32,7 +32,7 @@ body {
     padding: 20px;
     color: white; /* Eliminado el sombreado oscuro */
     z-index: 20;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -143,6 +143,12 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 100;
+}
+
+.whatsapp-float a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .whatsapp-float img {
