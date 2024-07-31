@@ -51,12 +51,12 @@ body {
     display: none;
 }
 
-#productos, #acerca-de, #contacto {
+#productos {
     padding: 40px 20px;
     text-align: center;
 }
 
-#productos h2, #acerca-de h2, #contacto h2 {
+#productos h2 {
     font-size: 32px;
     margin-bottom: 20px;
 }
