@@ -2,33 +2,58 @@
 
 /* General */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* Header */
-.header {
+header {
     background-color: #333;
     color: #fff;
-    text-align: center;
-    padding: 15px;
-    font-size: 24px;
-    font-family: 'Didot', serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 /* Slider */
 .slider {
     position: relative;
     width: 100%;
-    height: 500px; /* Ajusta la altura del slider */
+    height: 500px;
     overflow: hidden;
+    text-align: center;
 }
 
 .slider-images {
     display: flex;
-    width: 400%; /* Ajusta el ancho total del contenedor */
+    width: 400%;
     height: 100%;
     transition: transform 1s ease-in-out;
 }
@@ -37,15 +62,15 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 1s ease-in-out;
 }
 
 .slider-text {
     position: absolute;
     bottom: 30px;
-    left: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     color: #fff;
-    font-size: 36px; /* Ajusta el tamaño del texto en pantallas grandes */
+    font-size: 36px;
     font-family: 'Didot', serif;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
@@ -54,18 +79,33 @@ body {
     text-align: center;
 }
 
+.slider-brand {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Didot', serif;
+}
+
 /* Productos */
 #productos {
     padding: 20px;
-    text-align: center;
     background-color: #f8f8f8;
 }
 
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .producto {
-    display: inline-block;
     margin: 10px;
-    width: calc(25% - 20px); /* Ajusta a 4 columnas */
+    width: calc(25% - 20px);
     box-sizing: border-box;
+    text-align: center;
 }
 
 .producto img {
@@ -82,49 +122,6 @@ body {
 .producto span {
     display: block;
     font-size: 16px;
-}
-
-/* Acerca de Nosotros */
-#acerca-de {
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-}
-
-#acerca-de h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-#acerca-de p {
-    font-size: 16px;
-    line-height: 1.5;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Contacto */
-#contacto {
-    padding: 20px;
-    text-align: center;
-    background-color: #f8f8f8;
-}
-
-#contacto h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.contact-email {
-    display: block;
-    color: #1a73e8;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.contact-email:hover {
-    text-decoration: underline;
 }
 
 /* Barra de Información */
@@ -149,6 +146,89 @@ body {
     height: 24px;
 }
 
+/* Suscripción */
+#suscripcion {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#suscripcion h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#suscripcion form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#suscripcion input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#suscripcion button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#suscripcion button:hover {
+    background-color: #555;
+}
+
+/* Acerca de Nosotros */
+#acerca-de {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+#acerca-de h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#acerca-de p {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contacto */
+#contacto {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#contacto h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-email {
+    display: block;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.contact-email:hover {
+    text-decoration: underline;
+}
+
 /* Footer */
 footer {
     background-color: #333;
@@ -161,7 +241,7 @@ footer {
 /* Responsividad */
 @media (max-width: 768px) {
     .producto {
-        width: calc(50% - 20px); /* 2 columnas en pantallas más pequeñas */
+        width: calc(50% - 20px);
     }
 
     .slider-text {
@@ -169,16 +249,26 @@ footer {
         bottom: 15px;
         left: 15px;
     }
+
+    .slider-brand {
+        font-size: 36px;
+        top: 15px;
+    }
 }
 
 @media (max-width: 480px) {
     .producto {
-        width: 100%; /* 1 columna en pantallas pequeñas */
+        width: 100%;
     }
 
     .slider-text {
         font-size: 16px;
         bottom: 10px;
         left: 10px;
+    }
+
+    .slider-brand {
+        font-size: 24px;
+        top: 10px;
     }
 }
