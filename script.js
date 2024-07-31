@@ -1,81 +1,56 @@
-// Slider functionality
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
+document.addEventListener('DOMContentLoaded', () => {
+    const orderButton = document.getElementById('order-button');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const productosContainer = document.getElementById('productos-container');
+    const sortLowToHigh = document.getElementById('sort-low-to-high');
+    const sortHighToLow = document.getElementById('sort-high-to-low');
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const closeModal = document.querySelector('.close');
 
-function showSlide(index) {
-    if (index >= slides.length) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = slides.length - 1;
-    } else {
-        currentSlide = index;
-    }
-    document.querySelector('.slides').style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-
-function nextSlide() {
-    showSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-    showSlide(currentSlide - 1);
-}
-
-setInterval(nextSlide, 5000); // Auto slide every 5 seconds
-
-// Product details functionality
-function showDetails(productId) {
-    const details = {
-        'lover-silver-bracelet': {
-            name: 'Lover Silver Bracelet',
-            color: 'Plateado',
-            width: '9mm',
-            description: 'Combinable con charms. Acero inoxidable (No se despinta).'
-        },
-        'golden-bracelet': {
-            name: 'Golden Bracelet',
-            color: 'Dorado',
-            width: '10mm',
-            description: 'Elegante y duradero. Ideal para cualquier ocasión.'
-        },
-        'silver-bracelet': {
-            name: 'Silver Bracelet',
-            color: 'Plateado',
-            width: '8mm',
-            description: 'Diseño sofisticado y versátil. Perfecto para combinar con otros accesorios.'
-        },
-        'star-silver-bracelet': {
-            name: 'Star Silver Bracelet',
-            color: 'Plateado con estrella',
-            width: '11mm',
-            description: 'Añade un toque estrellado a tu estilo. Acero inoxidable de alta calidad.'
-        },
-        'butterfly-silver-bracelet': {
-            name: 'Butterfly Silver Bracelet',
-            color: 'Plateado con mariposa',
-            width: '12mm',
-            description: 'Un diseño delicado con mariposas. Ideal para un look elegante.'
-        }
-    };
-
-    const product = details[productId];
-    if (product) {
-        alert(`Nombre: ${product.name}\nColor: ${product.color}\nMedida: ${product.width}\nDescripción: ${product.description}`);
-    }
-}
-
-// Sort products
-function sortProducts() {
-    const sortValue = document.getElementById('sort').value;
-    const container = document.querySelector('.productos-container');
-    const products = Array.from(container.children);
-
-    products.sort((a, b) => {
-        const priceA = parseInt(a.querySelector('span').textContent.replace('Precio: ', '').replace(' soles', ''));
-        const priceB = parseInt(b.querySelector('span').textContent.replace('Precio: ', '').replace(' soles', ''));
-
-        return sortValue === 'low-to-high' ? priceA - priceB : priceB - priceA;
+    orderButton.addEventListener('click', () => {
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
     });
 
-    products.forEach(product => container.appendChild(product));
-}
+    sortLowToHigh.addEventListener('click', () => {
+        sortProducts('asc');
+    });
+
+    sortHighToLow.addEventListener('click', () => {
+        sortProducts('desc');
+    });
+
+    function sortProducts(order) {
+        const productos = Array.from(productosContainer.getElementsByClassName('producto'));
+        productos.sort((a, b) => {
+            const priceA = parseFloat(a.getAttribute('data-price'));
+            const priceB = parseFloat(b.getAttribute('data-price'));
+            return order === 'asc' ? priceA - priceB : priceB - priceA;
+        });
+        productos.forEach(producto => productosContainer.appendChild(producto));
+    }
+
+    document.querySelectorAll('.producto').forEach(producto => {
+        producto.addEventListener('click', () => {
+            const imgSrc = producto.querySelector('img').src;
+            const title = producto.querySelector('h3').textContent;
+            const description = producto.getAttribute('data-description');
+            modalImage.src = imgSrc;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modal.style.display = 'block';
+        });
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
