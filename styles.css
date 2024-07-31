@@ -46,7 +46,7 @@ nav a:hover {
 .slider {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 5000px;
     overflow: hidden;
     text-align: center;
 }
@@ -55,7 +55,7 @@ nav a:hover {
     display: flex;
     width: 400%;
     height: 100%;
-    transition: transform 1s ease-in-out;
+    transition: transform 2s ease-in-out;
 }
 
 .slider-image {
