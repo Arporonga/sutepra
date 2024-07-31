@@ -1,16 +1,22 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', function() {
-    const sliderImages = document.querySelectorAll('.slider-image');
+    const slider = document.querySelector('.slider-background');
     let currentIndex = 0;
-    const imageCount = sliderImages.length;
 
-    function showNextImage() {
-        sliderImages[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % imageCount;
-        sliderImages[currentIndex].classList.add('active');
+    function updateSlider() {
+        if (currentIndex === 0) {
+            slider.style.backgroundImage = 'url("panel.jpg")';
+        } else {
+            slider.style.backgroundImage = 'url("panel4.jpg")';
+        }
     }
 
-    // Ajusta el intervalo para mostrar imágenes solo entre panel.jpg y panel4.jpg
-    setInterval(showNextImage, 4000); // Cambiar cada 4 segundos
+    // Inicializa el slider
+    updateSlider();
+
+    setInterval(function() {
+        currentIndex = (currentIndex + 1) % 2;
+        updateSlider();
+    }, 4000); // Cambiar cada 4 segundos
 });
