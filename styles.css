@@ -27,7 +27,7 @@ body {
 
 .slider-images {
     display: flex;
-    width: 400%; /* Asume 4 imágenes para la transición */
+    width: 400%; /* Ancho total para mostrar 4 imágenes */
     height: 100%;
     transition: transform 1s ease-in-out;
 }
@@ -161,12 +161,14 @@ body {
 
 .info-bar span {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .info-icon {
     width: 24px;
     height: 24px;
-    vertical-align: middle;
     margin-right: 8px;
 }
 
