@@ -12,11 +12,14 @@ document.addEventListener("DOMContentLoaded", function() {
         currentIndex = (currentIndex + 1) % totalImages;
         // Mostrar la siguiente imagen
         sliderImages[currentIndex].style.opacity = 1;
+        // Mover el contenedor de imágenes
+        const sliderImagesContainer = document.querySelector(".slider-images");
+        sliderImagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
     // Inicializar la primera imagen
     sliderImages[currentIndex].style.opacity = 1;
 
-    // Cambiar la imagen cada 5 segundos
-    setInterval(showNextImage, 5000);
+    // Cambiar la imagen cada 4 segundos
+    setInterval(showNextImage, 4000);
 });
