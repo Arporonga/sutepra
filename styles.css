@@ -22,26 +22,19 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #333; /* Fondo oscuro para contraste */
 }
 
 .slider-images {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     display: flex;
+    width: 400%; /* Asume 4 imágenes para la transición */
+    height: 100%;
     transition: transform 1s ease-in-out;
 }
 
 .slider-image {
-    width: 100%;
+    width: 25%; /* Cada imagen ocupa el 25% del ancho del slider */
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: opacity 1s ease-in-out;
 }
 
 .slider-text {
@@ -82,18 +75,6 @@ body {
     .slider-text {
         font-size: 2vw; /* Ajustar aún más el tamaño del texto */
         padding: 40px;
-    }
-}
-
-/* Slider para mostrar las imágenes correctamente */
-@media (min-width: 768px) {
-    .slider-images {
-        width: 100%;
-        height: auto;
-    }
-
-    .slider-image {
-        display: block;
     }
 }
 
