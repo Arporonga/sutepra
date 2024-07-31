@@ -130,7 +130,12 @@ h2 {
 }
 
 /* Botón de ordenar productos */
-button {
+.order-container {
+    position: relative;
+    display: inline-block;
+}
+
+#order-button {
     padding: 12px 20px;
     font-size: 16px;
     background-color: #333;
@@ -142,47 +147,74 @@ button {
     margin: 20px 0;
 }
 
-button:hover {
+#order-button:hover {
     background-color: #555;
     transform: scale(1.05);
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.order-container:hover .dropdown-content {
+    display: block;
+}
+
 /* Barra de Información */
 .info-bar {
-    background-color: #333;
-    color: white;
     display: flex;
     justify-content: center;
-    padding: 20px 0;
-    gap: 30px;
+    gap: 20px;
+    padding: 10px 0;
+    background-color: #f4f4f4;
+}
+
+.info-bar span {
+    font-size: 16px;
 }
 
 .info-icon {
+    margin-right: 5px;
+}
+
+/* Suscripción */
+#suscripcion {
+    padding: 30px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#suscripcion form {
+    display: inline-block;
+}
+
+#suscripcion input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     margin-right: 10px;
 }
 
-/* Formulario de Suscripción */
-form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-form input {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    transition: border-color 0.3s;
-}
-
-form input:focus {
-    border-color: #333;
-    outline: none;
-}
-
-form button {
+#suscripcion button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #333;
@@ -190,21 +222,11 @@ form button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s;
 }
 
-form button:hover {
+#suscripcion button:hover {
     background-color: #555;
-    transform: scale(1.05);
-}
-
-/* Enlaces de Contacto */
-.contact-email {
-    display: block;
-    margin: 10px 0;
-    color: #333;
-    text-decoration: none;
-    font-size: 16px;
 }
 
 /* Footer */
@@ -212,5 +234,8 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
