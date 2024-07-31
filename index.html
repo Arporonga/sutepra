@@ -7,43 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Didot:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Styles for slider */
-        .slider {
-            position: relative;
-            width: 100%;
-            max-height: 500px; /* Adjust based on your preference */
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 300%; /* Adjust based on the number of slides */
-        }
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-        .slide img {
-            width: 100%;
-            height: auto;
-        }
-        .slider-text, .slider-brand {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 2em;
-            text-align: center;
-            z-index: 10;
-        }
-        .slider-brand {
-            font-size: 3em;
-            font-family: 'Didot', serif;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -86,7 +49,6 @@
             </div>
         </div>
         <div id="productos-container" class="productos-container">
-            <!-- Brazaletes Italianos -->
             <div class="producto" data-price="42" data-description="Descubre la elegancia del 'Butterfly Silver Bracelet', un brazalete de plata exquisitamente diseñado con un toque de feminidad. Este accesorio combina un diseño delicado con materiales de alta calidad, ideal para cualquier ocasión. Con un ancho de 9mm, es perfectamente combinable con charms y está fabricado en acero inoxidable para garantizar durabilidad y resistencia a la decoloración.">
                 <img src="brazalete-mariposa.jpg" alt="Butterfly Silver Bracelet">
                 <h3>Butterfly Silver Bracelet</h3>
@@ -112,27 +74,6 @@
                 <h3>Silver Bracelet</h3>
                 <span>Precio: 37 soles</span>
             </div>
-            <!-- Lentes Retro -->
-            <div class="producto" data-price="18" data-description="Lentes Retro Negro, con un diseño clásico y elegante que complementa cualquier look. Perfectos para añadir un toque de sofisticación a tu estilo.">
-                <img src="negro.jpg" alt="Retro Black">
-                <h3>Retro Black</h3>
-                <span>Precio: 18 soles</span>
-            </div>
-            <div class="producto" data-price="18" data-description="Lentes Retro Blanco, ideales para un estilo fresco y moderno. Su diseño versátil se adapta a cualquier ocasión.">
-                <img src="blanco.jpg" alt="Retro White">
-                <h3>Retro White</h3>
-                <span>Precio: 18 soles</span>
-            </div>
-            <div class="producto" data-price="18" data-description="Lentes Retro Rojo, perfectos para un look audaz y vibrante. Añaden un toque de color a tu estilo.">
-                <img src="rojo.jpg" alt="Retro Red">
-                <h3>Retro Red</h3>
-                <span>Precio: 18 soles</span>
-            </div>
-            <div class="producto" data-price="18" data-description="Lentes Retro Print, con un diseño único que destaca y complementa tu estilo retro. Ideal para quienes buscan algo diferente.">
-                <img src="print.jpg" alt="Retro Print">
-                <h3>Retro Print</h3>
-                <span>Precio: 18 soles</span>
-            </div>
         </div>
     </section>
 
@@ -155,24 +96,33 @@
     <!-- Acerca de Nosotros -->
     <section id="acerca-de">
         <h2>Acerca de Nosotros</h2>
-        <p>En SUTEPRA, nos dedicamos a ofrecer accesorios de alta calidad que realzan tu estilo personal. Con una variedad de productos diseñados para cada ocasión, nuestro objetivo es proporcionar elegancia y sofisticación en cada detalle.</p>
+        <p>En SUTEPRA, nos dedicamos a ofrecer accesorios de alta calidad que realzan tu estilo personal. Nuestro objetivo es proporcionar productos únicos y elegantes que se adapten a tu gusto y personalidad.</p>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Para consultas y pedidos, por favor contáctanos a través de nuestro correo electrónico o el botón de WhatsApp.</p>
+        <a href="mailto:contacto@sutepra.com" class="contact-button email-button">contacto@sutepra.com</a>
+        <a href="https://wa.me/1234567890" class="contact-button whatsapp-button" target="_blank">Contáctanos por WhatsApp</a>
+        <a href="https://www.instagram.com/sutepra" class="contact-button instagram-button" target="_blank">Síguenos en Instagram</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 SUTEPRA. Todos los derechos reservados.</p>
+        &copy; 2024 SUTEPRA. Todos los derechos reservados.
     </footer>
 
     <!-- Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <img src="" alt="Imagen del Producto" id="modal-img">
-            <div id="modal-text"></div>
+            <img id="modal-image" src="" alt="">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
         </div>
     </div>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
