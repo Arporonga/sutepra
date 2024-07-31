@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.slider-image');
-    const totalImages = images.length;
+    const sliderImages = document.querySelector('.slider-images');
+    const images = Array.from(document.querySelectorAll('.slider-image'));
     let currentIndex = 0;
 
     function showNextImage() {
-        currentIndex = (currentIndex + 1) % totalImages;
-        const offset = -currentIndex * 100;
-        document.querySelector('.slider-images').style.transform = `translateX(${offset}%)`;
+        currentIndex = (currentIndex + 1) % images.length;
+        sliderImages.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    // Establece el intervalo para cambiar la imagen
-    setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos
+    function startSlider() {
+        setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos
+    }
+
+    startSlider();
 });
