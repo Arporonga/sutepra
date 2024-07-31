@@ -4,41 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUTEPRA - Accesorios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .header {
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 36px;
-            font-weight: bold;
-            color: white;
-            z-index: 10;
-        }
-        .slider {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: url('path-to-your-slider-image.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        .slider-text {
-            font-size: 48px;
-            text-align: center;
-            max-width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="header">SUTEPRA</div>
@@ -47,7 +13,39 @@
             Accesorios que destacan tu estilo único
         </div>
     </div>
-    <!-- El resto de tu contenido va aquí -->
+
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="producto">
+            <img src="path-to-your-image1.jpg" alt="Producto 1">
+            <h3>Producto 1</h3>
+            <p>Descripción del producto 1</p>
+            <span>40 soles</span>
+        </div>
+        <div class="producto">
+            <img src="path-to-your-image2.jpg" alt="Producto 2">
+            <h3>Producto 2</h3>
+            <p>Descripción del producto 2</p>
+            <span>18 soles</span>
+        </div>
+        <div class="producto">
+            <img src="path-to-your-image3.jpg" alt="Producto 3">
+            <h3>Producto 3</h3>
+            <p>Descripción del producto 3</p>
+            <span>22 soles</span>
+        </div>
+    </section>
+
+    <section id="acerca-de">
+        <h2>Acerca de Nosotros</h2>
+        <p>Somos una empresa dedicada a ofrecer los mejores accesorios para destacar tu estilo único. Nuestro compromiso es brindarte productos de alta calidad y un excelente servicio al cliente.</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Para más información, contáctanos a través de nuestras redes sociales o envíanos un correo a info@sutepra.com.</p>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
