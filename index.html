@@ -4,111 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUTEPRA - Accesorios</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos básicos para la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #bbb 1px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .producto {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 220px;
+            text-align: center;
+            position: relative;
+        }
+        .producto img {
+            width: 100%;
+            height: auto;
+        }
+        .producto .desc {
+            padding: 10px;
+            background: #f4f4f4;
+        }
+        .producto .desc h3 {
+            margin: 0;
+        }
+        .producto .desc p {
+            font-size: 14px;
+        }
+        .btn-ordenar {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 20px 0;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        .show {display: block;}
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <h1>Bienvenido a SUTEPRA</h1>
-        <nav>
-            <ul>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#acerca-de-nosotros">Acerca de Nosotros</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#acerca">Acerca de Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Sección de Bienvenida -->
-    <section id="bienvenida">
-        <div class="welcome-content">
-            <h2>Explora Nuestro Mundo de Accesorios</h2>
-            <p>Descubre la elegancia y sofisticación en cada detalle. Cada pieza está diseñada para realzar tu estilo personal y destacar en cualquier ocasión.</p>
-        </div>
-    </section>
-
-    <!-- Productos -->
-    <section id="productos">
+    <div id="productos" class="container">
         <h2>Productos</h2>
-        <div class="order-container">
-            <button id="order-button">Ordenar por Precio</button>
-            <div class="dropdown-content">
-                <a href="#" id="sort-low-to-high">Precio más Bajo a Alto</a>
-                <a href="#" id="sort-high-to-low">Precio más Alto a Bajo</a>
-            </div>
-        </div>
-        <div id="productos-container" class="productos-container">
-            <!-- Brazaletes -->
-            <div class="producto" data-price="42" data-description="Descubre la elegancia del 'Butterfly Silver Bracelet', un brazalete de plata exquisitamente diseñado con un toque de feminidad. Este accesorio combina un diseño delicado con materiales de alta calidad, ideal para cualquier ocasión. Con un ancho de 9mm, es perfectamente combinable con charms y está fabricado en acero inoxidable para garantizar durabilidad y resistencia a la decoloración.">
-                <img src="brazalete-mariposa.jpg" alt="Butterfly Silver Bracelet">
-                <h3>Butterfly Silver Bracelet</h3>
-                <span>Precio: 42 soles</span>
-            </div>
-            <div class="producto" data-price="42" data-description="El 'Lover Silver Bracelet' es el epitome de la sofisticación. Este brazalete de plata destaca por su diseño atemporal y elegante, que resalta con cualquier conjunto. Con 9mm de ancho y fabricado en acero inoxidable, ofrece una combinación perfecta de belleza y funcionalidad, ideal para combinar con charms. Su acabado de alta calidad asegura que nunca se despinte, manteniendo su aspecto como nuevo.">
+        <div class="productos">
+            <!-- Fila de Brazaletes Italianos y Lentes Retro -->
+            <div class="producto">
                 <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
-                <h3>Lover Silver Bracelet</h3>
-                <span>Precio: 42 soles</span>
+                <div class="desc">
+                    <h3>Lover Silver Bracelet</h3>
+                    <p>40 soles</p>
+                    <p>Un brazalete elegante y único, ideal para cualquier ocasión especial.</p>
+                </div>
             </div>
-            <div class="producto" data-price="42" data-description="Con el 'Star Silver Bracelet', destaca con un estilo brillante y moderno. Este brazalete de plata está adornado con un diseño de estrella que aporta un toque de glamour a tu look. Con 9mm de ancho, este brazalete es ideal para el uso diario y especial, y está hecho de acero inoxidable para una durabilidad superior y resistencia a la decoloración.">
-                <img src="brazalete-estrella.jpg" alt="Star Silver Bracelet">
-                <h3>Star Silver Bracelet</h3>
-                <span>Precio: 42 soles</span>
-            </div>
-            <div class="producto" data-price="37" data-description="El 'Golden Bracelet' es la opción ideal para quienes buscan un toque de lujo en su día a día. Fabricado en acero inoxidable con un acabado dorado, este brazalete de 9mm de ancho combina elegancia y resistencia. Perfecto para cualquier ocasión, su diseño versátil permite combinarlo con charms y accesorios para un estilo personalizado.">
-                <img src="brazalete-dorado.jpg" alt="Golden Bracelet">
-                <h3>Golden Bracelet</h3>
-                <span>Precio: 37 soles</span>
-            </div>
-            <div class="producto" data-price="37" data-description="El 'Silver Bracelet' es el complemento perfecto para cualquier guardarropa. Su diseño clásico de plata es adecuado tanto para ocasiones formales como informales. Con un ancho de 9mm y fabricado en acero inoxidable, garantiza durabilidad y resistencia a la decoloración. Ideal para quienes buscan un brazalete elegante y versátil.">
+            <div class="producto">
                 <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
-                <h3>Silver Bracelet</h3>
-                <span>Precio: 37 soles</span>
+                <div class="desc">
+                    <h3>Silver Bracelet</h3>
+                    <p>40 soles</p>
+                    <p>Un brazalete con un diseño sofisticado que combina con cualquier estilo.</p>
+                </div>
             </div>
-
-            <!-- Nuevos Productos Retro -->
-            <div class="producto" data-price="12" data-description="El 'Retro Black' es un estilo clásico que añade un toque de sofisticación a tu look. Con un diseño elegante en color negro, este lente es perfecto para cualquier ocasión y está hecho con materiales de alta calidad para una durabilidad superior.">
+            <div class="producto">
                 <img src="retro-negro.jpg" alt="Retro Black">
-                <h3>Retro Black</h3>
-                <span>Precio: 12 soles</span>
+                <div class="desc">
+                    <h3>Retro Black</h3>
+                    <p>12 soles</p>
+                    <p>Lentes con un diseño retro en color negro, perfectos para un look clásico.</p>
+                </div>
             </div>
-            <div class="producto" data-price="12" data-description="El 'Retro White' ofrece un diseño atemporal en color blanco que combina con cualquier estilo. Estos lentes están fabricados con atención al detalle para garantizar una apariencia elegante y durabilidad.">
+            <div class="producto">
                 <img src="retro-blanco.jpg" alt="Retro White">
-                <h3>Retro White</h3>
-                <span>Precio: 12 soles</span>
+                <div class="desc">
+                    <h3>Retro White</h3>
+                    <p>12 soles</p>
+                    <p>Lentes con un diseño retro en color blanco, ideales para un estilo fresco.</p>
+                </div>
             </div>
-            <div class="producto" data-price="12" data-description="El 'Retro Print' destaca con un diseño único y moderno que añade un toque de originalidad a tu estilo. Con un patrón atractivo, estos lentes están fabricados con materiales de alta calidad para una larga duración.">
-                <img src="retro-print.jpg" alt="Retro Print">
-                <h3>Retro Print</h3>
-                <span>Precio: 12 soles</span>
-            </div>
-            <div class="producto" data-price="12" data-description="El 'Retro Red' es la opción perfecta para quienes buscan un toque de color vibrante. Con un diseño llamativo en rojo, estos lentes combinan estilo y durabilidad para un accesorio que no pasará desapercibido.">
+            <div class="producto">
                 <img src="retro-rojo.jpg" alt="Retro Red">
-                <h3>Retro Red</h3>
-                <span>Precio: 12 soles</span>
+                <div class="desc">
+                    <h3>Retro Red</h3>
+                    <p>12 soles</p>
+                    <p>Lentes con un diseño retro en color rojo, para un toque de color vibrante.</p>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="retro-print.jpg" alt="Retro Print">
+                <div class="desc">
+                    <h3>Retro Print</h3>
+                    <p>12 soles</p>
+                    <p>Lentes con un diseño retro y estampado, para destacar entre la multitud.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Contacto -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form action="submit_form.php" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const orderButton = document.getElementById('order-button');
+            const sortLowToHigh = document.getElementById('sort-low-to-high');
+            const sortHighToLow = document.getElementById('sort-high-to-low');
+            const productosContainer = document.getElementById('productos-container');
 
-    <!-- Acerca de Nosotros -->
-    <section id="acerca-de-nosotros">
-        <h2>Acerca de Nosotros</h2>
-        <p>En SUTEPRA, ofrecemos una cuidada selección de accesorios para realzar tu estilo personal. Cada pieza está diseñada con atención al detalle y calidad para asegurar que tu look destaque en cualquier ocasión.</p>
-    </section>
+            function sortProducts(order) {
+                const productos = Array.from(productosContainer.getElementsByClassName('producto'));
+                productos.sort((a, b) => {
+                    const priceA = parseFloat(a.getAttribute('data-price'));
+                    const priceB = parseFloat(b.getAttribute('data-price'));
+                    return order === 'low-to-high' ? priceA - priceB : priceB - priceA;
+                });
+                productos.forEach(producto => productosContainer.appendChild(producto));
+            }
 
-    <script src="script.js"></script>
+            orderButton.addEventListener('click', function() {
+                const dropdown = document.querySelector('.dropdown-content');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            });
+
+            sortLowToHigh.addEventListener('click', function() {
+                sortProducts('low-to-high');
+            });
+
+            sortHighToLow.addEventListener('click', function() {
+                sortProducts('high-to-low');
+            });
+
+            // Inicializa el dropdown para que esté oculto por defecto
+            document.querySelector('.dropdown-content').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
