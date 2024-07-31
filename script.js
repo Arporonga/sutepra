@@ -9,5 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.slider-images').style.transform = `translateX(${offset}%)`;
     }
 
+    // Establece el intervalo para cambiar la imagen
     setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos
 });
