@@ -4,14 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showImage(index) {
         images.forEach((img, i) => {
-            img.classList.toggle('active', i === index);
+            img.classList.remove('active');
+            if (i === index) {
+                img.classList.add('active');
+            }
         });
     }
 
-    showImage(currentIndex);
-
-    setInterval(() => {
+    function nextImage() {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
-    }, 5000); // Cambia la imagen cada 5 segundos
+    }
+
+    setInterval(nextImage, 3000);
 });
