@@ -24,9 +24,15 @@
     <!-- Slider -->
     <div class="slider">
         <div class="slides">
-            <div class="slide"><img src="panel2.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="panel4.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="panel3.jpg" alt="Slide 3"></div>
+            <div class="slide">
+                <img src="panel2.jpg" alt="Panel 2">
+            </div>
+            <div class="slide">
+                <img src="panel4.jpg" alt="Panel 4">
+            </div>
+            <div class="slide">
+                <img src="panel3.jpg" alt="Panel 3">
+            </div>
         </div>
         <div class="slider-text">Accesorios que destacan tu estilo único</div>
         <div class="slider-brand">SUTEPRA</div>
@@ -35,8 +41,14 @@
     <!-- Productos -->
     <section id="productos">
         <h2>Productos</h2>
-        <button onclick="sortProductsByPrice()">Ordenar por precio: Bajo a Alto</button>
-        <div class="productos-container" id="productos-container">
+        <div class="order-container">
+            <button id="order-button">Ordenar por Precio</button>
+            <div class="dropdown-content">
+                <a href="#" id="sort-low-to-high">Precio más Bajo a Alto</a>
+                <a href="#" id="sort-high-to-low">Precio más Alto a Bajo</a>
+            </div>
+        </div>
+        <div id="productos-container" class="productos-container">
             <div class="producto" data-price="42">
                 <img src="brazalete-corazon.jpg" alt="Lover Silver Bracelet">
                 <h3>Lover Silver Bracelet</h3>
@@ -51,11 +63,6 @@
                 <img src="brazalete-plateado.jpg" alt="Silver Bracelet">
                 <h3>Silver Bracelet</h3>
                 <span>Precio: 37 soles</span>
-            </div>
-            <div class="producto" data-price="42">
-                <img src="brazalete-estrella.jpg" alt="Star Silver Bracelet">
-                <h3>Star Silver Bracelet</h3>
-                <span>Precio: 42 soles</span>
             </div>
             <div class="producto" data-price="42">
                 <img src="brazalete-mariposa.jpg" alt="Butterfly Silver Bracelet">
