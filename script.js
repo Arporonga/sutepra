@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startSlider() {
-        setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos
+        setInterval(showNextImage, 5000); // Cambia la imagen cada 5 segundos
     }
 
     startSlider();
