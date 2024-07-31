@@ -22,14 +22,13 @@ body {
 .slider {
     position: relative;
     width: 100%;
-    height: 500px; /* Altura mayor para pantallas grandes */
+    height: 500px; /* Ajusta la altura del slider */
     overflow: hidden;
-    border-bottom: 2px solid #ddd; /* Línea sutil en la parte inferior */
 }
 
 .slider-images {
     display: flex;
-    width: 400%; /* Ajusta al número de imágenes */
+    width: 400%; /* Ajusta el ancho total del contenedor */
     height: 100%;
     transition: transform 1s ease-in-out;
 }
@@ -46,12 +45,12 @@ body {
     bottom: 30px;
     left: 30px;
     color: #fff;
-    font-size: 36px; /* Tamaño grande para pantallas grandes */
+    font-size: 36px; /* Ajusta el tamaño del texto en pantallas grandes */
     font-family: 'Didot', serif;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 5px;
-    max-width: 80%; /* Ajusta el ancho máximo */
+    max-width: 80%;
     text-align: center;
 }
 
@@ -65,7 +64,7 @@ body {
 .producto {
     display: inline-block;
     margin: 10px;
-    width: calc(25% - 20px); /* Ajuste para 4 columnas */
+    width: calc(25% - 20px); /* Ajusta a 4 columnas */
     box-sizing: border-box;
 }
 
@@ -162,7 +161,7 @@ footer {
 /* Responsividad */
 @media (max-width: 768px) {
     .producto {
-        width: calc(50% - 20px); /* Ajuste para 2 columnas en pantallas más pequeñas */
+        width: calc(50% - 20px); /* 2 columnas en pantallas más pequeñas */
     }
 
     .slider-text {
@@ -174,7 +173,7 @@ footer {
 
 @media (max-width: 480px) {
     .producto {
-        width: 100%; /* Ajuste para 1 columna en pantallas pequeñas */
+        width: 100%; /* 1 columna en pantallas pequeñas */
     }
 
     .slider-text {
