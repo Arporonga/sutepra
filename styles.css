@@ -55,7 +55,7 @@ header nav ul li a {
 
 .slide img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -100,6 +100,46 @@ h2 {
     margin-bottom: 20px;
 }
 
+.order-container {
+    margin-bottom: 20px;
+}
+
+#order-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    text-align: left;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+#order-button:hover + .dropdown-content {
+    display: block;
+}
+
 .productos-container {
     display: flex;
     flex-wrap: wrap;
@@ -109,73 +149,32 @@ h2 {
 
 .producto {
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
     width: 200px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
+}
+
+.producto:hover {
+    transform: scale(1.05);
 }
 
 .producto img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.producto h3 {
+    font-size: 18px;
+    margin: 10px 0;
 }
 
-/* Botón de ordenar productos */
-.order-container {
-    position: relative;
-    display: inline-block;
-}
-
-#order-button {
-    padding: 12px 20px;
+.producto span {
     font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin: 20px 0;
-}
-
-#order-button:hover {
-    background-color: #555;
-    transform: scale(1.05);
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-}
-
-.dropdown-content a {
     color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.order-container:hover .dropdown-content {
-    display: block;
 }
 
 /* Barra de Información */
@@ -183,50 +182,45 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 10px 0;
-    background-color: #f4f4f4;
+    padding: 10px;
+    background-color: #f5f5f5;
 }
 
 .info-bar span {
-    font-size: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .info-icon {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
-/* Suscripción */
-#suscripcion {
-    padding: 30px 0;
-    text-align: center;
-    background-color: #f4f4f4;
-}
-
-#suscripcion form {
+/* Contacto */
+.contact-button {
     display: inline-block;
-}
-
-#suscripcion input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-#suscripcion button {
-    padding: 10px 20px;
-    font-size: 16px;
     background-color: #333;
     color: white;
-    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
 }
 
-#suscripcion button:hover {
+.contact-button:hover {
     background-color: #555;
+}
+
+.email-button {
+    background-color: #4CAF50;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+}
+
+.instagram-button {
+    background-color: #C13584;
 }
 
 /* Footer */
@@ -234,8 +228,5 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 10px 0;
 }
