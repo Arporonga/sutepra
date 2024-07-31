@@ -1,20 +1,46 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Modal functionality
+    const orderButton = document.getElementById('order-button');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const productosContainer = document.getElementById('productos-container');
+    const sortLowToHigh = document.getElementById('sort-low-to-high');
+    const sortHighToLow = document.getElementById('sort-high-to-low');
     const modal = document.getElementById('modal');
     const modalImage = document.getElementById('modal-image');
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const closeModal = document.querySelector('.close');
 
-    const productos = document.querySelectorAll('.producto');
-    productos.forEach(producto => {
+    orderButton.addEventListener('click', () => {
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+    sortLowToHigh.addEventListener('click', () => {
+        sortProducts('asc');
+    });
+
+    sortHighToLow.addEventListener('click', () => {
+        sortProducts('desc');
+    });
+
+    function sortProducts(order) {
+        const productos = Array.from(productosContainer.getElementsByClassName('producto'));
+        productos.sort((a, b) => {
+            const priceA = parseFloat(a.getAttribute('data-price'));
+            const priceB = parseFloat(b.getAttribute('data-price'));
+            return order === 'asc' ? priceA - priceB : priceB - priceA;
+        });
+        productos.forEach(producto => productosContainer.appendChild(producto));
+    }
+
+    document.querySelectorAll('.producto').forEach(producto => {
         producto.addEventListener('click', () => {
+            const imgSrc = producto.querySelector('img').src;
+            const title = producto.querySelector('h3').textContent;
+            const description = producto.getAttribute('data-description');
+            modalImage.src = imgSrc;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
             modal.style.display = 'block';
-            modalImage.src = producto.querySelector('img').src;
-            modalTitle.textContent = producto.querySelector('h3').textContent;
-            modalDescription.textContent = producto.dataset.description;
         });
     });
 
@@ -22,33 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     });
 
-    window.onclick = function(event) {
+    window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
-    };
-
-    // Ordenar productos
-    const sortLowToHigh = document.getElementById('sort-low-to-high');
-    const sortHighToLow = document.getElementById('sort-high-to-low');
-    const productosContainer = document.getElementById('productos-container');
-
-    function sortProducts(order) {
-        const productosArray = Array.from(productosContainer.children);
-        productosArray.sort((a, b) => {
-            const priceA = parseFloat(a.dataset.price);
-            const priceB = parseFloat(b.dataset.price);
-            return order === 'low-to-high' ? priceA - priceB : priceB - priceA;
-        });
-        productosContainer.innerHTML = '';
-        productosArray.forEach(producto => productosContainer.appendChild(producto));
-    }
-
-    sortLowToHigh.addEventListener('click', () => {
-        sortProducts('low-to-high');
-    });
-
-    sortHighToLow.addEventListener('click', () => {
-        sortProducts('high-to-low');
     });
 });
