@@ -24,24 +24,19 @@ body {
     width: 100%;
     height: 400px; /* Ajusta según sea necesario */
     overflow: hidden;
-    background: #000; /* Color de fondo para el slider */
 }
 
 .slider-images {
     display: flex;
-    width: 100%;
+    width: 400%; /* Ajusta al número de imágenes */
     height: 100%;
+    transition: transform 1s ease-in-out;
 }
 
 .slider-image {
     width: 100%;
-    height: auto;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slider-image.active {
-    opacity: 1;
+    height: 100%;
+    object-fit: cover;
 }
 
 .slider-text {
@@ -60,6 +55,7 @@ body {
 #productos {
     padding: 20px;
     text-align: center;
+    background-color: #f8f8f8;
 }
 
 .producto {
@@ -89,6 +85,7 @@ body {
 #acerca-de {
     padding: 20px;
     text-align: center;
+    background-color: #fff;
 }
 
 #acerca-de h2 {
@@ -107,6 +104,7 @@ body {
 #contacto {
     padding: 20px;
     text-align: center;
+    background-color: #f8f8f8;
 }
 
 #contacto h2 {
