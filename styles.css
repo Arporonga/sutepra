@@ -40,44 +40,64 @@ header nav ul li a {
 /* Slider */
 .slider {
     position: relative;
+    height: 100vh; /* Ajusta la altura para que ocupe toda la altura de la pantalla */
     overflow: hidden;
-    height: 300px;
+    background-color: black;
+    color: white;
+    text-align: center;
 }
 
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    width: 300%; /* Ajusta según el número de imágenes */
+    height: 100%;
+    animation: slide 15s infinite;
 }
 
 .slide {
-    min-width: 100%;
-    box-sizing: border-box;
+    width: 100%; /* Ajusta para que ocupe todo el ancho disponible */
+    flex-shrink: 0;
 }
 
-.slider img {
+.slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionar */
 }
 
-/* Texto y marca del slider */
+/* Texto del Slider */
 .slider-text {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    font-size: 24px;
-    font-family: 'Didot', serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem; /* Ajusta el tamaño del texto */
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
 }
 
 .slider-brand {
     position: absolute;
-    bottom: 60px;
-    left: 20px;
-    color: white;
-    font-size: 20px;
-    font-family: 'Didot', serif;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem; /* Ajusta el tamaño del texto */
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
 }
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(0); }
+    33.33% { transform: translateX(-100%); }
+    58.33% { transform: translateX(-100%); }
+    66.66% { transform: translateX(-200%); }
+    91.66% { transform: translateX(-200%); }
+    100% { transform: translateX(-300%); }
+}
+
 
 /* Productos */
 section {
