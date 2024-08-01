@@ -102,6 +102,7 @@ h2 {
 .order-container {
     text-align: center;
     margin: 20px 0;
+    position: relative;
 }
 
 .order-button {
@@ -126,6 +127,7 @@ h2 {
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
     border-radius: 5px;
     margin-top: 10px;
+    z-index: 10;
 }
 
 .dropdown-content a {
@@ -177,6 +179,26 @@ h2 {
 .producto span {
     font-size: 16px;
     color: #333;
+}
+
+/* Categorías */
+.categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.categoria {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+.categoria h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Barra de Información */
