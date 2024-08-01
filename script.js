@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
 
     function showSlide(index) {
-        slides.style.transform = `translateX(-${index * 100}%)`; // Corregido el error en el string
+        slides.style.transform = `translateX(-${index * 100}%)`; // Usar comillas invertidas para el string
         updateIndicators(index);
     }
 
