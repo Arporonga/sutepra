@@ -1,57 +1,58 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const orderButton = document.getElementById("order-button");
-    const dropdownContent = document.querySelector(".dropdown-content");
+// Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
-    orderButton.addEventListener("click", function() {
-        dropdownContent.classList.toggle("show");
+function showSlide(index) {
+    const offset = -index * 100;
+    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+}
+
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+}, 5000);
+
+// Ordenar productos
+document.getElementById('order-button').addEventListener('click', () => {
+    const dropdown = document.querySelector('.dropdown-content');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+document.getElementById('sort-low-to-high').addEventListener('click', () => {
+    sortProducts(true);
+});
+
+document.getElementById('sort-high-to-low').addEventListener('click', () => {
+    sortProducts(false);
+});
+
+function sortProducts(lowToHigh) {
+    const container = document.getElementById('productos-container');
+    const productos = Array.from(container.querySelectorAll('.producto'));
+
+    productos.sort((a, b) => {
+        const priceA = parseFloat(a.getAttribute('data-price'));
+        const priceB = parseFloat(b.getAttribute('data-price'));
+        return lowToHigh ? priceA - priceB : priceB - priceA;
     });
 
-    const sortLowToHigh = document.getElementById("sort-low-to-high");
-    const sortHighToLow = document.getElementById("sort-high-to-low");
-    const productosContainer = document.getElementById("productos-container");
-    const productos = Array.from(productosContainer.getElementsByClassName("producto"));
+    productos.forEach(producto => container.appendChild(producto));
+}
 
-    sortLowToHigh.addEventListener("click", function() {
-        sortProducts(true);
-        dropdownContent.classList.remove("show");
+// Mostrar especificaciones del producto
+document.querySelectorAll('.product-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const producto = e.target.closest('.producto');
+        document.getElementById('product-title').textContent = producto.querySelector('h3').textContent;
+        document.getElementById('product-image').src = producto.querySelector('img').src;
+        document.getElementById('product-description').textContent = producto.getAttribute('data-description');
+        document.getElementById('product-price').textContent = producto.querySelector('span').textContent;
+        document.getElementById('product-specifications').classList.remove('hidden');
     });
+});
 
-    sortHighToLow.addEventListener("click", function() {
-        sortProducts(false);
-        dropdownContent.classList.remove("show");
-    });
-
-    function sortProducts(asc) {
-        productos.sort((a, b) => {
-            const priceA = parseInt(a.getAttribute("data-price"));
-            const priceB = parseInt(b.getAttribute("data-price"));
-            return asc ? priceA - priceB : priceB - priceA;
-        });
-
-        productos.forEach(producto => productosContainer.appendChild(producto));
-    }
-
-    // Modal functionality
-    const modal = document.getElementById("myModal");
-    const modalImg = document.getElementById("modal-img");
-    const modalDescription = document.getElementById("modal-description");
-    const closeModal = document.getElementsByClassName("close")[0];
-
-    productos.forEach(producto => {
-        producto.addEventListener("click", function() {
-            modal.style.display = "block";
-            modalImg.src = this.querySelector("img").src;
-            modalDescription.textContent = this.getAttribute("data-description");
-        });
-    });
-
-    closeModal.addEventListener("click", function() {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
+document.querySelector('.close-specifications').addEventListener('click', () => {
+    document.getElementById('product-specifications').classList.add('hidden');
 });
