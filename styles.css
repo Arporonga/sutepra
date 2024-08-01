@@ -1,10 +1,6 @@
-/* Importar fuentes desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-
 /* Estilos generales */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Didot', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -32,89 +28,65 @@ header nav ul li {
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
+    font-weight: bold;
 }
 
 /* Slider */
 .slider {
     position: relative;
-    width: 100%;
-    max-width: 1200px; /* Ajuste máximo del ancho para PC */
-    margin: 0 auto; /* Centra el slider */
-    padding-top: 50%; /* Mantiene una proporción de 2:1 */
+    height: 300px;
     overflow: hidden;
     background-color: black;
     color: white;
     text-align: center;
-    border-radius: 10px; /* Bordes redondeados para un aspecto más elegante */
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Sombra para darle profundidad */
 }
 
 .slides {
     display: flex;
-    width: 300%;
+    width: 400%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 1s ease-in-out;
+    animation: slide 15s infinite;
 }
 
 .slide {
-    flex: 1 0 100%;
-    height: 100%;
-    position: relative;
+    width: 25%;
+    flex-shrink: 0;
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen dentro del contenedor, cubriendo todo el área */
-    object-position: center; /* Centra la imagen dentro del contenedor */
-    border-radius: 10px; /* Asegura que las imágenes también tengan bordes redondeados */
-}
-
-.slider-text, .slider-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    width: 90%; /* Asegura que el texto no se extienda demasiado en pantallas pequeñas */
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mayor legibilidad */
-    padding: 10px;
-    border-radius: 5px;
+    object-fit: cover;
 }
 
 .slider-text {
-    top: 30%;
-    font-size: 18px;
-    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
 }
 
 .slider-brand {
-    top: 50%;
-    font-size: 24px;
-    font-weight: 700;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: #fff;
+    font-weight: bold;
 }
 
-@media (max-width: 768px) {
-    .slider {
-        padding-top: 75%; /* Ajusta la altura del slider en dispositivos móviles */
-        max-width: 100%; /* Asegura que el slider ocupe el ancho completo del dispositivo */
-    }
-
-    .slider-text {
-        font-size: 16px;
-        top: 25%;
-    }
-
-    .slider-brand {
-        font-size: 20px;
-        top: 45%;
-    }
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(0); }
+    33.33% { transform: translateX(-25%); }
+    58.33% { transform: translateX(-25%); }
+    66.66% { transform: translateX(-50%); }
+    91.66% { transform: translateX(-50%); }
+    100% { transform: translateX(-75%); }
 }
 
 /* Productos */
@@ -124,9 +96,7 @@ section {
 
 h2 {
     text-align: center;
-    font-size: 32px;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
+    font-size: 28px;
 }
 
 .order-container {
@@ -194,19 +164,18 @@ h2 {
 .producto img {
     width: 100%;
     height: auto;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 200px; /* Ajusta según el tamaño deseado */
+    max-height: 200px; /* Ajusta según el tamaño deseado */
     object-fit: cover;
 }
 
 .producto h3 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px 0;
-    font-family: 'Playfair Display', serif;
 }
 
 .producto span {
-    font-size: 18px;
+    font-size: 16px;
     color: #333;
 }
 
@@ -222,7 +191,6 @@ h2 {
 .info-bar span {
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
 }
 
 .info-icon {
@@ -238,7 +206,6 @@ h2 {
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
     transition: background-color 0.3s;
 }
 
@@ -272,7 +239,6 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    font-family: 'Roboto', sans-serif;
 }
 
 /* Modal */
@@ -285,8 +251,7 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
@@ -295,6 +260,13 @@ footer {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    max-width: 600px;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .close {
