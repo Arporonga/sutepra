@@ -39,19 +39,23 @@ header nav ul li a {
 /* Slider */
 .slider {
     position: relative;
-    overflow: hidden;
     width: 100%;
-    max-width: 600px; /* Ajusta el ancho máximo del slider */
-    margin: auto; /* Centra el slider horizontalmente */
-    aspect-ratio: 1 / 1; /* Mantiene la proporción cuadrada */
+    padding-top: 100%; /* Mantiene una proporción cuadrada */
+    overflow: hidden;
     background-color: black;
     color: white;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .slides {
     display: flex;
-    width: 300%; /* Cambia el ancho a 300% para permitir la transición de 3 imágenes */
-    transition: transform 0.5s ease-in-out; /* Cambia la duración de la transición si es necesario */
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s ease-in-out;
 }
 
 .slide {
@@ -72,7 +76,7 @@ header nav ul li a {
     transform: translateX(-50%);
     color: #fff;
     font-family: 'Playfair Display', serif;
-    width: 90%;
+    width: 90%; /* Asegura que el texto no se extienda demasiado en pantallas pequeñas */
     text-align: center;
 }
 
@@ -90,7 +94,7 @@ header nav ul li a {
 
 @media (max-width: 768px) {
     .slider {
-        height: 200px; /* Ajusta la altura para dispositivos móviles si es necesario */
+        padding-top: 75%; /* Ajusta la altura del slider en dispositivos móviles */
     }
 
     .slider-text {
@@ -103,7 +107,6 @@ header nav ul li a {
         top: 45%;
     }
 }
-
 
 /* Productos */
 section {
