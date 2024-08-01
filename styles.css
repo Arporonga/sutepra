@@ -223,3 +223,46 @@ footer {
 #modal-description {
     margin-top: 20px;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .producto {
+        width: 45%;
+    }
+
+    .slider-text {
+        font-size: 18px;
+    }
+
+    .slider-brand {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .producto {
+        width: 90%;
+    }
+
+    .order-container button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .info-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info-bar span {
+        font-size: 14px;
+    }
+
+    .slider-text {
+        font-size: 16px;
+    }
+
+    .slider-brand {
+        font-size: 24px;
+    }
+}
