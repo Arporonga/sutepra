@@ -1,46 +1,31 @@
-// Script para mostrar el modal
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("order-button");
-var span = document.getElementsByClassName("close")[0];
-
-// Abre el modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// Cierra el modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// Cierra el modal si el usuario hace clic fuera del modal
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-// Script para ordenar productos
-document.getElementById("sort-low-to-high").addEventListener("click", function() {
-    sortProducts("asc");
+// Script para mostrar y ocultar la descripción de los productos
+document.querySelectorAll('.producto').forEach(product => {
+    product.addEventListener('click', function() {
+        // Alterna la clase 'active' en el producto clicado
+        this.classList.toggle('active');
+    });
 });
 
-document.getElementById("sort-high-to-low").addEventListener("click", function() {
-    sortProducts("desc");
-});
-
+// Función para ordenar los productos
 function sortProducts(order) {
-    var container = document.getElementById("productos-container");
-    var products = Array.from(container.getElementsByClassName("producto"));
+    const container = document.getElementById('productos-container');
+    const products = Array.from(container.querySelectorAll('.producto'));
 
-    products.sort(function(a, b) {
-        var priceA = parseFloat(a.getAttribute("data-price"));
-        var priceB = parseFloat(b.getAttribute("data-price"));
+    products.sort((a, b) => {
+        const priceA = parseFloat(a.getAttribute('data-price'));
+        const priceB = parseFloat(b.getAttribute('data-price'));
 
-        return order === "asc" ? priceA - priceB : priceB - priceA;
+        if (order === 'low-to-high') {
+            return priceA - priceB;
+        } else if (order === 'high-to-low') {
+            return priceB - priceA;
+        }
+        return 0;
     });
 
-    products.forEach(function(product) {
-        container.appendChild(product);
-    });
+    products.forEach(product => container.appendChild(product));
 }
+
+// Event listeners para los enlaces de ordenamiento
+document.getElementById('sort-low-to-high').addEventListener('click', () => sortProducts('low-to-high'));
+document.getElementById('sort-high-to-low').addEventListener('click', () => sortProducts('high-to-low'));
