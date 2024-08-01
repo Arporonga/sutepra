@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* General */
 body {
     font-family: 'Didot', serif; /* Fuente elegante */
@@ -117,6 +115,7 @@ nav ul li a {
     color: #333;
 }
 
+/* Filtro */
 .filter-container {
     position: relative;
     text-align: center;
