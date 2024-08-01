@@ -83,3 +83,33 @@ window.addEventListener('click', (event) => {
         });
     }
 });
+
+// Filtrar productos por categoría
+document.getElementById('sort-low-to-high').addEventListener('click', () => {
+    sortProducts('low-to-high');
+});
+
+document.getElementById('sort-high-to-low').addEventListener('click', () => {
+    sortProducts('high-to-low');
+});
+
+document.querySelectorAll('.dropdown-content a').forEach(option => {
+    option.addEventListener('click', () => {
+        filterProducts(option.innerText);
+    });
+});
+
+function filterProducts(category) {
+    const container = document.getElementById('productos-container');
+    const products = Array.from(container.getElementsByClassName('producto'));
+
+    products.forEach(product => {
+        if (category === 'Italian Bracelets') {
+            product.style.display = product.querySelector('h3').innerText.includes('Bracelet') ? 'block' : 'none';
+        } else if (category === 'Lentes') {
+            product.style.display = product.querySelector('h3').innerText.includes('Retro') ? 'block' : 'none';
+        } else {
+            product.style.display = 'block'; // Mostrar todos los productos si la categoría no coincide
+        }
+    });
+}
