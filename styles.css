@@ -71,10 +71,13 @@ header nav ul li a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem; /* Ajusta el tamaño del texto */
+    font-size: 2rem; /* Tamaño de fuente base */
     color: #fff;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Añade sombra para mejor legibilidad */
+    padding: 0 20px; /* Espaciado horizontal */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
 
 .slider-brand {
@@ -82,10 +85,38 @@ header nav ul li a {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3rem; /* Ajusta el tamaño del texto */
+    font-size: 3rem; /* Tamaño de fuente base */
     color: #fff;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Añade sombra para mejor legibilidad */
+    padding: 0 20px; /* Espaciado horizontal */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .slider-text {
+        font-size: 1.5rem; /* Reduce el tamaño de fuente para móviles */
+        padding: 0 10px; /* Reduce el padding para móviles */
+    }
+
+    .slider-brand {
+        font-size: 2.5rem; /* Reduce el tamaño de fuente para móviles */
+        padding: 0 10px; /* Reduce el padding para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-text {
+        font-size: 1.2rem; /* Reduce aún más el tamaño de fuente para móviles pequeños */
+        padding: 0 5px; /* Reduce aún más el padding para móviles pequeños */
+    }
+
+    .slider-brand {
+        font-size: 2rem; /* Reduce aún más el tamaño de fuente para móviles pequeños */
+        padding: 0 5px; /* Reduce aún más el padding para móviles pequeños */
+    }
 }
 
 @keyframes slide {
