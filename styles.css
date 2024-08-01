@@ -40,7 +40,7 @@ header nav ul li a {
 .slider {
     position: relative;
     width: 100%;
-    padding-top: 100%; /* Mantiene una proporción cuadrada */
+    padding-top: 56.25%; /* Mantiene una proporción de 16:9 */
     overflow: hidden;
     background-color: black;
     color: white;
