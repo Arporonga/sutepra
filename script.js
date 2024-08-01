@@ -1,23 +1,22 @@
-// Código JavaScript para el slider
 document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;
     const totalSlides = slides.length;
-    
+
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.style.opacity = i === index ? 1 : 0;
         });
     }
-    
+
     function nextSlide() {
         currentIndex = (currentIndex + 1) % totalSlides;
         showSlide(currentIndex);
     }
-    
+
     // Cambiar de imagen cada 5 segundos
     setInterval(nextSlide, 5000);
-    
+
     // Mostrar la primera imagen al cargar la página
     showSlide(currentIndex);
 });
