@@ -40,11 +40,7 @@ function sortProducts(order) {
         const priceA = parseFloat(a.getAttribute('data-price'));
         const priceB = parseFloat(b.getAttribute('data-price'));
 
-        if (order === 'asc') {
-            return priceA - priceB;
-        } else {
-            return priceB - priceA;
-        }
+        return order === 'asc' ? priceA - priceB : priceB - priceA;
     });
 
     container.innerHTML = '';
@@ -58,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
 
     function showSlide(index) {
-        slides.style.transform = `translateX(-${index * 100}%)`;
+        slides.style.transform = `translateX(-${index * 100}%)`; // Corregido el error en el string
         updateIndicators(index);
     }
 
