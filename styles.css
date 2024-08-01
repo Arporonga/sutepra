@@ -39,21 +39,19 @@ header nav ul li a {
 /* Slider */
 .slider {
     position: relative;
-    height: 300px; /* Ajusta la altura según sea necesario */
     overflow: hidden;
+    width: 100%;
+    max-width: 600px; /* Ajusta el ancho máximo del slider */
+    margin: auto; /* Centra el slider horizontalmente */
+    aspect-ratio: 1 / 1; /* Mantiene la proporción cuadrada */
     background-color: black;
     color: white;
-    text-align: center;
 }
 
 .slides {
     display: flex;
-    width: 300%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 1s ease-in-out;
+    width: 300%; /* Cambia el ancho a 300% para permitir la transición de 3 imágenes */
+    transition: transform 0.5s ease-in-out; /* Cambia la duración de la transición si es necesario */
 }
 
 .slide {
@@ -74,7 +72,7 @@ header nav ul li a {
     transform: translateX(-50%);
     color: #fff;
     font-family: 'Playfair Display', serif;
-    width: 90%; /* Añadido para asegurar que el texto no se extienda demasiado en pantallas pequeñas */
+    width: 90%;
     text-align: center;
 }
 
@@ -105,6 +103,7 @@ header nav ul li a {
         top: 45%;
     }
 }
+
 
 /* Productos */
 section {
