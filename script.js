@@ -1,37 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('product-modal');
-    const modalImage = document.getElementById('modal-image');
-    const modalDescription = document.getElementById('modal-description');
-    const closeModal = document.querySelector('.close');
+// script.js
 
-    // Función para abrir el modal
-    function openModal(imageSrc, description) {
-        modalImage.src = imageSrc;
-        modalDescription.innerHTML = description;
-        modal.style.display = 'block';
-    }
+// Función para abrir el modal
+function openModal(imageSrc, description) {
+    document.getElementById('modal-image').src = imageSrc;
+    document.getElementById('modal-description').textContent = description;
+    document.getElementById('product-modal').style.display = 'block';
+}
 
-    // Función para cerrar el modal
-    function closeModalFn() {
-        modal.style.display = 'none';
-    }
+// Función para cerrar el modal
+function closeModal() {
+    document.getElementById('product-modal').style.display = 'none';
+}
 
-    // Añadir evento al botón de cerrar
-    closeModal.addEventListener('click', closeModalFn);
-
-    // Añadir evento al hacer clic en cualquier parte del producto
-    document.querySelectorAll('.producto').forEach(producto => {
-        producto.addEventListener('click', () => {
-            const imageSrc = producto.querySelector('img').src;
-            const description = producto.getAttribute('data-description');
-            openModal(imageSrc, description);
-        });
-    });
-
-    // Cerrar el modal si el usuario hace clic fuera del contenido del modal
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModalFn();
-        }
+// Configurar eventos para los productos
+document.querySelectorAll('.producto').forEach(producto => {
+    producto.addEventListener('click', () => {
+        const imageSrc = producto.querySelector('img').src;
+        const description = producto.getAttribute('data-description');
+        openModal(imageSrc, description);
     });
 });
+
+// Configurar evento para cerrar el modal
+document.querySelector('.close').addEventListener('click', closeModal);
+
+// Configurar eventos para ordenar productos
+document.getElementById('sort-low-to-high').addEventListener('click', () => {
+    sortProducts('asc');
+});
+document.getElementById('sort-high-to-low').addEventListener('click', () => {
+    sortProducts('desc');
+});
+
+function sortProducts(order) {
+    const container = document.getElementById('productos-container');
+    const products = Array.from(container.getElementsByClassName('producto'));
+
+    products.sort((a, b) => {
+        const priceA = parseFloat(a.getAttribute('data-price'));
+        const priceB = parseFloat(b.getAttribute('data-price'));
+
+        if (order === 'asc') {
+            return priceA - priceB;
+        } else {
+            return priceB - priceA;
+        }
+    });
+
+    container.innerHTML = '';
+    products.forEach(product => container.appendChild(product));
+}
