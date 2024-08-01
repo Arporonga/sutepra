@@ -117,9 +117,10 @@ header nav ul li a {
 
 .producto {
     display: inline-block;
-    width: 30%;
+    width: 100%;
+    max-width: 300px;
     box-sizing: border-box;
-    margin: 1%;
+    margin: 10px;
     border: 1px solid #ddd;
     padding: 10px;
     background-color: white;
@@ -174,4 +175,21 @@ footer {
 
 .social-media i {
     font-size: 20px;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+    .producto {
+        width: calc(33.333% - 20px); /* 3 productos por fila con espacio entre ellos */
+    }
+}
+
+@media (min-width: 1024px) {
+    #productos {
+        padding: 40px;
+    }
+
+    .producto {
+        width: calc(25% - 20px); /* 4 productos por fila con espacio entre ellos */
+    }
 }
