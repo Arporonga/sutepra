@@ -1,44 +1,54 @@
-/* styles.css */
+/* General */
 body {
-    font-family: 'Didot', serif;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: #000;
+    color: #fff;
     padding: 10px 0;
+    text-align: center;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
     padding: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    display: inline;
+    margin: 0 10px;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-size: 18px;
 }
 
+/* Slider */
 .slider {
     position: relative;
-    width: 100%;
     height: 300px;
     overflow: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
 }
 
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    width: 300%;
+    height: 100%;
+    animation: slide 15s infinite;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .slide img {
@@ -47,62 +57,208 @@ nav ul li a {
     object-fit: cover;
 }
 
-.slider-text, .slider-brand {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    text-align: center;
-}
-
 .slider-text {
-    font-size: 24px;
-    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
 }
 
 .slider-brand {
-    font-size: 36px;
-    font-weight: bold;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
 }
 
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(0); }
+    33.33% { transform: translateX(-100%); }
+    58.33% { transform: translateX(-100%); }
+    66.66% { transform: translateX(-200%); }
+    91.66% { transform: translateX(-200%); }
+    100% { transform: translateX(-300%); }
+}
+
+/* Productos */
 .productos-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
 }
 
 .producto {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
     width: 200px;
-    margin: 10px;
     text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.producto:hover {
+    transform: scale(1.05);
 }
 
 .producto img {
     width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
 }
 
-.order-container {
+.producto h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.producto span {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Barra de Información */
+.info-bar {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
     display: flex;
     justify-content: center;
-    margin: 20px;
+    gap: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.info-bar span {
+    font-size: 16px;
+    color: #333;
+}
+
+.info-bar .info-icon {
+    margin-right: 5px;
+}
+
+/* Suscripción */
+#suscripcion {
+    padding: 20px;
+    text-align: center;
+}
+
+#suscripcion form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#suscripcion input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#suscripcion button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#suscripcion button:hover {
+    background-color: #333;
+}
+
+/* Acerca de Nosotros */
+#acerca-de {
+    padding: 20px;
+    text-align: center;
+}
+
+#acerca-de p {
+    font-size: 18px;
+}
+
+/* Contacto */
+#contacto {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.contact-button:hover {
+    background-color: #333;
+}
+
+.email-button { background-color: #555; }
+.email-button:hover { background-color: #777; }
+
+.whatsapp-button { background-color: #25D366; }
+.whatsapp-button:hover { background-color: #128C7E; }
+
+.instagram-button { background-color: #E4405F; }
+.instagram-button:hover { background-color: #C13584; }
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo adicional */
+.order-container {
+    text-align: center;
+    margin: 20px 0;
 }
 
 #order-button {
-    background-color: #333;
-    color: white;
     padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
 .dropdown-content a {
@@ -112,64 +268,12 @@ nav ul li a {
     display: block;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
+.dropdown-content a:hover {background-color: #f1f1f1;}
 
-.info-bar {
-    background-color: #f2f2f2;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.info-icon {
-    margin-right: 5px;
-}
-
-#suscripcion {
-    text-align: center;
-    padding: 20px;
-}
-
-#suscripcion form {
-    display: inline-block;
-    margin-top: 10px;
-}
-
-#suscripcion input[type="email"] {
-    padding: 10px;
-    font-size: 16px;
-}
-
-#suscripcion button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.contact-button {
+.order-container:hover .dropdown-content {
     display: block;
-    width: 200px;
-    margin: 10px auto;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    color: white;
-    background-color: #333;
 }
 
-.email-button { background-color: #333; }
-.whatsapp-button { background-color: #25D366; }
-.instagram-button { background-color: #C13584; }
-
-footer {
-    text-align: center;
-    padding: 10px;
+.order-container:hover #order-button {
     background-color: #333;
-    color: white;
 }
