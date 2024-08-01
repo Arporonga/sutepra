@@ -48,7 +48,7 @@ header nav ul li a {
 
 .slides {
     display: flex;
-    width: 100%;
+    width: 300%;
     height: 100%;
     position: absolute;
     top: 0;
