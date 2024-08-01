@@ -1,3 +1,28 @@
+// script.js
+
+// Slider
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const indicators = document.querySelectorAll('.slider-indicator');
+
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    for (let i = 0; i < indicators.length; i++) {
+        indicators[i].className = indicators[i].className.replace(' active', '');
+    }
+    slides[slideIndex - 1].style.display = 'block';
+    indicators[slideIndex - 1].className += ' active';
+    setTimeout(showSlides, 5000); // Cambiar de imagen cada 5 segundos
+}
+
+showSlides();
+
 // Obtener el modal
 const modal = document.getElementById('product-modal');
 const modalImage = document.getElementById('modal-image');
