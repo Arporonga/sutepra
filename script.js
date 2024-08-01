@@ -1,58 +1,53 @@
-// Slider
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
+document.addEventListener('DOMContentLoaded', function() {
+    // Modal
+    var modal = document.getElementById("product-modal");
+    var closeBtn = document.getElementsByClassName("close")[0];
 
-function showSlide(index) {
-    const offset = -index * 100;
-    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
-}
+    document.querySelectorAll('.view-details').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var producto = this.parentElement;
+            var description = producto.getAttribute('data-description');
+            var imgSrc = producto.querySelector('img').src;
 
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-}, 5000);
+            document.getElementById('modal-description').textContent = description;
+            document.getElementById('modal-image').src = imgSrc;
 
-// Ordenar productos
-document.getElementById('order-button').addEventListener('click', () => {
-    const dropdown = document.querySelector('.dropdown-content');
-    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-});
-
-document.getElementById('sort-low-to-high').addEventListener('click', () => {
-    sortProducts(true);
-});
-
-document.getElementById('sort-high-to-low').addEventListener('click', () => {
-    sortProducts(false);
-});
-
-function sortProducts(lowToHigh) {
-    const container = document.getElementById('productos-container');
-    const productos = Array.from(container.querySelectorAll('.producto'));
-
-    productos.sort((a, b) => {
-        const priceA = parseFloat(a.getAttribute('data-price'));
-        const priceB = parseFloat(b.getAttribute('data-price'));
-        return lowToHigh ? priceA - priceB : priceB - priceA;
+            modal.style.display = "block";
+        });
     });
 
-    productos.forEach(producto => container.appendChild(producto));
-}
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
 
-// Mostrar especificaciones del producto
-document.querySelectorAll('.product-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const producto = e.target.closest('.producto');
-        document.getElementById('product-title').textContent = producto.querySelector('h3').textContent;
-        document.getElementById('product-image').src = producto.querySelector('img').src;
-        document.getElementById('product-description').textContent = producto.getAttribute('data-description');
-        document.getElementById('product-price').textContent = producto.querySelector('span').textContent;
-        document.getElementById('product-specifications').classList.remove('hidden');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Ordenar productos por precio
+    document.getElementById('sort-low-to-high').addEventListener('click', function() {
+        sortProducts('asc');
     });
-});
 
-document.querySelector('.close-specifications').addEventListener('click', () => {
-    document.getElementById('product-specifications').classList.add('hidden');
+    document.getElementById('sort-high-to-low').addEventListener('click', function() {
+        sortProducts('desc');
+    });
+
+    function sortProducts(order) {
+        var container = document.getElementById('productos-container');
+        var productos = Array.from(container.getElementsByClassName('producto'));
+
+        productos.sort(function(a, b) {
+            var priceA = parseFloat(a.getAttribute('data-price'));
+            var priceB = parseFloat(b.getAttribute('data-price'));
+
+            return order === 'asc' ? priceA - priceB : priceB - priceA;
+        });
+
+        productos.forEach(function(producto) {
+            container.appendChild(producto);
+        });
+    }
 });
