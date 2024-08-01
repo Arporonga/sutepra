@@ -37,11 +37,11 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Estilos generales del slider */
+/* Slider Styles */
 .slider {
     position: relative;
     overflow: hidden;
-    height: 300px; /* Ajusta según el tamaño de tus imágenes */
+    height: 400px; /* Ajusta la altura según sea necesario */
 }
 
 .slides {
@@ -51,33 +51,36 @@ nav ul li a {
 
 .slide {
     min-width: 100%;
-    transition: opacity 1s ease-in-out;
+    box-sizing: border-box;
 }
 
 .slide img {
     width: 100%;
-    height: auto; /* Asegura que la imagen se ajuste al ancho del contenedor */
+    height: auto;
 }
 
-/* Texto y marca del slider */
-.slider-text {
+/* Text Styles */
+.slider-text, .slider-brand {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.slider-text {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em; /* Ajusta el tamaño del texto según sea necesario */
 }
 
 .slider-brand {
-    position: absolute;
-    bottom: 60px;
-    left: 20px;
-    font-size: 20px;
-    color: white;
+    bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+    font-size: 2em; /* Ajusta el tamaño del texto según sea necesario */
 }
+
 
 /* Estilos para el indicador del slider */
 .slider-indicators {
