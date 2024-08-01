@@ -35,11 +35,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Estilos generales del slider */
 .slider {
     position: relative;
-    width: 100%;
-    height: 400px;
     overflow: hidden;
+    height: 300px; /* Ajusta según el tamaño de tus imágenes */
 }
 
 .slides {
@@ -47,30 +47,59 @@ nav ul li a {
     transition: transform 0.5s ease-in-out;
 }
 
+.slide {
+    min-width: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
 .slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto; /* Asegura que la imagen se ajuste al ancho del contenedor */
 }
 
-.slider-text, .slider-brand {
-    position: absolute;
-    color: #fff;
-    text-align: center;
-    width: 100%;
-}
-
+/* Texto y marca del slider */
 .slider-text {
-    top: 20%;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
     font-size: 24px;
-    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .slider-brand {
-    bottom: 20%;
-    font-size: 36px;
-    font-family: 'Didot', serif;
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    font-size: 20px;
+    color: white;
 }
+
+/* Estilos para el indicador del slider */
+.slider-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.slider-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-indicator.active {
+    background-color: #000;
+}
+
 
 #productos {
     padding: 20px;
