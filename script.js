@@ -50,3 +50,46 @@ function sortProducts(order) {
     container.innerHTML = '';
     products.forEach(product => container.appendChild(product));
 }
+
+// Slider functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelector(".slides");
+    const slideCount = document.querySelectorAll(".slide").length;
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        updateIndicators(index);
+    }
+
+    function updateIndicators(index) {
+        document.querySelectorAll(".slider-indicator").forEach((indicator, i) => {
+            indicator.classList.toggle("active", i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        showSlide(currentIndex);
+    }
+
+    // Start automatic slide transition every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Create indicators
+    const indicators = document.createElement("div");
+    indicators.className = "slider-indicators";
+    for (let i = 0; i < slideCount; i++) {
+        const indicator = document.createElement("div");
+        indicator.className = "slider-indicator";
+        indicator.addEventListener("click", () => {
+            currentIndex = i;
+            showSlide(currentIndex);
+        });
+        indicators.appendChild(indicator);
+    }
+    document.querySelector(".slider").appendChild(indicators);
+
+    // Initialize
+    showSlide(currentIndex);
+});
