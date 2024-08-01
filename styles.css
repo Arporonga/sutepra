@@ -43,13 +43,13 @@ header nav ul li a {
 
 .slides {
     display: flex;
-    width: 400%;
+    width: 300%;
     height: 100%;
     animation: slide 15s infinite;
 }
 
 .slide {
-    width: 25%;
+    width: 33.33%;
     flex-shrink: 0;
 }
 
@@ -59,84 +59,37 @@ header nav ul li a {
     object-fit: cover;
 }
 
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    33.33% { transform: translateX(0%); }
+    44.44% { transform: translateX(-100%); }
+    77.77% { transform: translateX(-100%); }
+    88.88% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+}
+
 .slider-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 20px;
+    left: 0;
+    right: 0;
     font-size: 24px;
-    color: #fff;
     font-weight: bold;
 }
 
 .slider-brand {
     position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20px;
+    left: 0;
+    right: 0;
     font-size: 36px;
-    color: #fff;
     font-weight: bold;
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(0); }
-    33.33% { transform: translateX(-25%); }
-    58.33% { transform: translateX(-25%); }
-    66.66% { transform: translateX(-50%); }
-    91.66% { transform: translateX(-50%); }
-    100% { transform: translateX(-75%); }
-}
-
 /* Productos */
-section {
+#productos {
     padding: 20px;
-}
-
-h2 {
     text-align: center;
-    font-size: 28px;
-}
-
-.order-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.order-button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.order-button:hover {
-    background-color: #555;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    text-align: left;
-    background-color: #fff;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-}
-
-.dropdown-content a:hover {
-    background-color: #f5f5f5;
 }
 
 .productos-container {
@@ -148,89 +101,111 @@ h2 {
 
 .producto {
     border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
     width: 200px;
     text-align: center;
-    transition: transform 0.3s;
-    cursor: pointer;
-}
-
-.producto:hover {
-    transform: scale(1.05);
 }
 
 .producto img {
     width: 100%;
     height: auto;
-    max-width: 200px; /* Ajusta según el tamaño deseado */
-    max-height: 200px; /* Ajusta según el tamaño deseado */
-    object-fit: cover;
 }
 
 .producto h3 {
-    font-size: 18px;
     margin: 10px 0;
 }
 
 .producto span {
-    font-size: 16px;
-    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.order-container {
+    margin: 20px 0;
+}
+
+#order-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#order-button:hover {
+    background-color: #555;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
 }
 
 /* Barra de Información */
 .info-bar {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px;
-    background-color: #f5f5f5;
-}
-
-.info-bar span {
-    display: flex;
-    align-items: center;
+    justify-content: space-around;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .info-icon {
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
-/* Contacto */
-.contact-button {
-    display: inline-block;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    text-decoration: none;
+/* Suscripción */
+#suscripcion {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+#suscripcion form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#suscripcion input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s;
 }
 
-.email-button {
-    background-color: #4CAF50;
+#suscripcion button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
-.email-button:hover {
-    background-color: #45a049;
-}
-
-.whatsapp-button {
-    background-color: #25D366;
-}
-
-.whatsapp-button:hover {
-    background-color: #1ebe57;
-}
-
-.instagram-button {
-    background-color: #C13584;
-}
-
-.instagram-button:hover {
-    background-color: #a32a68;
+#suscripcion button:hover {
+    background-color: #555;
 }
 
 /* Footer */
@@ -239,46 +214,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
+    position: relative;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-}
-
-.modal-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
