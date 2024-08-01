@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
     const totalSlides = slides.length;
+    let currentIndex = 0;
 
+    // Función para mostrar la imagen actual
     function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.opacity = i === index ? 1 : 0;
-        });
+        const offset = -index * 100; // Calcula el desplazamiento para mostrar la imagen actual
+        document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
     }
 
+    // Función para avanzar a la siguiente imagen
     function nextSlide() {
         currentIndex = (currentIndex + 1) % totalSlides;
         showSlide(currentIndex);
