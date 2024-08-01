@@ -164,7 +164,9 @@ h2 {
 .producto img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    max-width: 200px; /* Ajusta según el tamaño deseado */
+    max-height: 200px; /* Ajusta según el tamaño deseado */
+    object-fit: cover;
 }
 
 .producto h3 {
