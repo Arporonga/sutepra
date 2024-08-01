@@ -26,6 +26,11 @@ function sortProducts(order) {
     products.forEach(product => container.appendChild(product));
 }
 
-// Event listeners para los enlaces de ordenamiento
-document.getElementById('sort-low-to-high').addEventListener('click', () => sortProducts('low-to-high'));
-document.getElementById('sort-high-to-low').addEventListener('click', () => sortProducts('high-to-low'));
+// Eventos para los botones de ordenamiento
+document.getElementById('sort-low-to-high').addEventListener('click', () => {
+    sortProducts('low-to-high');
+});
+
+document.getElementById('sort-high-to-low').addEventListener('click', () => {
+    sortProducts('high-to-low');
+});
