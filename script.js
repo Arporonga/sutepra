@@ -52,29 +52,22 @@ function sortProducts(order) {
 }
 
 // Slider functionality
-document.addEventListener("DOMContentLoaded", function() {
-    const slides = document.querySelector(".slides");
-    const slideCount = document.querySelectorAll(".slide").length;
-    let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
 
-    function showSlide(index) {
-        slides.style.transform = `translateX(-${index * 100}%)`;
-        updateIndicators(index);
-    }
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${(i - index) * 100}%)`;
+    });
+}
 
-    function updateIndicators(index) {
-        document.querySelectorAll(".slider-indicator").forEach((indicator, i) => {
-            indicator.classList.toggle("active", i === index);
-        });
-    }
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slideCount;
-        showSlide(currentIndex);
-    }
+setInterval(nextSlide, 5000); // Cambia de imagen cada 5 segundos
 
-    // Start automatic slide transition every 5 seconds
-    setInterval(nextSlide, 5000);
 
     // Create indicators
     const indicators = document.createElement("div");
