@@ -1,52 +1,3 @@
-// Script para mostrar y ocultar la descripción de los productos
-document.querySelectorAll('.producto').forEach(product => {
-    product.addEventListener('click', function() {
-        // Alterna la clase 'active' en el producto clicado
-        this.classList.toggle('active');
-    });
-});
-
-// Función para ordenar los productos
-function sortProducts(order) {
-    const container = document.getElementById('productos-container');
-    const products = Array.from(container.querySelectorAll('.producto'));
-
-    products.sort((a, b) => {
-        const priceA = parseFloat(a.getAttribute('data-price'));
-        const priceB = parseFloat(b.getAttribute('data-price'));
-
-        if (order === 'low-to-high') {
-            return priceA - priceB;
-        } else if (order === 'high-to-low') {
-            return priceB - priceA;
-        }
-        return 0;
-    });
-
-    products.forEach(product => container.appendChild(product));
-}
-
-// Event listeners para los enlaces de ordenamiento
-document.getElementById('sort-low-to-high').addEventListener('click', () => sortProducts('low-to-high'));
-document.getElementById('sort-high-to-low').addEventListener('click', () => sortProducts('high-to-low'));
-
-// Script para el slider automático
-let currentIndex = 0;
-const slides = document.querySelector('.slides');
-const slideCount = document.querySelectorAll('.slide').length;
-
-function showSlide(index) {
-    const offset = -index * 100;
-    slides.style.transform = `translateX(${offset}%)`;
-}
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % slideCount;
-    showSlide(currentIndex);
-}
-
-setInterval(nextSlide, 5000); // Cambia la imagen cada 5 segundos
-
 // Script para mostrar el modal
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("order-button");
@@ -68,3 +19,42 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// Script para ordenar productos
+document.getElementById("sort-low-to-high").addEventListener("click", function() {
+    sortProducts("asc");
+});
+
+document.getElementById("sort-high-to-low").addEventListener("click", function() {
+    sortProducts("desc");
+});
+
+function sortProducts(order) {
+    var container = document.getElementById("productos-container");
+    var products = Array.from(container.getElementsByClassName("producto"));
+
+    products.sort(function(a, b) {
+        var priceA = parseFloat(a.getAttribute("data-price"));
+        var priceB = parseFloat(b.getAttribute("data-price"));
+
+        return order === "asc" ? priceA - priceB : priceB - priceA;
+    });
+
+    products.forEach(function(product) {
+        container.appendChild(product);
+    });
+}
+
+// Slider automático
+const slides = document.querySelector('.slides');
+const slideCount = slides.children.length;
+const slideWidth = 100; // en porcentaje
+
+let index = 0;
+
+function nextSlide() {
+    index = (index + 1) % slideCount;
+    slides.style.transform = `translateX(-${slideWidth * index}%)`;
+}
+
+setInterval(nextSlide, 5000); // Cambia cada 5 segundos
