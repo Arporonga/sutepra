@@ -40,12 +40,13 @@ header nav ul li a {
 .slider {
     position: relative;
     width: 100%;
+    max-width: 1200px; /* Ajuste máximo del ancho para PC */
+    margin: 0 auto; /* Centra el slider */
     padding-top: 56.25%; /* Mantiene una proporción de 16:9 */
     overflow: hidden;
     background-color: black;
     color: white;
     text-align: center;
-    box-sizing: border-box;
 }
 
 .slides {
@@ -95,6 +96,7 @@ header nav ul li a {
 @media (max-width: 768px) {
     .slider {
         padding-top: 75%; /* Ajusta la altura del slider en dispositivos móviles */
+        max-width: 100%; /* Asegura que el slider ocupe el ancho completo del dispositivo */
     }
 
     .slider-text {
