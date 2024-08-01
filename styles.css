@@ -84,12 +84,14 @@ header nav ul li a {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    position: relative;
 }
 
 #order-button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
 }
 
 .dropdown-content {
@@ -98,6 +100,8 @@ header nav ul li a {
     background-color: #fff;
     border: 1px solid #ccc;
     z-index: 1;
+    top: 100%;
+    left: 0;
 }
 
 .dropdown-content a {
@@ -120,6 +124,7 @@ header nav ul li a {
     padding: 10px;
     background-color: white;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto img {
@@ -146,6 +151,11 @@ header nav ul li a {
 
 .producto.active .description {
     display: block;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Styles */
