@@ -1,3 +1,27 @@
+// Código JavaScript para el slider
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? 1 : 0;
+        });
+    }
+    
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+    
+    // Cambiar de imagen cada 5 segundos
+    setInterval(nextSlide, 5000);
+    
+    // Mostrar la primera imagen al cargar la página
+    showSlide(currentIndex);
+});
+
 // Script para mostrar y ocultar la descripción de los productos
 document.querySelectorAll('.producto').forEach(product => {
     product.addEventListener('click', function() {
@@ -15,9 +39,9 @@ function sortProducts(order) {
         const priceA = parseFloat(a.getAttribute('data-price'));
         const priceB = parseFloat(b.getAttribute('data-price'));
 
-        if (order === 'low-to-high') {
+        if (order === 'asc') {
             return priceA - priceB;
-        } else if (order === 'high-to-low') {
+        } else if (order === 'desc') {
             return priceB - priceA;
         }
         return 0;
@@ -28,9 +52,31 @@ function sortProducts(order) {
 
 // Eventos para los botones de ordenamiento
 document.getElementById('sort-low-to-high').addEventListener('click', () => {
-    sortProducts('low-to-high');
+    sortProducts('asc');
 });
 
 document.getElementById('sort-high-to-low').addEventListener('click', () => {
-    sortProducts('high-to-low');
+    sortProducts('desc');
 });
+
+// Código para el modal
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("order-button");
+const span = document.getElementsByClassName("close")[0];
+
+// Abre el modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// Cierra el modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Cierra el modal si el usuario hace clic fuera del modal
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
