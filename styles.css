@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* General */
 body {
     font-family: 'Didot', serif; /* Fuente elegante */
@@ -115,23 +117,22 @@ nav ul li a {
     color: #333;
 }
 
-/* Filtro */
-.filter-container {
-    position: relative;
+.order-container {
     text-align: center;
     margin-bottom: 20px;
 }
 
-#filter-button {
+#order-button {
     padding: 10px 20px;
     border: none;
     background-color: #333;
     color: #fff;
     cursor: pointer;
     position: relative;
+    font-weight: bold;
 }
 
-#filter-dropdown {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #fff;
@@ -142,18 +143,18 @@ nav ul li a {
     z-index: 1000;
 }
 
-#filter-dropdown a {
+.dropdown-content a {
     color: #333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-#filter-dropdown a:hover {
+.dropdown-content a:hover {
     background-color: #ddd;
 }
 
-.filter-container:hover #filter-dropdown {
+.dropdown-content.show {
     display: block;
 }
 
