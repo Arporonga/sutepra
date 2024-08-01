@@ -40,39 +40,16 @@ function sortProducts(order) {
         const priceA = parseFloat(a.getAttribute('data-price'));
         const priceB = parseFloat(b.getAttribute('data-price'));
 
-        return order === 'asc' ? priceA - priceB : priceB - priceA;
+        if (order === 'asc') {
+            return priceA - priceB;
+        } else {
+            return priceB - priceA;
+        }
     });
 
     container.innerHTML = '';
     products.forEach(product => container.appendChild(product));
 }
-
-// Función para filtrar productos por categoría
-function filterProducts(category) {
-    const container = document.getElementById('productos-container');
-    const products = Array.from(container.getElementsByClassName('producto'));
-
-    products.forEach(product => {
-        const isVisible = category === 'all' || product.classList.contains(category);
-        product.style.display = isVisible ? 'block' : 'none';
-    });
-}
-
-// Configurar eventos para botones de categoría
-document.getElementById('sort-low-to-high').addEventListener('click', () => {
-    filterProducts('all'); // Muestra todos los productos antes de ordenar
-    sortProducts('asc');
-});
-document.getElementById('sort-high-to-low').addEventListener('click', () => {
-    filterProducts('all'); // Muestra todos los productos antes de ordenar
-    sortProducts('desc');
-});
-document.getElementById('category-italian-bracelets').addEventListener('click', () => {
-    filterProducts('italian-bracelets');
-});
-document.getElementById('category-lentes').addEventListener('click', () => {
-    filterProducts('lentes');
-});
 
 // Slider functionality
 document.addEventListener("DOMContentLoaded", function() {
@@ -81,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
 
     function showSlide(index) {
-        slides.style.transform = `translateX(-${index * 100}%)`; // Usar comillas invertidas para el string
+        slides.style.transform = `translateX(-${index * 100}%)`;
         updateIndicators(index);
     }
 
