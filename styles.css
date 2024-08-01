@@ -81,7 +81,6 @@ nav ul li a {
     font-size: 2em; /* Ajusta el tamaño del texto según sea necesario */
 }
 
-
 /* Estilos para el indicador del slider */
 .slider-indicators {
     position: absolute;
@@ -116,6 +115,39 @@ nav ul li a {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
+}
+
+/* Botón y menú desplegable para Filtrar por Categoría */
+.filter-container {
+    position: relative;
+    display: inline-block;
+}
+
+#filter-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#filter-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+#filter-dropdown a {
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+#filter-dropdown a:hover {
+    background-color: #f1f1f1;
 }
 
 .order-container {
@@ -265,7 +297,6 @@ footer {
 #modal-description {
     margin-top: 15px;
 }
-
 
 /* Media Queries */
 @media (max-width: 768px) {
