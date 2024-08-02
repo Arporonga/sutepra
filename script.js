@@ -2,12 +2,22 @@
 let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
-const slidesContainer = document.querySelector('.slides'); // Contenedor de las slides
+
+// Set initial styles for slides
+function initializeSlides() {
+    slides.forEach((slide, index) => {
+        slide.style.width = '100%';
+        slide.style.height = '100%';
+        if (index === 0) {
+            slide.classList.add('active'); // Set the first slide as active
+        }
+    });
+}
 
 // Show the slide at a specific index
 function showSlide(index) {
-    const offset = -index * 100; // Calcula el desplazamiento para la slide actual
-    slidesContainer.style.transform = `translateX(${offset}%)`;
+    const offset = -100 * index; // Desplazar el slider para mostrar la slide actual
+    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
 }
 
 // Move to the next slide
@@ -17,7 +27,7 @@ function nextSlide() {
 }
 
 // Initialize the slider
-showSlide(currentIndex);
+initializeSlides();
 setInterval(nextSlide, 5000); // Cambia la imagen cada 5 segundos
 
 // Dropdown filter functionality
