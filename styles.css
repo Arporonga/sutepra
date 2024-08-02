@@ -35,27 +35,24 @@ header nav ul li a {
 .slider {
     position: relative;
     width: 100%;
-    height: 100vh; /* Ajusta según el tamaño deseado */
+    height: 500px; /* Ajusta según el tamaño deseado */
     overflow: hidden;
 }
 
 /* Contenedor de las slides */
 .slides {
-    position: relative;
-    width: 100%;
+    display: flex;
+    width: 300%; /* Tres veces el ancho del contenedor para que cada slide ocupe un tercio */
     height: 100%;
+    transition: transform 1s ease-in-out;
 }
 
 /* Estilo de cada slide */
 .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    flex: 1 0 100%;
     height: 100%;
-    transition: opacity 1s ease-in-out; /* Transición suave */
-    opacity: 0; /* Inicia oculto */
-    visibility: hidden; /* Inicia oculto */
+    position: relative;
+    overflow: hidden;
 }
 
 /* Estilo para las imágenes en las slides */
@@ -66,12 +63,7 @@ header nav ul li a {
     display: block;
 }
 
-@keyframes slide {
-    0%, 33.33% { transform: translateX(0%); }
-    33.33%, 66.66% { transform: translateX(-100%); }
-    66.66%, 100% { transform: translateX(-200%); }
-}
-
+/* Texto y marca del slider */
 .slider-text, .slider-brand {
     position: absolute;
     color: white;
@@ -79,6 +71,7 @@ header nav ul li a {
     width: 100%;
     bottom: 40px;
     font-family: 'Didot', serif;
+    z-index: 1;
 }
 
 .slider-text {
@@ -89,7 +82,6 @@ header nav ul li a {
     font-size: 48px;
     font-weight: bold;
 }
-
 
 /* Productos */
 #productos {
