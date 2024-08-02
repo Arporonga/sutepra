@@ -41,18 +41,27 @@ header nav ul li a {
 
 /* Contenedor de las slides */
 .slides {
-    display: flex;
-    width: 300%; /* Tres veces el ancho del contenedor para que cada slide ocupe un tercio */
+    position: relative;
+    width: 100%;
     height: 100%;
-    transition: transform 1s ease-in-out;
 }
 
 /* Estilo de cada slide */
 .slide {
-    flex: 1 0 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    position: relative;
-    overflow: hidden;
+    transition: opacity 1s ease-in-out; /* Transición de desvanecimiento */
+    opacity: 0; /* Inicia oculto */
+    visibility: hidden; /* Inicia oculto */
+}
+
+/* Mostrar slide activa */
+.slide.active {
+    opacity: 1; /* Visible */
+    visibility: visible; /* Hacer visible */
 }
 
 /* Estilo para las imágenes en las slides */
