@@ -31,28 +31,37 @@ header nav ul li a {
     font-size: 18px;
 }
 
-/* Slider */
-/* Slider */
+/* Contenedor del slider */
 .slider {
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
+    height: 100vh; /* Ajusta según el tamaño deseado */
     overflow: hidden;
 }
 
+/* Contenedor de las slides */
 .slides {
-    display: flex;
-    transition: transform 1s ease;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
+/* Estilo de cada slide */
 .slide {
-    min-width: 100%;
-    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in-out; /* Transición suave */
+    opacity: 0; /* Inicia oculto */
+    visibility: hidden; /* Inicia oculto */
 }
 
+/* Estilo para las imágenes en las slides */
 .slide img {
     width: 100%;
+    height: auto;
     display: block;
 }
 
