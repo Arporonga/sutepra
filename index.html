@@ -9,7 +9,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Dropdown Styles */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Ajusta según el tamaño deseado */
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%; /* Número de slides x 100% */
+            height: 100%;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-text, .slider-brand {
+            position: absolute;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        .slider-text {
+            bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .slider-brand {
+            bottom: 50px;
+            font-size: 36px;
+            font-family: 'Didot', serif;
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
@@ -46,22 +89,22 @@
         </nav>
     </header>
 
-<!-- Slider -->
-<div class="slider">
-    <div class="slides">
-        <div class="slide">
-            <img src="panel2.jpg" alt="Panel 2">
+    <!-- Slider -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="panel2.jpg" alt="Panel 2">
+            </div>
+            <div class="slide">
+                <img src="panel4.jpg" alt="Panel 4">
+            </div>
+            <div class="slide">
+                <img src="panel3.jpg" alt="Panel 3">
+            </div>
         </div>
-        <div class="slide">
-            <img src="panel4.jpg" alt="Panel 4">
-        </div>
-        <div class="slide">
-            <img src="panel3.jpg" alt="Panel 3">
-        </div>
+        <div class="slider-text">Accesorios que destacan tu estilo único</div>
+        <div class="slider-brand">SUTEPRA</div>
     </div>
-    <div class="slider-text">Accesorios que destacan tu estilo único</div>
-    <div class="slider-brand">SUTEPRA</div>
-</div>
 
     <!-- Productos -->
     <section id="productos">
@@ -153,53 +196,6 @@
         </div>
     </div>
 
-    <script>
-        // JavaScript to handle dropdown filter
-        document.getElementById('filter-button').addEventListener('click', function() {
-            document.getElementById('filter-dropdown').classList.toggle('show');
-        });
-
-        document.querySelectorAll('#filter-dropdown a').forEach(function(item) {
-            item.addEventListener('click', function(event) {
-                event.preventDefault();
-                filterProducts(this.id);
-            });
-        });
-
-        function filterProducts(category) {
-            let products = document.querySelectorAll('.producto');
-            products.forEach(function(product) {
-                if (category === 'all' || product.dataset.category === category) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        }
-
-        // Modal functionality
-        var modal = document.getElementById("product-modal");
-        var modalImg = document.getElementById("modal-image");
-        var modalDescription = document.getElementById("modal-description");
-        var span = document.getElementsByClassName("close")[0];
-
-        document.querySelectorAll('.producto').forEach(function(product) {
-            product.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.querySelector('img').src;
-                modalDescription.innerHTML = this.dataset.description;
-            });
-        });
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
