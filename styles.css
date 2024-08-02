@@ -1,140 +1,205 @@
-/* Estilos generales */
+/* General */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Didot', serif; /* Fuente elegante */
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    box-sizing: border-box;
 }
 
-/* Header */
 header {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-header nav ul {
+nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    margin: 0;
 }
 
-header nav ul li {
+nav ul li {
     margin: 0 15px;
 }
 
-header nav ul li a {
-    color: white;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-weight: bold;
 }
 
-/* Contenedor del slider */
+/* Slider Styles */
 .slider {
     position: relative;
-    width: 100%;
-    height: 300px; /* Ajusta según el tamaño deseado */
     overflow: hidden;
+    height: 400px; /* Ajusta la altura según sea necesario */
 }
 
-/* Contenedor de las slides */
 .slides {
     display: flex;
-    width: 300%; /* Asegura que las slides se alineen horizontalmente */
-    height: 100%;
-    transition: transform 1s ease-in-out; /* Transición de desplazamiento */
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Estilo de cada slide */
 .slide {
     flex: 0 0 100%; /* Cada slide ocupa el 100% del contenedor */
-    height: 100%;
-    position: relative;
+    box-sizing: border-box;
 }
 
 /* Estilo para las imágenes en las slides */
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
-    display: block;
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin distorsión */
 }
 
 /* Texto y marca del slider */
 .slider-text, .slider-brand {
     position: absolute;
-    color: white;
+    color: #fff;
     text-align: center;
     width: 100%;
-    bottom: 40px;
-    font-family: 'Didot', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     z-index: 1;
 }
 
 .slider-text {
-    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em; /* Ajusta el tamaño del texto según sea necesario */
 }
 
 .slider-brand {
-    font-size: 48px;
-    font-weight: bold;
+    bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+    font-size: 2em; /* Ajusta el tamaño del texto según sea necesario */
 }
 
-/* Productos */
+/* Estilos para el indicador del slider */
+.slider-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.slider-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-indicator.active {
+    background-color: #000;
+}
+
+/* Sección de Productos */
 #productos {
     padding: 20px;
-    text-align: center;
+    background-color: #f8f8f8;
+    margin-top: 80px; /* Para no tapar el contenido por el header fijo */
 }
 
 #productos h2 {
-    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.order-container {
+    text-align: center;
     margin-bottom: 20px;
 }
 
+.order-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.order-container .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    top: 100%;
+    left: 0;
+}
+
+.order-container:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Contenedor de Productos */
 .productos-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
+/* Estilos de los Productos */
 .producto {
-    background: white;
-    border: 1px solid #ddd;
+    width: 22%;
     margin: 10px;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     text-align: center;
-    width: 250px;
-    transition: transform 0.2s;
+    position: relative;
     cursor: pointer;
 }
 
 .producto img {
     width: 100%;
     height: auto;
-}
-
-.producto:hover {
-    transform: scale(1.05);
+    border-bottom: 1px solid #ddd;
 }
 
 .producto h3 {
     margin: 10px 0;
+    color: #333;
 }
 
 .producto span {
-    font-size: 18px;
-    color: #333;
+    color: #666;
 }
 
 /* Barra de Información */
 .info-bar {
-    display: flex;
-    justify-content: space-around;
     background-color: #333;
-    color: white;
-    padding: 10px 0;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    bottom: 0;
 }
 
 .info-bar span {
@@ -142,104 +207,103 @@ header nav ul li a {
     align-items: center;
 }
 
-.info-icon {
-    margin-right: 10px;
+.info-bar .info-icon {
+    margin-right: 8px;
 }
 
 /* Footer */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
+    padding: 20px;
     text-align: center;
-    padding: 10px 0;
 }
 
-/* Modal */
+/* Modal Styles */
 .modal {
-    display: none;
+    display: none; /* Oculto por defecto */
     position: fixed;
-    z-index: 1;
+    z-index: 1; /* Asegúrate de que esté sobre otros elementos */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro */
 }
 
 .modal-content {
-    background-color: white;
+    background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
-    text-align: center;
     position: relative;
 }
 
-.modal-content img {
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-image {
     width: 100%;
     height: auto;
 }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+#modal-description {
+    margin-top: 15px;
 }
 
-.close:hover, .close:focus {
-    color: black;
-}
-
-/* Dropdown Styles */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown-content.show {
-    display: block;
-}
-
-/* Estilos específicos para dispositivos móviles */
+/* Media Queries */
 @media (max-width: 768px) {
-    .slider {
-        height: 200px; /* Ajusta según el tamaño deseado en móviles */
+    .producto {
+        width: 45%;
     }
-    
-    .slides {
-        width: 100%; /* Asegura que las slides ocupen el 100% del contenedor */
+
+    .slider-text {
+        font-size: 18px;
     }
-    
-    .slide {
-        flex: 0 0 100%; /* Cada slide ocupa el 100% del contenedor */
-        height: 100%;
+
+    .slider-brand {
+        font-size: 28px;
     }
-    
-    .slide img {
-        object-fit: contain; /* Ajusta la imagen para que encaje sin recorte */
+}
+
+@media (max-width: 480px) {
+    .producto {
+        width: 90%;
+    }
+
+    .order-container button {
         width: 100%;
-        height: 100%;
+        font-size: 14px;
+    }
+
+    .info-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info-bar span {
+        font-size: 14px;
+    }
+
+    .slider-text {
+        font-size: 16px;
+    }
+
+    .slider-brand {
+        font-size: 24px;
     }
 }
