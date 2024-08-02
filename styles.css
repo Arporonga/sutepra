@@ -237,8 +237,10 @@ footer {
     }
     
     .slide img {
-        object-fit: contain; /* Ajusta las imágenes para que no se recorten en móviles */
+        object-fit: cover; /* Ajusta las imágenes para que se adapten mejor al contenedor */
         height: 100%; /* Permite que la altura se ajuste automáticamente */
         width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+        max-width: none; /* Evita el escalado excesivo */
+        max-height: none; /* Evita el escalado excesivo */
     }
 }
