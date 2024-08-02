@@ -50,6 +50,14 @@ let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
+// Set initial styles for slides
+slides.forEach(slide => {
+    slide.style.transition = 'opacity 1s ease-in-out'; // Smooth transition effect
+    slide.style.opacity = '0';
+    slide.style.visibility = 'hidden';
+});
+
+// Show the slide at a specific index
 function showSlide(index) {
     slides.forEach((slide, i) => {
         if (i === index) {
@@ -62,6 +70,7 @@ function showSlide(index) {
     });
 }
 
+// Move to the next slide
 function nextSlide() {
     currentIndex = (currentIndex + 1) % totalSlides;
     showSlide(currentIndex);
