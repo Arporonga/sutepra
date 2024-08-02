@@ -228,9 +228,17 @@ footer {
         height: 200px; /* Ajusta según el tamaño deseado en móviles */
     }
     
+    .slides {
+        width: 100%; /* Ajusta el ancho de las slides */
+    }
+    
+    .slide {
+        flex: 0 0 100%; /* Cada slide ocupa el 100% del contenedor */
+    }
+    
     .slide img {
         object-fit: contain; /* Ajusta las imágenes para que no se recorten en móviles */
         height: 100%; /* Permite que la altura se ajuste automáticamente */
-        width: auto; /* Asegura que la imagen no se estire horizontalmente */
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
     }
 }
