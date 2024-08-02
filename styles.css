@@ -61,7 +61,8 @@ header nav ul li a {
 /* Estilo para las imágenes en las slides */
 .slide img {
     width: 100%;
-    height: auto;
+    height: 100%; /* Ajusta la altura para que todas las imágenes sean iguales */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
     display: block;
 }
 
