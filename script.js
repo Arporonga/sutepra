@@ -52,7 +52,13 @@ const totalSlides = slides.length;
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
-        slide.style.display = i === index ? 'block' : 'none';
+        if (i === index) {
+            slide.style.opacity = '1';
+            slide.style.visibility = 'visible';
+        } else {
+            slide.style.opacity = '0';
+            slide.style.visibility = 'hidden';
+        }
     });
 }
 
