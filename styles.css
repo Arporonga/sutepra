@@ -35,7 +35,7 @@ header nav ul li a {
 .slider {
     position: relative;
     width: 100%;
-    height: 500px; /* Ajusta según el tamaño deseado */
+    height: 300px; /* Ajusta según el tamaño deseado */
     overflow: hidden;
 }
 
@@ -225,11 +225,12 @@ footer {
 /* Estilos específicos para dispositivos móviles */
 @media (max-width: 768px) {
     .slider {
-        height: 300px; /* Ajusta según el tamaño deseado en móviles */
+        height: 200px; /* Ajusta según el tamaño deseado en móviles */
     }
     
     .slide img {
         object-fit: contain; /* Ajusta las imágenes para que no se recorten en móviles */
-        height: auto; /* Permite que la altura se ajuste automáticamente */
+        height: 100%; /* Permite que la altura se ajuste automáticamente */
+        width: auto; /* Asegura que la imagen no se estire horizontalmente */
     }
 }
