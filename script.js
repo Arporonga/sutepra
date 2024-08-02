@@ -2,36 +2,12 @@
 let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
-
-// Set initial styles for slides
-function initializeSlides() {
-    slides.forEach((slide, index) => {
-        slide.style.position = 'absolute';
-        slide.style.width = '100%';
-        slide.style.height = '100%';
-        slide.style.opacity = '0';
-        slide.style.visibility = 'hidden';
-        if (index === 0) {
-            slide.classList.add('active'); // Set the first slide as active
-            slide.style.opacity = '1';
-            slide.style.visibility = 'visible';
-        }
-    });
-}
+const slidesContainer = document.querySelector('.slides'); // Contenedor de las slides
 
 // Show the slide at a specific index
 function showSlide(index) {
-    slides.forEach((slide, i) => {
-        if (i === index) {
-            slide.classList.add('active');
-            slide.style.opacity = '1';
-            slide.style.visibility = 'visible';
-        } else {
-            slide.classList.remove('active');
-            slide.style.opacity = '0';
-            slide.style.visibility = 'hidden';
-        }
-    });
+    const offset = -index * 100; // Calcula el desplazamiento para la slide actual
+    slidesContainer.style.transform = `translateX(${offset}%)`;
 }
 
 // Move to the next slide
@@ -41,7 +17,7 @@ function nextSlide() {
 }
 
 // Initialize the slider
-initializeSlides();
+showSlide(currentIndex);
 setInterval(nextSlide, 5000); // Cambia la imagen cada 5 segundos
 
 // Dropdown filter functionality
