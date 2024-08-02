@@ -52,7 +52,10 @@ const totalSlides = slides.length;
 
 // Set initial styles for slides
 slides.forEach(slide => {
-    slide.style.transition = 'opacity 1s ease-in-out'; // Smooth transition effect
+    slide.style.position = 'absolute';
+    slide.style.width = '100%';
+    slide.style.height = '100%';
+    slide.style.transition = 'opacity 1s ease-in-out';
     slide.style.opacity = '0';
     slide.style.visibility = 'hidden';
 });
