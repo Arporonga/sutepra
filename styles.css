@@ -271,6 +271,14 @@ footer {
         width: 45%;
     }
 
+    .slider {
+        height: 300px; /* Ajusta la altura del slider en móviles */
+    }
+
+    .slide img {
+        object-fit: contain; /* Evita el recorte de las imágenes en móviles */
+    }
+
     .slider-text {
         font-size: 18px;
     }
@@ -297,6 +305,10 @@ footer {
 
     .info-bar span {
         font-size: 14px;
+    }
+
+    .slider {
+        height: 250px; /* Altura aún más reducida para pantallas más pequeñas */
     }
 
     .slider-text {
