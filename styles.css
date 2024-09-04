@@ -39,7 +39,7 @@ nav ul li a {
 .slider {
     position: relative;
     overflow: hidden;
-    height: 200px; /* Ajusta la altura según sea necesario */
+    height: 400px; /* Ajusta la altura según sea necesario */
 }
 
 .slides {
@@ -48,7 +48,7 @@ nav ul li a {
 }
 
 .slide {
-    flex: 0 0 80%; /* Cada slide ocupa el 100% del contenedor */
+    flex: 0 0 100%; /* Cada slide ocupa el 100% del contenedor */
     box-sizing: border-box;
 }
 
